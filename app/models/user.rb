@@ -1,13 +1,10 @@
 class User < ActiveRecord::Base
-  has_merit
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :google_oauth2], 
          :authentication_keys => [:email]
-  
-  has_one :points
+
   has_many :posts
   has_many :tagged_posts
   has_many :comments
