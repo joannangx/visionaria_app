@@ -4,9 +4,11 @@
             = image_tag(post.user.avatar.url(:thumb), :class => "post_thumb_profile")
         %div{:class => "user_name" }    
             = link_to "#{post.find_username}", profile_path(post.user), :class => "profile_link"
-        - if current_user.username == post.find_username
-            = link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }
-            = link_to 'Edit', edit_post_path(post)
+            - if current_user.username == post.find_username
+                = link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }
+                = link_to 'Edit', edit_post_path(post)
+            - elsif current_user.admin?
+                = link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }
     %div{:class => "content" }
         %p= post.content
     %div{:class => "timestamp" }

@@ -29,21 +29,6 @@ gem 'omniauth-google-oauth2'
 gem 'paperclip', '~> 4.1'
 
 gem 'best_in_place'
-#filter 
-gem 'html-pipeline'
-
-#gem 'shareable'
-
-<<<<<<< HEAD
-gem 'shareable'
-
-=======
->>>>>>> 1d2ed37a82df153de00074748cb971c58eaa01aa
-# Merit gem for the points system as motivations for the 17 Sustainable Goals
-gem 'merit'
-
-# easy_translate gem for the translation api
-gem 'easy_translate'
 
 # haml
 gem 'haml'

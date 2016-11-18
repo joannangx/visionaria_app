@@ -20,7 +20,13 @@ class User < ActiveRecord::Base
   
   has_attached_file :avatar, styles: { :medium => "300x300>", :thumb =>"100x100>" }, :default_url => "/assets/images/:style/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
+  ADMIN_EMAILS = ['admin@example.com', 'rucker95@gmail.com']
   
+  def self.admins
+    ADMIN_EMAILS
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.email = auth.info.email
