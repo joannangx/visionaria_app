@@ -9,6 +9,11 @@ Given /I am signed in as an admin/ do
   step %Q{I should see "admin"}
 end
 
-Then /^I should be able to delete the post by "([^"]*)"$/ do |user|
-    pending
-end
+# Then /^I should be able to delete the post "([^"]*)"$/ do |content|
+#   step %Q{I should see "Delete"}
+#   click_link "Delete"
+#   page.accept_confirm do
+#     click_button('Yes')
+#   end
+#   step %Q{I should not see #{content}}
+# end
