@@ -41,7 +41,13 @@ GEM
     adamantium (0.2.0)
       ice_nine (~> 0.11.0)
       memoizable (~> 0.4.0)
+<<<<<<< HEAD
     addressable (2.4.0)
+=======
+    addressable (2.5.0)
+      public_suffix (~> 2.0, >= 2.0.2)
+    ambry (1.0.0)
+>>>>>>> 04571c53070f09d74cfdefb7dc50b08b9b067b79
     arel (6.0.3)
     arrayfields (4.9.2)
     ast (2.3.0)
@@ -80,8 +86,8 @@ GEM
     code_analyzer (0.4.7)
       sexp_processor
     code_metrics (0.1.3)
-    codeclimate-test-reporter (0.6.0)
-      simplecov (>= 0.7.1, < 1.0.0)
+    codeclimate-test-reporter (1.0.3)
+      simplecov
     coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -247,7 +253,8 @@ GEM
     pg (0.19.0)
     phantomjs (2.1.1.0)
     procto (0.0.3)
-    rack (1.6.4)
+    public_suffix (2.0.4)
+    rack (1.6.5)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.6)
@@ -289,8 +296,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (2.1.0)
     rake (11.3.0)
-    rdoc (4.2.2)
-      json (~> 1.4)
+    rdoc (4.3.0)
     redcard (1.1.0)
     reek (2.2.1)
       parser (~> 2.2)
@@ -341,7 +347,7 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
-    social-share-button (0.8.1)
+    social-share-button (0.8.4)
       coffee-rails
       sass-rails
     spring (2.0.0)
