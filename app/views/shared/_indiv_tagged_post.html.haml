@@ -20,5 +20,5 @@
     =form_tag do 
         =link_to "#{post.taggedcomments.count} Comments", tagged_post_taggedcomments_path(post)
         =toggle_like_tag_button(post,current_user)
-        ="(#{post.likes.count})"
+        ="#{post.likes.count}"
 %br
