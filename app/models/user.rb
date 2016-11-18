@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :google_oauth2], 
          :authentication_keys => [:email]
   
-  has_many :points
+  has_one :points
   has_many :posts
   has_many :tagged_posts
   has_many :comments
