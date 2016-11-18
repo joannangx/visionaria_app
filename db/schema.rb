@@ -94,11 +94,15 @@ ActiveRecord::Schema.define(version: 20161118012115) do
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "location"
-    t.text     "info",        default: "Click on text to edit user info.",        null: false
-    t.text     "motivations", default: "Click on text to edit user motivations.", null: false
-    t.text     "priorities",  default: "Click on text to edit user priorities.",  null: false
-    t.datetime "created_at",                                                      null: false
-    t.datetime "updated_at",                                                      null: false
+    t.text     "info",                default: "Click on text to edit user info.",        null: false
+    t.text     "motivations",         default: "Click on text to edit user motivations.", null: false
+    t.text     "priorities",          default: "Click on text to edit user priorities.",  null: false
+    t.datetime "created_at",                                                              null: false
+    t.datetime "updated_at",                                                              null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
@@ -109,8 +113,8 @@ ActiveRecord::Schema.define(version: 20161118012115) do
   end
 
   create_table "tagged_posts", force: :cascade do |t|
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "category"
     t.string   "tag"
     t.string   "username"
@@ -118,8 +122,6 @@ ActiveRecord::Schema.define(version: 20161118012115) do
     t.integer  "user_id"
     t.integer  "likes"
     t.boolean  "public",     default: true
-    t.integer  "sash_id"
-    t.integer  "level",      default: 0
   end
 
   add_index "tagged_posts", ["user_id"], name: "index_tagged_posts_on_user_id"
