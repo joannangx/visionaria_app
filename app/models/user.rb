@@ -6,6 +6,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :google_oauth2], 
          :authentication_keys => [:email]
 
+  #The pointing system requires all the user have a point and a level
+  has_one :points
+  has_one :levels
+  
+  
   has_many :posts
   has_many :tagged_posts
   has_many :comments
