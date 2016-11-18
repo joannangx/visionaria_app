@@ -12,9 +12,6 @@ class AdminsController < UsersController
       return false
     end
   end
-  
-  def make_tags
-  end
 
   def delete_other_posts
   end

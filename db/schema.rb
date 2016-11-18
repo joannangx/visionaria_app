@@ -64,15 +64,16 @@ ActiveRecord::Schema.define(version: 20161112111947) do
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
   create_table "tagged_posts", force: :cascade do |t|
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "category"
     t.string   "tag"
     t.string   "username"
     t.text     "content"
     t.integer  "user_id"
     t.integer  "likes"
-    t.boolean  "public",     default: true
+    t.integer  "taggedcomments"
+    t.boolean  "public",         default: true
   end
 
   add_index "tagged_posts", ["user_id"], name: "index_tagged_posts_on_user_id"

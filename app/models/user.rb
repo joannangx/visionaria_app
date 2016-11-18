@@ -15,6 +15,12 @@ class User < ActiveRecord::Base
   validates_presence_of :username
   validates :username, uniqueness: true
   
+  ADMIN_EMAILS = ['admin@example.com', 'rucker95@gmail.com']
+  
+  def self.admins
+    ADMIN_EMAILS
+  end
+  
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.email = auth.info.email
