@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161118001928) do
+ActiveRecord::Schema.define(version: 20161118043818) do
 
   create_table "badges_sashes", force: :cascade do |t|
     t.integer  "badge_id"
@@ -155,7 +155,8 @@ ActiveRecord::Schema.define(version: 20161118001928) do
     t.string   "uid"
     t.string   "name"
     t.integer  "sash_id"
-    t.integer  "level",                  default: 0
+    t.integer  "level",                  default: 1
+    t.integer  "point",                  default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

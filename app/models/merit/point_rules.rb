@@ -14,9 +14,8 @@ module Merit
 
     def initialize
       # For every post any user make, the user would have earned 10 points
-      # score 1, :on => 'post#create' do |user|
-      #   user.bio.present?
-      # end
+      score 1, :on => 'post#create' 
+      
       #
       # score 15, :on => 'reviews#create', :to => [:reviewer, :reviewed]
       #

@@ -23,7 +23,7 @@ end
 # badge_id = 0
 # [{
 #   id: (badge_id = badge_id+1),
-#   name: 'just-registered'
+#   name: 'first-registered'
 # }, {
 #   id: (badge_id = badge_id+1),
 #   name: 'best-unicorn',
@@ -31,3 +31,15 @@ end
 # }].each do |attrs|
 #   Merit::Badge.create! attrs
 # end
+
+
+Merit::Badge.create!(
+  id: 1,
+  name: "Badge1",
+)
+
+Merit::Badge.create!(
+  id: 2,
+  name: "Badge2",
+)
+

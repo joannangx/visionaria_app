@@ -1,16 +1,11 @@
 class User < ActiveRecord::Base
 
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :google_oauth2], 
          :authentication_keys => [:email]
-
-  #The pointing system requires all the user have a point and a level
-  has_one :points
-  has_one :levels
-  
-  
   has_many :posts
   has_many :tagged_posts
   has_many :comments
@@ -38,5 +33,11 @@ class User < ActiveRecord::Base
       Like.find_by(:tagged_post_id => post.id, :user_id => self.id)
     end
   end
-
+  
+  
+  def self.points_increment
+        self.point = self.point + 1
+  end
+  
+  
 end

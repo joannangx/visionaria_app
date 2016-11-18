@@ -17,10 +17,18 @@ class PostsController < ApplicationController
     
     def create
         @user = current_user
+        #Whenever the user makes a post, he/should earn one point for creating that point
+        @user.point = @user.point + 1
+        #If we divide 5 points into every level
+        @user.level = @user.point / 5
+        @user.save
+        
         @post = @user.posts.create!(post_params)
 
         flash[:notice] = "Post successfully saved!"
+        
         redirect_to posts_path
+        
     end
     
     def edit
