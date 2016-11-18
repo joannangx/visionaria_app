@@ -1,6 +1,6 @@
 class Points < ActiveRecord::Base
 
-  has_merit
+  #has_merit
 
 
 
