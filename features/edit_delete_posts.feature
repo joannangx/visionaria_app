@@ -18,7 +18,7 @@ Feature: Give users the ability to edit and delete their own posts
       | dodobird  | 1           | "comments2"   | Challenge       | Quality Education               | true      |
       | dodobird  | 1           | "comments3"   | Challenge       | Quality Education               | true      |
   
-    And     I am signed in with email "dodo@example.com" and password "dodosrule"
+    And     I am signed in with username "dodobird", email "dodo@example.com" and password "dodosrule"
     And     I look at the tagged posts
     
     Scenario: Can edit my own posts

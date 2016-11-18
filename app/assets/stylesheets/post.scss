@@ -1,3 +1,4 @@
+
 // Place all the styles related to the Post controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -12,7 +13,7 @@
 }
 
 .post:hover, .tag_post:hover{
-    background-color: #869B9C;
+    opacity: 0.9;
 }
 
 .content_wrap {
@@ -26,7 +27,7 @@
 .content, .tagged_content {
     font-family: Verdana, Geneva, sans-serif;
     font-size: 15px;
-    padding-left: 30px;
+    padding-left: 15px;
     width: 80%;
 }
 
@@ -41,13 +42,29 @@
     padding-top: 15px;
 }
 
+.user_image {
+    float: left;
+}
+
+.user_name {
+    float: left;
+    flex: 1;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
 .user {
+    display: flex;
     text-align: left;
     padding-left: 10px;
     padding-top: 5px;
     padding-bottom: 10px;
     font-size: 12px;
-    background-color: #065169;
+    background-color: #37AA8B;
+}
+
+.user .profile_link {
+    color: white;
 }
 
 .timestamp {
@@ -58,7 +75,8 @@
 }
 
 .filters_cat, .timestamp {
-    padding-right: 50px;
+    padding-right: 10px;
+    color: #e5e5e5;
 }
 
 .filters_tag {
@@ -69,7 +87,7 @@
 }
 
 .comments {
-    padding-left: 20px;
+    padding-left: 10px;
     padding-bottom: 10px;
 }
 
@@ -77,34 +95,72 @@
 	width: 16px;
 	height: 16px;
 	background: url("/social/facebook.png") no-repeat;
-	float: right;
-	
+}
+
+.social-share-button {
+    float: right;
+    margin-right: 5px;
+    margin-top: 2px;
 }
 
 textarea { 
     display: block;
     margin-left: auto;
     margin-right: auto;
+    padding: 10px;
     width: 95%;
-    height: 90px;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid #b5cde5;
+    transition: 0.5s;
+    font-size: 30px;
+}
+
+textarea:focus {
+    height: 150px;
+    border: 1px solid #5398DD;
+    outline: none;
 }
 
 .new_post_form {
     margin: auto;
-    width: 60%;
+    width: 57%;
 }
 
 .content_label {
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 .privacy, .post_submit, .sort_labels {
     text-align: right;
-    padding-right: 20px;
+    padding-right: 10px;
     padding-top: 10px;
+}
+.post_submit input[type="submit"] {
+    width: 100px;
 }
 
 a.profile_link {
     color: #bbb;
     text-decoration: none;
+}
+
+.post_thumb_profile {
+    margin-left: 10px;
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    height: 30px;
+    width: 30px;
+    overflow: hidden;
+    text-align: center;
+    img { width: 100% }
+}
+
+.facebook_share {
+    text-align: right;
+    float:right;
+    margin-right: 30px;
 }

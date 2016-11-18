@@ -13,8 +13,9 @@
 
 .profile_image {
     border: 1px solid;
-    float: left;
-    width: 40%;
+    margin: auto;
+    display: block;
+    //width: 40%;
 }
 
 .prof_user {
@@ -32,7 +33,7 @@
 .about_me {
     display: block;
     float: left;
-    border: 1px solid;
+    //border: 1px solid;
     padding-left: 30px;
     flex: 1;
 }

@@ -1,5 +1,6 @@
 %div{:class => "sidenav", :id => "mySidenav"}
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    = image_tag(current_user.avatar.url(:thumb), :class => "round_thumb_profile")
     = link_to 'Home', posts_path, :method => :get
     = link_to "Profile", profile_path(current_user), :method => :get
     = link_to 'Logout', destroy_user_session_path, :method => :delete
@@ -7,7 +8,7 @@
 
 %div{:class => "header_nav_bar"}
     %ul{:class => "header_nav_links"}
-        %li= link_to "SUSTAINABLE UN GOALS", tagged_posts_path, :method => :get, :class => "goals"
-        %li= link_to "VISIONARIAS", posts_path, :method => :get, :class => "visions"
+        %li= link_to "PROGRESO", tagged_posts_path, :method => :get, :class => "goals"
+        %li= link_to "YO", posts_path, :method => :get, :class => "visions"
         %div{:class => "open_nav"}
             <span onclick="openNav()">&#9776;</span>

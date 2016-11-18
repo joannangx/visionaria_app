@@ -2,7 +2,8 @@
 
 %div{:class => "profile_page"}
     %div{:class => "profile_image"}
-    
+        = image_tag @viewed_user.avatar.url(:medium), :class => "profile_image"
+        
     %div{:class => "about_me"}
         %p{:class => "prof_user"}= @viewed_user.username 
         %b{:class => "loc_label"} Location: 
@@ -11,7 +12,7 @@
             %b{:class => "prof_label"} Info
             - if @owned
                 %div{:class => "edit_input_wrap"}
-                    %p= best_in_place @viewed_profile, :info, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
+                    %p= best_in_place @profile, :info, :class => "info_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
             - else
                 %div{:class => "input_wrap"}
                     %p= @info
@@ -19,7 +20,7 @@
             %b{:class => "prof_label"} What Motivates Me...
             - if @owned
                 %div{:class => "edit_input_wrap"}
-                    %p= best_in_place @viewed_profile, :motivations, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
+                    %p= best_in_place @profile, :motivations, :class => "motivs_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
             - else
                 %div{:class => "input_wrap"}
                     %p= @motivations
@@ -27,7 +28,7 @@
             %b{:class => "prof_label"} My Top Community Priorities...
             - if @owned
                 %div{:class => "edit_input_wrap"}
-                    %p= best_in_place @viewed_profile, :priorities, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
+                    %p= best_in_place @profile, :priorities, :class => "prios_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
             - else    
                 %div{:class => "input_wrap"}
                     %p= @priorities

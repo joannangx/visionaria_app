@@ -3,20 +3,20 @@
 %div{:class => "new_post_form"}
     = form_tag :action => 'create', :method => :post do
         %div{:class => "content_label"}
-            = label :post, :content, 'Your Thoughts'
+            = label :tagged_post, :content, 'Your Thoughts'
         %br
-        = text_area :post, :content
+        = text_area :tagged_post, :content
         
         %div{:class => "sort_labels"}
-            = label :post, :category, 'Category'
-            = select :post, :category, TaggedPost.all_categories
+            = label :tagged_post, :category, 'Category'
+            = select :tagged_post, :category, TaggedPost.all_categories
         
-            = label :post, :tag, 'Sustainable UN Goal'
-            = select :post, :tag, TaggedPost.all_un_goals
+            = label :tagged_post, :tag, 'Sustainable UN Goal'
+            = select :tagged_post, :tag, TaggedPost.all_un_goals
 
         %div{:class => "privacy"}
-            = label :post, :public, 'Private'
-            = radio_button :post, :public, false
+            = label :tagged_post, :public, 'Private'
+            = radio_button :tagged_post, :public, false
 
         %div{:class => "post_submit"}
             = submit_tag 'Submit'

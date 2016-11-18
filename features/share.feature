@@ -1,5 +1,4 @@
-# Don't know how Zhigang is implementing this
-Feature: Share on Facebook
+Feature: Share on social button Facebook
   As a social media user
   In order to share inspiring posts on Visionaria with friends on other social media platforms
   I want to be able to share posts on Facebook

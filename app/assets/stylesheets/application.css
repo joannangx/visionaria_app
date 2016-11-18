@@ -14,10 +14,14 @@
  *= require social-share-button
  *= require_self
  */
- 
-.social-share-button-facebook {
-	display: inline-block;
-	width: 18px;
-	height: 18px;
-	background: url("/social/facebook.png") no-repeat;
+*= require social-share-button
+
+$size: 24px;
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
 }

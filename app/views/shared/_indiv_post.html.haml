@@ -1,17 +1,19 @@
 %div{:class => "post" }
     %div{:class => "user" }
-        =form_tag do
+        %div{:class => "user_image" }
+            = image_tag(post.user.avatar.url(:thumb), :class => "post_thumb_profile")
+        %div{:class => "user_name" }    
             = link_to "#{post.find_username}", profile_path(post.user), :class => "profile_link"
-            - if current_user.username == post.find_username
-                = link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }
-                = link_to 'Edit', edit_post_path(post)
+        - if current_user.username == post.find_username
+            = link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }
+            = link_to 'Edit', edit_post_path(post)
     %div{:class => "content" }
         %p= post.content
     %div{:class => "timestamp" }
         Posted on
         = post.created_at.strftime("%m/%d/%Y at %l:%M%p")
-    %div{:class => "social-share-button-facebook"}
-        = social_share_button_tag("My Post")
+    %div{:class => "social-share-button"}
+        =social_share_button_tag(post.content, :url => "http://myapp.com/foo/bar")
     %div{:class => "comments"}
         =form_tag do 
             = link_to "#{post.comments.count} Comments", post_comments_path(post)
@@ -21,3 +23,5 @@
 
     
 %br
+
+
