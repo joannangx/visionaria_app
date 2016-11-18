@@ -3,37 +3,46 @@ body {
     margin:0;
 }
 
+.open_nav {
+    color: #42A3AC;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
 ul.header_nav_links {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: white;
     position: fixed;
     top: 0;
     width: 100%;
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .15);
 }
 
 li {
     float: right;
     width:48%;
-    border-left:1px solid #bbb;
 }
 
 li a {
     display: block;
-    color: white;
+    color: gray;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 li a:hover:not(.active) {
-    background-color: #111;
+    color: #42A3AC;
+    border-bottom: 3px solid #42A3AC;
 }
 
 .active {
-    background-color: #2EB1B3;
+    background-color: white;
+    color: #42A3AC;
+    border-bottom: 3px solid #42A3AC;
 }
 
 h2 {
