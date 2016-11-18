@@ -1,5 +1,5 @@
 class TaggedPost < ActiveRecord::Base
-  has_merit
+#   has_merit
 
     belongs_to :user
     has_many :taggedcomments

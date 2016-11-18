@@ -30,15 +30,13 @@ gem 'paperclip', '~> 4.1'
 
 gem 'best_in_place'
 
-<<<<<<< HEAD
 gem 'shareable'
-=======
+
 # Merit gem for the points system as motivations for the 17 Sustainable Goals
 gem 'merit'
 
 # easy_translate gem for the translation api
 gem 'easy_translate'
->>>>>>> 0066da03c2697056f012158f00ee436aafa8d4e7
 
 # haml
 gem 'haml'
