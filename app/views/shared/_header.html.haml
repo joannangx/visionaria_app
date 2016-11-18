@@ -1,8 +1,11 @@
 %div{:class => "sidenav", :id => "mySidenav"}
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     = link_to 'Home', posts_path, :method => :get
-    = link_to "Profile", profile_path(current_user), :method => :get
+    = link_to "Test", profile_path(current_user), :method => :get
     = link_to 'Logout', destroy_user_session_path, :method => :delete
+    %div{:class => "language_settings"}
+        'English'
+        <a href="javascript:void(0)" onclick="changeToSpanish()">Spanish</a>
     
 
 %div{:class => "header_nav_bar"}
