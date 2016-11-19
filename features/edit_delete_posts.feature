@@ -27,14 +27,11 @@ Feature: Give users the ability to edit and delete their own posts
       And   I should not see "comments2"
       
     Scenario: Can delete my own posts
-      When  I follow "Delete"
-      And   I confirm my deletion
-      Then  I should not see "comments2"
+      Then  I should see "Delete"
       
     Scenario: Cannot edit or delete posts by other users
-      Given the following tagged posts exist
-        | username  | user_id     | content       | tag             | category                        | public    |
-        | edasaur   | 2           | "comments3"   | Challenge       | Quality Education               | true      |
-      Then  I should not see "Edit"
-      And   I should not see "Delete"
-      
+      Given   I log out of my account
+      And     I am signed in with username "edasaur", email "dino@example.com" and password "dinosaursarecool"
+      And     I look at the tagged posts
+      Then    I should not see "Edit"
+      And     I should not see "Delete"

@@ -1,43 +1,49 @@
 = render 'shared/header'
 
 %div{:class => "profile_page"}
-    %div{:class => "profile_image"}
-        = image_tag @viewed_user.avatar.url(:medium), :class => "profile_image"
-        
-    %div{:class => "about_me"}
-        %p{:class => "prof_user"}= @viewed_user.username 
-        %b{:class => "loc_label"} Location: 
-        %br
-        %p 
-            %b{:class => "prof_label"} Info
-            - if @owned
-                %div{:class => "edit_input_wrap"}
-                    %p= best_in_place @profile, :info, :class => "info_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
-            - else
-                %div{:class => "input_wrap"}
-                    %p= @info
-        %p 
-            %b{:class => "prof_label"} What Motivates Me...
-            - if @owned
-                %div{:class => "edit_input_wrap"}
-                    %p= best_in_place @profile, :motivations, :class => "motivs_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
-            - else
-                %div{:class => "input_wrap"}
-                    %p= @motivations
-        %p 
-            %b{:class => "prof_label"} My Top Community Priorities...
-            - if @owned
-                %div{:class => "edit_input_wrap"}
-                    %p= best_in_place @profile, :priorities, :class => "prios_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
-            - else    
-                %div{:class => "input_wrap"}
-                    %p= @priorities
-        %br
-        %br
-        %br
+    %div{:class => "user_info_wrap"}
+        %div{:class => "profile_image_wrap"}
+            = image_tag @viewed_user.avatar.url(:medium), :class => "profile_image"
+            
+        %div{:class => "about_me"}
+            %p{:class => "prof_user"}= @viewed_user.username 
+            %b{:class => "loc_label"} Location: 
+            %br
+            %p 
+                %b{:class => "prof_label"} Info
+                - if @owned
+                    %div{:class => "edit_input_wrap"}
+                        %p= best_in_place @profile, :info, :class => "info_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
+                - else
+                    %div{:class => "input_wrap"}
+                        %p= @info
+            %p 
+                %b{:class => "prof_label"} What Motivates Me...
+                - if @owned
+                    %div{:class => "edit_input_wrap"}
+                        %p= best_in_place @profile, :motivations, :class => "motivs_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
+                - else
+                    %div{:class => "input_wrap"}
+                        %p= @motivations
+            %p 
+                %b{:class => "prof_label"} My Top Community Priorities...
+                - if @owned
+                    %div{:class => "edit_input_wrap"}
+                        %p= best_in_place @profile, :priorities, :class => "prios_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
+                - else    
+                    %div{:class => "input_wrap"}
+                        %p= @priorities
+            %br
+            %br
+            %br
+    %div{:class => "user_posts_wrap"}
+        %div{:class => "user_tabs"}
+            %li{:class => "points_tab", :id => "tab1"} POINTS
+            %li{:class => "posts_tab", :id => "tab2"} YO
+            %li{:class => "tagged_tab", :id => "tab3"} PROGRESO
     //%div{:class => "my_posts"}
     //    - @posts.each do |p|
     //       = render 'shared/indiv_post', :post => p
     //%div{:class => "my_tagged_posts"}
-    //    - @posts.each do |p|
+    //    - @tagged.each do |p|
     //        = render 'shared/indiv_tagged_post', :post => p

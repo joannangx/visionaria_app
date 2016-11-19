@@ -39,6 +39,14 @@ class User < ActiveRecord::Base
     end
   end
   
+  def public_posts
+    self.posts.where('public = ?', true).order('created_at DESC')
+  end  
+  
+  def public_tagged_posts
+    self.tagged_posts.where('public = ?', true).order('created_at DESC')
+  end  
+  
   def liked?(post)
     if post.classname == 'post'
       Like.find_by(:post_id => post.id, :user_id => self.id)
