@@ -58,7 +58,7 @@
     text-align: left;
     padding-left: 10px;
     padding-top: 5px;
-    padding-bottom: 10px;
+    padding-bottom: 3px;
     font-size: 12px;
     background-color: #37AA8B;
 }
@@ -146,14 +146,14 @@ a.profile_link {
 }
 
 .post_thumb_profile {
-    margin-left: 10px;
+    margin-left: 5px;
     background-color: white;
     border: 1px solid #d9d9d9;
-    border-radius: 15px;
-    -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
-    height: 30px;
-    width: 30px;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    height: 40px;
+    width: 40px;
     overflow: hidden;
     text-align: center;
     img { width: 100% }

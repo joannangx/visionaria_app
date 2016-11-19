@@ -15,6 +15,8 @@ class ProfilesController < ApplicationController
             @profile.motivations == "Click on text to edit user motivations." ? @motivations = " " : @motivations = @profile.motivations
             @profile.priorities == "Click on text to edit user priorities." ? @priorities = " " : @priorities = @profile.priorities
         end
+        @posts = @viewed_user.public_posts
+        @tagged = @viewed_user.public_tagged_posts
     end    
     
     def update

@@ -24,12 +24,12 @@ ratings:
   - app/**
   - "**.rb"
 exclude_paths:
-- config/**/*
-- features/**/*
-- db/
-- script/
-- spec/
-- vendor/
+  - config/**/*
+  - features/**/*
+  - db/
+  - script/
+  - spec/
+  - vendor/
 JavaScript: true
 Ruby: true
 Python: false
