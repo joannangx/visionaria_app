@@ -14,25 +14,27 @@ Feature: Give users the ability to edit and delete their own posts
     And     the following tagged posts exist
       
       | username  | user_id     | content       | tag             | category                        | public    |
-      | edasaur   | 2           | "comments"    | Observaion      | Zero Hunger                     | true      |
       | dodobird  | 1           | "comments2"   | Challenge       | Quality Education               | true      |
-      | dodobird  | 1           | "comments3"   | Challenge       | Quality Education               | true      |
   
     And     I am signed in with username "dodobird", email "dodo@example.com" and password "dodosrule"
     And     I look at the tagged posts
     
     Scenario: Can edit my own posts
-      When  I choose to edit my post with "comments2"
+      When  I follow "Edit"
       And   I fill in "Your Thoughts" with "edited comments"
-      And   I press "Submit"
+      And   I press "Save changes"
       Then  I should see "edited comments"
       And   I should not see "comments2"
       
     Scenario: Can delete my own posts
-      When  I choose to delete my post with "comments3"
-      Then  I should not see "comments3"
+      When  I follow "Delete"
+      And   I confirm my deletion
+      Then  I should not see "comments2"
       
     Scenario: Cannot edit or delete posts by other users
-      Then  I should not see an edit option for the post with "comments" by "edasaur"
-      And   I should not see a delete option for the post "comments" by "edasaur"
+      Given the following tagged posts exist
+        | username  | user_id     | content       | tag             | category                        | public    |
+        | edasaur   | 2           | "comments3"   | Challenge       | Quality Education               | true      |
+      Then  I should not see "Edit"
+      And   I should not see "Delete"
       
