@@ -19,7 +19,7 @@ jQuery ->
             $('#my_tagged').hide();
             $('#my_posts').hide();
             $('#my_journal').hide();
-            $('#my_points').slideToggle();
+            $('#my_points').slideDown();
         return
     return
 
@@ -29,7 +29,7 @@ jQuery ->
             $('#my_tagged').hide();
             $('#my_points').hide();
             $('#my_journal').hide();
-            $('#my_posts').slideToggle();
+            $('#my_posts').slideDown();
         return
     return
 
@@ -39,7 +39,7 @@ jQuery ->
             $('#my_posts').hide();
             $('#my_points').hide();
             $('#my_journal').hide();
-            $('#my_tagged').slideToggle();
+            $('#my_tagged').slideDown();
         return
     return
     
@@ -49,7 +49,7 @@ jQuery ->
             $('#my_posts').hide();
             $('#my_points').hide();
             $('#my_tagged').hide();
-            $('#my_journal').slideToggle();
+            $('#my_journal').slideDown();
         return
     return
     
