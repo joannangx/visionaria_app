@@ -570,6 +570,7 @@
         null,
         1,
         null,
+        null,
         1,
         20,
         null,
@@ -582,6 +583,7 @@
         0,
         0,
         0,
+        0,
         null,
         null,
         null,
@@ -595,8 +597,8 @@
         null,
         null,
         1,
-        80,
-        40,
+        81,
+        41,
         null,
         40,
         null,
@@ -826,10 +828,10 @@
       "/home/ubuntu/workspace/visionaria_app/app/helpers/likes_helper.rb": [
         1,
         1,
-        38,
+        39,
         1,
         null,
-        37,
+        38,
         null,
         null,
         null,
@@ -1019,11 +1021,11 @@
         1,
         null,
         1,
-        40,
+        41,
         null,
         null,
         1,
-        76,
+        78,
         null,
         null
       ],
@@ -1223,10 +1225,6 @@
         null
       ]
     },
-<<<<<<< HEAD
-    "timestamp": 1479605553
-=======
-    "timestamp": 1479559676
->>>>>>> master
+    "timestamp": 1479625920
   }
 }
