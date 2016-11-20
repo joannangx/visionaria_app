@@ -21,9 +21,9 @@ engines:
     enabled: true
 ratings:
   paths:
-exclude_paths:
   - app/**
-  - app/**/*
+exclude_paths:
+- config/**/*
 JavaScript: true
 Ruby: true
 Python: false
