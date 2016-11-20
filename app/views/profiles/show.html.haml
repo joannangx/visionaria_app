@@ -33,17 +33,12 @@
                 - else    
                     %div{:class => "input_wrap"}
                         %p= @priorities
-            %br
-            %br
-            %br
+    %br
     %div{:class => "user_posts_wrap"}
         %div{:class => "user_tabs"}
             %li{:class => "points_tab", :id => "tab1"} POINTS
             %li{:class => "posts_tab", :id => "tab2"} YO
             %li{:class => "tagged_tab", :id => "tab3"} PROGRESO
-    //%div{:class => "my_posts"}
+    //%div{:class => "profile_tab", :id => "my_posts"}
     //    - @posts.each do |p|
-    //       = render 'shared/indiv_post', :post => p
-    //%div{:class => "my_tagged_posts"}
-    //    - @tagged.each do |p|
-    //        = render 'shared/indiv_tagged_post', :post => p
+    //        = render 'shared/indiv_post', :post => p
