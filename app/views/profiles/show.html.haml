@@ -34,11 +34,38 @@
                     %div{:class => "input_wrap"}
                         %p= @priorities
     %br
-    %div{:class => "user_posts_wrap"}
-        %div{:class => "user_tabs"}
-            %li{:class => "points_tab", :id => "tab1"} POINTS
-            %li{:class => "posts_tab", :id => "tab2"} YO
-            %li{:class => "tagged_tab", :id => "tab3"} PROGRESO
-    //%div{:class => "profile_tab", :id => "my_posts"}
-    //    - @posts.each do |p|
-    //        = render 'shared/indiv_post', :post => p
+    //%div{:class => "user_posts_wrap"}
+    %div{:class => "user_tabs"}
+        %a{:href =>"#", :class => "points tab", :id => "tab1"} POINTS
+        %a{:href =>"#", :class => "posts tab", :id => "tab2"} YO
+        %a{:href =>"#", :class => "tagged tab", :id => "tab3"} PROGRESO
+        %a{:href =>"#", :class => "journal tab", :id => "tab4"} JOURNAL
+    %div{:class => "profile_tab", :id => "my_points"}
+        %br
+        COMING SOON
+        %br
+        %br
+        %br
+    %div{:class => "profile_tab", :id => "my_posts"}
+        %br
+        - @posts.each do |p|
+            = render 'shared/indiv_post', :post => p
+        %br
+        %br
+        %br
+    %div{:class => "profile_tab", :id => "my_tagged"}
+        %br
+        - @tagged.each do |p|
+            = render 'shared/indiv_tagged_post', :post => p
+        %br
+        %br
+        %br
+    %div{:class => "profile_tab", :id => "my_journal"}
+        %br
+        COMING SOON
+        %br
+        %br
+        %br
+    %br
+    %br
+    %br

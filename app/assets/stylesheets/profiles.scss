@@ -4,10 +4,8 @@
 
 .profile_page {
     margin: auto;
-    //padding-top: 70px;
     padding-top: 3%;
     width: 73%;
-    //border: 1px solid;
 }
 
 .user_info_wrap {
@@ -79,19 +77,40 @@
 
 .user_tabs {
     list-style-type: none;
-    //margin: 0;
-    padding: 2px;
+    padding-top: 2px;
     overflow: hidden;
     background-color: white;
-    width: 70%;
+    width: 100%;
     box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .15);
     text-align: center;
     margin: auto;
+    
 }
 
-.points_tab, .posts_tab, .tagged_tab {
+.tab {
     float: left;
-    //border: 1px solid;
-    width: 32%;
+    width: 25%;
     font-size: 15px;
+    text-decoration: none;
+    color: gray;
+}
+
+.profile_tab {
+    margin-top: 5px;
+    background-color: white;
+    width: 100%;
+}
+
+#my_points, #my_journal {
+    text-align: center;
+}
+
+.tab:hover {
+    color: #42A3AC;
+    border-bottom: 3px solid #42A3AC;
+}
+
+.tab:active {
+    color: #42A3AC;
+    border-bottom: 3px solid #42A3AC;
 }
