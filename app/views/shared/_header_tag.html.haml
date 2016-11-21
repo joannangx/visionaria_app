@@ -4,6 +4,9 @@
     = link_to 'Home', posts_path, :method => :get
     = link_to "Profile", profile_path(current_user), :method => :get
     = link_to 'Logout', destroy_user_session_path, :method => :delete
+    %div{:class =>"language_selection"}
+        = link_to 'English'
+        = link_to 'Spanish', :id => "set_language"
     
 %div{:class => "header_nav_bar"}
     %ul{:class => "header_nav_links"}
