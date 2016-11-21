@@ -1,39 +1,147 @@
 %div{:class => "levels"}
-    %p= "LEVEL #{@viewed_user.point.regular / 5}"
+    - if @viewed_user.point.regular < 5
+        - if @viewed_user.point.regular >= 2
+            %p= "LEVEL 1"
+        - else
+            %p= "LEVEL 0"
+    - else
+        %p= "LEVEL #{(@viewed_user.point.regular / 5) + 1}"
     %br
-    %p= "LEVEL #{@viewed_user.point.poverty / 5}" 
+    - if @viewed_user.point.poverty < 5
+        - if @viewed_user.point.poverty >= 2
+            %p= "LEVEL 1"
+        - else
+            %p= "LEVEL 0"
+    - else
+        %p= "LEVEL #{(@viewed_user.point.poverty / 5) + 1}" 
     %br
-    %p= "LEVEL #{@viewed_user.point.hunger / 5}" 
+    - if @viewed_user.point.hunger < 5
+        - if @viewed_user.point.hunger >= 2
+            %p= "LEVEL 1"
+        - else
+            %p= "LEVEL 0"
+    - else
+        %p= "LEVEL #{(@viewed_user.point.hunger / 5) + 1}" 
     %br
-    %p= "LEVEL #{@viewed_user.point.health / 5}" 
+    - if @viewed_user.point.health < 5
+        - if @viewed_user.point.health >= 2
+            %p= "LEVEL 1"
+        - else
+            %p= "LEVEL 0"
+    - else
+        %p= "LEVEL #{(@viewed_user.point.health / 5) + 1}" 
     %br
-    %p= "LEVEL #{@viewed_user.point.education / 5}" 
+    - if @viewed_user.point.education < 5
+        - if @viewed_user.point.education >= 2
+            %p= "LEVEL 1"
+        - else
+            %p= "LEVEL 0"
+    - else
+        %p= "LEVEL #{(@viewed_user.point.education / 5) + 1}" 
     %br
-    %p= "LEVEL #{@viewed_user.point.gender / 5}" 
+    - if @viewed_user.point.gender < 5
+        - if @viewed_user.point.gender >= 2
+            %p= "LEVEL 1"
+        - else
+            %p= "LEVEL 0"
+    - else
+        %p= "LEVEL #{(@viewed_user.point.gender / 5) + 1}" 
     %br
-    %p= "LEVEL #{@viewed_user.point.sanitation / 5}" 
+    - if @viewed_user.point.sanitation < 5
+        - if @viewed_user.point.sanitation >= 2
+            %p= "LEVEL 1"
+        - else
+            %p= "LEVEL 0"
+    - else
+        %p= "LEVEL #{(@viewed_user.point.sanitation / 5) + 1}" 
     %br
-    %p= "LEVEL #{@viewed_user.point.energy / 5}" 
+    - if @viewed_user.point.energy < 5
+        - if @viewed_user.point.energy >= 2
+            %p= "LEVEL 1"
+        - else
+            %p= "LEVEL 0"
+    - else
+        %p= "LEVEL #{(@viewed_user.point.energy / 5) + 1}" 
     %br
-    %p= "LEVEL #{@viewed_user.point.economy / 5}" 
+    - if @viewed_user.point.economy < 5
+        - if @viewed_user.point.economy >= 2
+            %p= "LEVEL 1"
+        - else
+            %p= "LEVEL 0"
+    - else    
+        %p= "LEVEL #{(@viewed_user.point.economy / 5) + 1}" 
     %br
-    %p= "LEVEL #{@viewed_user.point.industry / 5}" 
+    - if @viewed_user.point.industry < 5
+        - if @viewed_user.point.industry >= 2
+            %p= "LEVEL 1"
+        - else
+            %p= "LEVEL 0"
+    - else
+        %p= "LEVEL #{(@viewed_user.point.industry / 5) + 1}" 
     %br
-    %p= "LEVEL #{@viewed_user.point.inequalities / 5}" 
+    - if @viewed_user.point.inequalities < 5
+        - if @viewed_user.point.inequalities >= 2
+            %p= "LEVEL 1"
+        - else
+            %p= "LEVEL 0"
+    - else
+        %p= "LEVEL #{(@viewed_user.point.inequalities / 5) + 1}" 
     %br
-    %p= "LEVEL #{@viewed_user.point.cities / 5}" 
+    - if @viewed_user.point.cities < 5
+        - if @viewed_user.point.cities >= 2
+            %p= "LEVEL 1"
+        - else
+            %p= "LEVEL 0"
+    - else
+        %p= "LEVEL #{(@viewed_user.point.cities / 5) + 1}" 
     %br
-    %p= "LEVEL #{@viewed_user.point.consumption / 5}" 
+    - if @viewed_user.point.consumption < 5
+        - if @viewed_user.point.consumption >= 2
+            %p= "LEVEL 1"
+        - else
+            %p= "LEVEL 0"
+    - else
+        %p= "LEVEL #{(@viewed_user.point.consumption / 5) + 1}" 
     %br
-    %p= "LEVEL #{@viewed_user.point.climate / 5}" 
+    - if @viewed_user.point.climate < 5
+        - if @viewed_user.point.climate >= 2
+            %p= "LEVEL 1"
+        - else
+            %p= "LEVEL 0"
+    - else
+        %p= "LEVEL #{(@viewed_user.point.climate / 5) + 1}" 
     %br
-    %p= "LEVEL #{@viewed_user.point.water / 5}" 
+    - if @viewed_user.point.water < 5
+        - if @viewed_user.point.water >= 2
+            %p= "LEVEL 1"
+        - else
+            %p= "LEVEL 0"
+    - else
+        %p= "LEVEL #{(@viewed_user.point.water / 5) + 1}" 
     %br
-    %p= "LEVEL #{@viewed_user.point.land / 5}" 
+    - if @viewed_user.point.land < 5
+        - if @viewed_user.point.land >= 2
+            %p= "LEVEL 1"
+        - else
+            %p= "LEVEL 0"
+    - else
+        %p= "LEVEL #{(@viewed_user.point.land / 5) + 1}" 
     %br
-    %p= "LEVEL #{@viewed_user.point.peace / 5}" 
+    - if @viewed_user.point.peace < 5
+        - if @viewed_user.point.peace >= 2
+            %p= "LEVEL 1"
+        - else
+            %p= "LEVEL 0"
+    - else
+        %p= "LEVEL #{(@viewed_user.point.peace / 5) + 1}" 
     %br
-    %p= "LEVEL #{@viewed_user.point.partnerships / 5}" 
+    - if @viewed_user.point.partnerships < 5
+        - if @viewed_user.point.partnerships >= 2
+            %p= "LEVEL 1"
+        - else
+            %p= "LEVEL 0"
+    - else
+        %p= "LEVEL #{(@viewed_user.point.partnerships / 5) + 1}" 
     %br
 
 %div{:class => "earned"}
