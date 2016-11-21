@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
             @comment.username = current_user.username
         end
         @comment.save
-        redirect_to post_comments_path(@post)
+        redirect_to posts_path
     end
     
     def index

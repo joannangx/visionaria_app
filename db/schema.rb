@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161118001955) do
+ActiveRecord::Schema.define(version: 20161121061700) do
 
   create_table "badges_sashes", force: :cascade do |t|
     t.integer  "badge_id"
@@ -33,6 +33,30 @@ ActiveRecord::Schema.define(version: 20161118001955) do
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
+
+  create_table "helps", force: :cascade do |t|
+    t.integer  "post_id"
+    t.integer  "tagged_post_id"
+    t.integer  "user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "helps", ["post_id"], name: "index_helps_on_post_id"
+  add_index "helps", ["tagged_post_id"], name: "index_helps_on_tagged_post_id"
+  add_index "helps", ["user_id"], name: "index_helps_on_user_id"
+
+  create_table "inspires", force: :cascade do |t|
+    t.integer  "post_id"
+    t.integer  "tagged_post_id"
+    t.integer  "user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "inspires", ["post_id"], name: "index_inspires_on_post_id"
+  add_index "inspires", ["tagged_post_id"], name: "index_inspires_on_tagged_post_id"
+  add_index "inspires", ["user_id"], name: "index_inspires_on_user_id"
 
   create_table "likes", force: :cascade do |t|
     t.integer  "post_id"

@@ -5,6 +5,8 @@ class TaggedPost < ActiveRecord::Base
     has_many :taggedcomments
     has_many :points
     has_many :likes
+    has_many :helps
+    has_many :inspires
     has_many :liking_users, :through => :likes, :source => :user
     validates :content, :presence => true
     validates :tag, :presence => true
