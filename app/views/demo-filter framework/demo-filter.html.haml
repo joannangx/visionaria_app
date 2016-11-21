@@ -28,14 +28,3 @@
                      @filterrific.select_options[:sorted_by],
                      {},
                      { :class => 'form-control' }
-
-#results
-  = render :partial => 'students/list',
-           :locals => { :students => @students }
-
-:javascript
-  $('.js-datepicker').datepicker();
-  $('#overlayTrigger').click(function(event) {
-    event.preventDefault();
-    $('body').chardinJs('start');
-  });
