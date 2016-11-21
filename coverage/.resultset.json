@@ -595,8 +595,8 @@
         null,
         null,
         1,
-        80,
-        40,
+        81,
+        41,
         null,
         40,
         null,
@@ -642,6 +642,15 @@
         1,
         null,
         0,
+        null
+      ],
+      "/home/ubuntu/workspace/visionaria_app/features/step_definitions/points_steps.rb": [
+        1,
+        null,
+        null,
+        3,
+        6,
+        null,
         null
       ],
       "/home/ubuntu/workspace/visionaria_app/features/step_definitions/post_steps.rb": [
@@ -826,10 +835,10 @@
       "/home/ubuntu/workspace/visionaria_app/app/helpers/likes_helper.rb": [
         1,
         1,
-        38,
+        39,
         1,
         null,
-        37,
+        38,
         null,
         null,
         null,
@@ -1076,11 +1085,11 @@
         1,
         null,
         1,
-        40,
+        41,
         null,
         null,
         1,
-        76,
+        78,
         null,
         null
       ],
@@ -1287,6 +1296,6 @@
         null
       ]
     },
-    "timestamp": 1479726569
+    "timestamp": 1479732963
   }
 }

@@ -14,14 +14,14 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-21T11:09:29+00:00">2016-11-21T11:09:29+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-21T12:56:03+00:00">2016-11-21T12:56:03+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">80.8%</span></span>
+    (<span class="covered_percent"><span class="yellow">80.92%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -31,9 +31,9 @@
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>46</b> files in total.
-    <b>474</b> relevant lines. 
-    <span class="green"><b>383</b> lines covered</span> and
+    <b>47</b> files in total.
+    <b>477</b> relevant lines. 
+    <span class="green"><b>386</b> lines covered</span> and
     <span class="red"><b>91</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -157,7 +157,7 @@
         <td>9</td>
         <td>9</td>
         <td>0</td>
-        <td>17.2</td>
+        <td>17.4</td>
       </tr>
       
       <tr>
@@ -247,7 +247,7 @@
         <td>11</td>
         <td>11</td>
         <td>0</td>
-        <td>11.4</td>
+        <td>11.6</td>
       </tr>
       
       <tr>
@@ -468,6 +468,16 @@
         <td>1</td>
         <td>1</td>
         <td>0.5</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#0da4d8f94bed9d41a6d5477ec8516a59c5754e08" class="src_link" title="features/step_definitions/points_steps.rb">features/step_definitions/points_steps.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>7</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>3.3</td>
       </tr>
       
       <tr>
@@ -2550,8 +2560,8 @@
           <code class="ruby">    def toggle_like_button(post, user)</code>
         </li>
       
-        <li class="covered" data-hits="38" data-linenumber="3">
-          <span class="hits">38</span>
+        <li class="covered" data-hits="39" data-linenumber="3">
+          <span class="hits">39</span>
           
           <code class="ruby">        if user.liked?(post)</code>
         </li>
@@ -2568,8 +2578,8 @@
           <code class="ruby">        else</code>
         </li>
       
-        <li class="covered" data-hits="37" data-linenumber="6">
-          <span class="hits">37</span>
+        <li class="covered" data-hits="38" data-linenumber="6">
+          <span class="hits">38</span>
           
           <code class="ruby">            link_to image_tag(&#39;unlike.png&#39;, size:&quot;15&quot;,alt: &quot;like&quot;), like_post_path(post), remote: true</code>
         </li>
@@ -3216,8 +3226,8 @@
           <code class="ruby">    def classname</code>
         </li>
       
-        <li class="covered" data-hits="40" data-linenumber="10">
-          <span class="hits">40</span>
+        <li class="covered" data-hits="41" data-linenumber="10">
+          <span class="hits">41</span>
           
           <code class="ruby">        &#39;post&#39;</code>
         </li>
@@ -3240,8 +3250,8 @@
           <code class="ruby">    def find_username</code>
         </li>
       
-        <li class="covered" data-hits="76" data-linenumber="14">
-          <span class="hits">76</span>
+        <li class="covered" data-hits="78" data-linenumber="14">
+          <span class="hits">78</span>
           
           <code class="ruby">        User.find(self.user_id).username</code>
         </li>
@@ -3900,14 +3910,14 @@
           <code class="ruby">  def liked?(post)</code>
         </li>
       
-        <li class="covered" data-hits="80" data-linenumber="51">
-          <span class="hits">80</span>
+        <li class="covered" data-hits="81" data-linenumber="51">
+          <span class="hits">81</span>
           
           <code class="ruby">    if post.classname == &#39;post&#39;</code>
         </li>
       
-        <li class="covered" data-hits="40" data-linenumber="52">
-          <span class="hits">40</span>
+        <li class="covered" data-hits="41" data-linenumber="52">
+          <span class="hits">41</span>
           
           <code class="ruby">      Like.find_by(:post_id =&gt; post.id, :user_id =&gt; self.id)</code>
         </li>
@@ -7549,6 +7559,66 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="0da4d8f94bed9d41a6d5477ec8516a59c5754e08">
+  <div class="header">
+    <h3>features/step_definitions/points_steps.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">Given /the following points systems exist/ do |table|</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby">  # table is a Cucumber::MultilineArgument::DataTable</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby">  #pending # Write code here that turns the phrase above into concrete actions</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="4">
+          <span class="hits">3</span>
+          
+          <code class="ruby">  table.hashes.each do |points|</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="5">
+          <span class="hits">6</span>
+          
+          <code class="ruby">    Point.create(points)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">end</code>

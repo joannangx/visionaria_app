@@ -95,6 +95,11 @@
     color: gray;
 }
 
+#tab1.active, #tab2.active, #tab3.active, #tab4.active {
+    color: #42A3AC;
+    border-bottom: 3px solid #42A3AC;
+}
+
 .profile_tab {
     margin-top: 5px;
     background-color: white;
@@ -196,4 +201,3 @@
 .part { 
     color: #043a5e;
 }
-    

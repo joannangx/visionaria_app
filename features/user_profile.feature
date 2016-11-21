@@ -16,6 +16,11 @@ Feature: User Profiles
       | 1             |
       | 2             |
     
+    And   the following points systems exist
+      | user_id       |
+      | 1             |
+      | 2             |
+    
     And     the following posts exist
       
       | username      | user_id     | content       | public    |
