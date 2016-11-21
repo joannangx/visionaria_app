@@ -12,6 +12,9 @@ class PostsController < ApplicationController
     def create
         @user = current_user
         @post = @user.posts.create!(post_params)
+        
+        @points_sys = @user.point
+        @points_sys.update({:regular => @points_sys.regular + 1})
 
         flash[:notice] = "Post successfully saved!"
         redirect_to posts_path
@@ -40,6 +43,10 @@ class PostsController < ApplicationController
            like.destroy! 
         end
         @post.destroy!
+        
+        @points_sys = @post.user.point
+        @points_sys.update({:regular => @points_sys.regular - 1})
+        
         flash[:notice] = "Post successfully deleted!"
         redirect_to posts_path
     end

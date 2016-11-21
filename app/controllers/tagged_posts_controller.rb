@@ -24,6 +24,9 @@ class TaggedPostsController < ApplicationController
         @user = current_user
         @tagged = @user.tagged_posts.create!(tagged_post_params)
 
+        
+
+
         flash[:notice] = "Post successfully saved!"
         redirect_to tagged_posts_path
     end

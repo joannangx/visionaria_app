@@ -1,5 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
   after_filter :build_profile, only: :create
+  after_filter :allot_points, only: :create
 
   private
 
@@ -28,6 +29,12 @@ class RegistrationsController < Devise::RegistrationsController
     @user = current_user
     @profile = Profile.create({:user_id => @user.id})
     @user.profile = @profile
+  end  
+  
+  def allot_points
+    @user = current_user
+    @points = Point.create({:user_id => @user.id})
+    @user.point = @points
   end  
 
 end
