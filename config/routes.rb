@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :comments
     member do
       get 'like'
+      get 'help'
+      get 'inspire'
     end
   end
   get 'posts/:id/edit', to: 'posts#edit', as: :edit_post
@@ -14,6 +16,8 @@ Rails.application.routes.draw do
     resources :taggedcomments
     member do
       get 'like'
+      get 'help'
+      get 'inspire'
     end
   end
   get 'tagged_posts/:id/edit', to: 'tagged_posts#edit', as: :edit_tagged_post

@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :taggedcomments
   has_many :likes, :source => :posts
+  has_many :helps, :source => :posts
+  has_many :inspires, :source => :posts
   has_one :profile, :dependent => :destroy
 
   validates_presence_of :username
@@ -54,6 +56,22 @@ class User < ActiveRecord::Base
       Like.find_by(:post_id => post.id, :user_id => self.id)
     else
       Like.find_by(:tagged_post_id => post.id, :user_id => self.id)
+    end
+  end
+  
+  def helped?(post)
+    if post.classname == 'post'
+      Help.find_by(:post_id => post.id, :user_id => self.id)
+    else
+      Help.find_by(:tagged_post_id => post.id, :user_id => self.id)
+    end
+  end
+  
+  def inspired?(post)
+    if post.classname == 'post'
+      Inspire.find_by(:post_id => post.id, :user_id => self.id)
+    else
+      Inspire.find_by(:tagged_post_id => post.id, :user_id => self.id)
     end
   end
 
