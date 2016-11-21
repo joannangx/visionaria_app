@@ -1,11 +1,18 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   after_filter :build_profile
+  after_filter :allot_points
     
   def build_profile
       @user = current_user
       @profile = Profile.create({:user_id => @user.id})
       @user.profile = @profile
   end  
+    
+  def allot_points
+    @user = current_user
+    @points = Point.create({:user_id => @user.id})
+    @user.point = @points
+  end 
     
   def facebook
     @user = User.from_omniauth(request.env["omniauth.auth"])
