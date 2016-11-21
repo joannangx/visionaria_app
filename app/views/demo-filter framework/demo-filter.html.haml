@@ -1,0 +1,38 @@
+.well
+  = form_for_filterrific @filterrific do |f|
+    .row
+      .col-md-3
+        .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Search by first name, last name, or email.' }
+          %label Search
+          = f.text_field :search_query,
+                         :class => 'filterrific-periodically-observed form-control'
+      .col-md-3
+        .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by country.' }
+          %label Country
+          = f.select :with_country_id,
+                     @filterrific.select_options[:with_country_id],
+                     { :include_blank => '- Any -' },
+                     { :class => 'form-control' }
+      .col-md-2
+        .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by registration date.' }
+          %label Registered after
+          = f.text_field :with_created_at_gte,
+                         :class => 'js-datepicker form-control'
+      .col-md-4
+        .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Change the sorting.' }
+          %label Sorted by
+          = f.select :sorted_by,
+                     @filterrific.select_options[:sorted_by],
+                     {},
+                     { :class => 'form-control' }
+
+#results
+  = render :partial => 'students/list',
+           :locals => { :students => @students }
+
+:javascript
+  $('.js-datepicker').datepicker();
+  $('#overlayTrigger').click(function(event) {
+    event.preventDefault();
+    $('body').chardinJs('start');
+  });
