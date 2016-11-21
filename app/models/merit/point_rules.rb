@@ -10,7 +10,7 @@
 
 module Merit
   class PointRules
-    include Merit::PointRulesMethods
+    #include Merit::PointRulesMethods
 
     def initialize
       # score 10, :on => 'users#create' do |user|

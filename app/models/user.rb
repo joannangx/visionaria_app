@@ -18,12 +18,20 @@ class User < ActiveRecord::Base
   validates_presence_of :username
   validates :username, uniqueness: true
   
-  has_attached_file :avatar, styles: { :medium => "300x300>", :thumb =>"100x100>" }, :default_url => "/assets/images/:style/missing.png"
+  has_attached_file :avatar, styles: { :medium => "300x300>", :thumb =>"100x100>" }, :default_url => ":style/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
+  ADMIN_EMAILS = ['admin@example.com', 'rucker95@gmail.com', 'joanna.ng@berkeley.edu', 'paul@visionarianetwork.org', 
+                  'genevieve@visionarianetwork.org', 'paola.saldivias@visionarianetwork.org', 'contact@visionarianetwork.org']
   
+  def self.admins
+    ADMIN_EMAILS
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.email = auth.info.email
+        user.admin = true if User.admins.include?(user.email) 
         user.username = auth.info.email
         user.password = Devise.friendly_token[0,20]
         user.name = auth.info.name
@@ -32,6 +40,14 @@ class User < ActiveRecord::Base
         end
     end
   end
+  
+  def public_posts
+    self.posts.where('public = ?', true).order('created_at DESC')
+  end  
+  
+  def public_tagged_posts
+    self.tagged_posts.where('public = ?', true).order('created_at DESC')
+  end  
   
   def liked?(post)
     if post.classname == 'post'

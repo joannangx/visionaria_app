@@ -11,10 +11,12 @@ class ProfilesController < ApplicationController
         @owned = @profile == current_user.profile
         
         if @owned == false
-            @profile.info == "Click on text to edit user info." ? @info = " " : @info = @viewed_profile.info
-            @profile.motivations == "Click on text to edit user motivations." ? @motivations = " " : @motivations = @viewed_profile.motivations
-            @profile.priorities == "Click on text to edit user priorities." ? @priorities = " " : @priorities = @viewed_profile.priorities
+            @profile.info == "Click on text to edit user info." ? @info = " " : @info = @profile.info
+            @profile.motivations == "Click on text to edit user motivations." ? @motivations = " " : @motivations = @profile.motivations
+            @profile.priorities == "Click on text to edit user priorities." ? @priorities = " " : @priorities = @profile.priorities
         end
+        @posts = @viewed_user.public_posts
+        @tagged = @viewed_user.public_tagged_posts
     end    
     
     def update

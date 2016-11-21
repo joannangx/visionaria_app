@@ -41,6 +41,7 @@ Rails.application.configure do
   
   config.web_console.whitelisted_ips = '136.152.142.24'
   config.web_console.whitelisted_ips = '24.130.121.38'
-  Paperclip.options[:command_path] = "/usr/bin/"
+  config.web_console.whitelisted_ips = '98.210.146.158'
+  Paperclip.options[:command_path] = "/usr/bin/convert"
   
 end

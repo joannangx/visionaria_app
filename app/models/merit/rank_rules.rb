@@ -12,7 +12,7 @@
 
 module Merit
   class RankRules
-    include Merit::RankRulesMethods
+    #include Merit::RankRulesMethods
 
     def initialize
       # set_rank :level => 1, :to => Commiter.active do |commiter|

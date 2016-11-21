@@ -37,6 +37,10 @@ Given(/^I am signed in with username "([^"]*)", email "([^"]*)" and password "([
   step %Q{I should see "#{username}"}
 end
 
+Given(/^I log out of my account$/) do
+  step %Q{I follow "Logout"}
+end  
+
 #Given /facebook login/  do
 #  find(:css, 'a.facebook').click
 #end
