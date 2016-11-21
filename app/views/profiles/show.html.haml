@@ -42,10 +42,7 @@
         %a{:href =>"#", :class => "journal tab", :id => "tab4"} JOURNAL
     %div{:class => "profile_tab", :id => "my_points"}
         %br
-        =@viewed_user.point.regular
-        =@viewed_user.point.poverty
-        %br
-        %br
+        = render 'shared/show_points'
         %br
     %div{:class => "profile_tab", :id => "my_posts"}
         %br

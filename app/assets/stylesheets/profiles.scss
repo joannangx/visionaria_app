@@ -101,11 +101,25 @@
     width: 100%;
 }
 
-#my_points, #my_journal {
+#my_journal {
     text-align: center;
 }
 
 .tab:hover {
     color: #42A3AC;
     border-bottom: 3px solid #42A3AC;
+}
+
+.profile_tab#my_points {
+    display: flex;
+}
+
+.levels {
+    float:left;
+    margin-left: 200px;
+}
+
+.earned {
+    float:left;
+    margin-left: 280px;
 }

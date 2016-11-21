@@ -22,13 +22,10 @@ class TaggedPostsController < ApplicationController
 
     def create
         @user = current_user
-        
         @tagged = @user.tagged_posts.create!(tagged_post_params)
 
         @points_sys = @user.point
         @points_sys.determine_tag_and_update(@tagged.tag, 'add')
-        
-        #@points_sys.update({Point.determine_tag(params[:tag]) => @points_sys.Point.determine_tag(params[:tag]) + 1})
 
         flash[:notice] = "Post successfully saved!"
         redirect_to tagged_posts_path
@@ -60,6 +57,7 @@ class TaggedPostsController < ApplicationController
         
         @points_sys = @post.user.point
         @points_sys.determine_tag_and_update(@post.tag, 'sub')
+        
         flash[:notice] = "Tagged post successfully deleted!"
         redirect_to tagged_posts_path
     end
