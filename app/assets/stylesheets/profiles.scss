@@ -4,37 +4,40 @@
 
 .profile_page {
     margin: auto;
-    //padding-top: 70px;
     padding-top: 3%;
-    width: 73%;
-    //border: 1px solid;
+    width: 75%;
+}
+
+.user_info_wrap {
     display: flex;
+}
+
+.profile_image_wrap {
+    display: block;
+    margin: auto;
+    width: 40%;
 }
 
 .profile_image {
     border: 1px solid;
-    float: left;
-    width: 40%;
+    width: 100%;
+    height: auto;
 }
 
 .prof_user {
     font-size: 25px;
 }
 
-.loc_label {
+.loc_label, .prof_label {
     font-size: 15px;
 }
 
-.prof_label {
-    font-size: 18px;
-}
-
 .about_me {
+    width: 60%;
     display: block;
     float: left;
-    border: 1px solid;
     padding-left: 30px;
-    flex: 1;
+    display: inline-block;
 }
 
 .best_in_place {
@@ -49,11 +52,11 @@
 }
 
 .edit_input_wrap {
-    background: #cdd6d3;
+    background: #80b5ac;
 }
 
 .input_wrap {
-    background: #e2e1cc;
+    background: #9cd8ce;
 }
 
 .best_in_place:hover {
@@ -70,4 +73,39 @@
       background-color: #FCC;
       border: solid 2px #666;
       &:first-letter { text-transform: uppercase };
+}
+
+.user_tabs {
+    list-style-type: none;
+    padding-top: 2px;
+    overflow: hidden;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .15);
+    text-align: center;
+    margin: auto;
+    
+}
+
+.tab {
+    float: left;
+    width: 25%;
+    font-size: 15px;
+    text-decoration: none;
+    color: gray;
+}
+
+.profile_tab {
+    margin-top: 5px;
+    background-color: white;
+    width: 100%;
+}
+
+#my_points, #my_journal {
+    text-align: center;
+}
+
+.tab:hover {
+    color: #42A3AC;
+    border-bottom: 3px solid #42A3AC;
 }

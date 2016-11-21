@@ -45,7 +45,7 @@ Background:
       Then  I should see "Anonymous"
       
     Scenario: Successfully make a tagged post comment with username
-      When  I follow "SUSTAINABLE UN GOALS"
+      When  I follow "PROGRESO"
       When  I follow "0 Comments"
       And   I fill in "Your Comment" with "Good"
       And   I press "Create"
@@ -55,7 +55,7 @@ Background:
       Then  I should see "1 Comments"
       
     Scenario: Successfully make a tagged post comment anonymously
-      When  I follow "SUSTAINABLE UN GOALS"  
+      When  I follow "PROGRESO"  
       When  I follow "0 Comments"
       And   I fill in "Your Comment" with "Secret"
       And   I check "Anonymous"

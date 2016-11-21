@@ -6,12 +6,6 @@ class TaggedPostsController < ApplicationController
     end 
 
     def index
-        @user = current_user
-        if @user.profile.nil?
-            @profile = Profile.create({:user_id => @user.id})
-            @user.profile = @profile
-        end
-        
         @taggedposts = TaggedPost.where('public = ? OR user_id = ?', true, current_user.id).order('created_at DESC')
         if params[:sort_tag] 
             @taggedposts = @taggedposts.where('tag = ?', params[:sort_tag]).order('created_at DESC')

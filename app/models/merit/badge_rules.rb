@@ -18,7 +18,7 @@
 
 module Merit
   class BadgeRules
-    include Merit::BadgeRulesMethods
+    #include Merit::BadgeRulesMethods
 
     def initialize
       # If it creates user, grant badge

@@ -1,4 +1,12 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  after_filter :build_profile
+    
+  def build_profile
+      @user = current_user
+      @profile = Profile.create({:user_id => @user.id})
+      @user.profile = @profile
+  end  
+    
   def facebook
     @user = User.from_omniauth(request.env["omniauth.auth"])
     if @user.persisted?

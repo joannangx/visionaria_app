@@ -32,7 +32,7 @@ Background:
       And   I should see "0"
     
     Scenario: Successfully like and unlike a tagged post
-      When  I follow "SUSTAINABLE UN GOALS"
+      When  I follow "PROGRESO"
       And   I follow image link "like"
       Then  I should see "You liked the post!"
       And   I should see "1"

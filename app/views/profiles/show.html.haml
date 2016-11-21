@@ -1,44 +1,71 @@
 = render 'shared/header'
 
 %div{:class => "profile_page"}
-    %div{:class => "profile_image"}
-    
-    %div{:class => "about_me"}
-        %p{:class => "prof_user"}= @viewed_user.username 
-        %b{:class => "loc_label"} Location: 
+    %div{:class => "user_info_wrap"}
+        %div{:class => "profile_image_wrap"}
+            = image_tag @viewed_user.avatar.url(:medium), :class => "profile_image"
+            
+        %div{:class => "about_me"}
+            %p{:class => "prof_user"}= @viewed_user.username 
+            %b{:class => "loc_label"} Location: 
+            %br
+            %p 
+                %b{:class => "prof_label"} Info
+                - if @owned
+                    %div{:class => "edit_input_wrap"}
+                        %p= best_in_place @profile, :info, :class => "info_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
+                - else
+                    %div{:class => "input_wrap"}
+                        %p= @info
+            %p 
+                %b{:class => "prof_label"} What Motivates Me...
+                - if @owned
+                    %div{:class => "edit_input_wrap"}
+                        %p= best_in_place @profile, :motivations, :class => "motivs_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
+                - else
+                    %div{:class => "input_wrap"}
+                        %p= @motivations
+            %p 
+                %b{:class => "prof_label"} My Top Community Priorities...
+                - if @owned
+                    %div{:class => "edit_input_wrap"}
+                        %p= best_in_place @profile, :priorities, :class => "prios_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
+                - else    
+                    %div{:class => "input_wrap"}
+                        %p= @priorities
+    %br
+    //%div{:class => "user_posts_wrap"}
+    %div{:class => "user_tabs"}
+        %a{:href =>"#", :class => "points tab", :id => "tab1"} POINTS
+        %a{:href =>"#", :class => "posts tab", :id => "tab2"} YO
+        %a{:href =>"#", :class => "tagged tab", :id => "tab3"} PROGRESO
+        %a{:href =>"#", :class => "journal tab", :id => "tab4"} JOURNAL
+    %div{:class => "profile_tab", :id => "my_points"}
         %br
-        %p 
-            %b{:class => "prof_label"} Info
-            - if @owned
-                %div{:class => "edit_input_wrap"}
-                    %p= best_in_place @viewed_profile, :info, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
-            - else
-                %div{:class => "input_wrap"}
-                    %p= @info
-        %p 
-            %b{:class => "prof_label"} What Motivates Me...
-            - if @owned
-                %div{:class => "edit_input_wrap"}
-                    %p= best_in_place @viewed_profile, :motivations, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
-            - else
-                %div{:class => "input_wrap"}
-                    %p= @motivations
-        %p 
-            %b{:class => "prof_label"} My Top Community Priorities...
-            - if @owned
-                %div{:class => "edit_input_wrap"}
-                    %p= best_in_place @viewed_profile, :priorities, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
-            - else    
-                %div{:class => "input_wrap"}
-                    %p= @priorities
+        COMING SOON
         %br
         %br
         %br
-    //- if @owned
-    //    = link_to "Edit Profile", edit_user_profile_path(@viewed_user, @viewed_profile)
-    //%div{:class => "my_posts"}
-    //    - @posts.each do |p|
-    //       = render 'shared/indiv_post', :post => p
-    //%div{:class => "my_tagged_posts"}
-    //    - @posts.each do |p|
-    //        = render 'shared/indiv_tagged_post', :post => p
+    %div{:class => "profile_tab", :id => "my_posts"}
+        %br
+        - @posts.each do |p|
+            = render 'shared/indiv_post', :post => p
+        %br
+        %br
+        %br
+    %div{:class => "profile_tab", :id => "my_tagged"}
+        %br
+        - @tagged.each do |p|
+            = render 'shared/indiv_tagged_post', :post => p
+        %br
+        %br
+        %br
+    %div{:class => "profile_tab", :id => "my_journal"}
+        %br
+        COMING SOON
+        %br
+        %br
+        %br
+    %br
+    %br
+    %br
