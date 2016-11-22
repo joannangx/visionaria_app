@@ -3,9 +3,10 @@ class Post < ActiveRecord::Base
     has_many :comments
     has_many :points
     has_many :likes
+    has_many :helps
+    has_many :inspires
     has_many :liking_users, :through => :likes, :source => :user
     validates :content, :presence => true
-    
     def classname
         'post'
     end

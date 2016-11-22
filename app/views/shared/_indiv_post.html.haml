@@ -18,9 +18,23 @@
         =social_share_button_tag(post.content, :url => "http://myapp.com/foo/bar")
     %div{:class => "comments"}
         =form_tag do 
-            = link_to "#{post.comments.count} Comments", post_comments_path(post)
+            = link_to "Comments",post_comments_path(post), :id => 'comments_link'
             = toggle_like_button(post,current_user)
             = post.likes.count
+            = toggle_help_button(post,current_user)
+            = post.helps.count
+            = toggle_inspire_button(post,current_user)
+            = post.inspires.count
+        %section{:id => 'comment_section'}
+            - post.comments.each do |c|
+                = render 'shared/indiv_comment', :comment => c 
+            = form_for [post, post.comments.new] do |f|
+                = label :comment, :body, "Your Comment:"
+                = text_field :comment, :body, rows: 2, cols:30, placeholder: "Write your comment here!"
+                = check_box_tag :anonymous, 0
+                = label_tag :anonymous, "Anonymous"
+                = submit_tag 'Create'
+%br
             
 
     

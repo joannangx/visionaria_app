@@ -20,6 +20,28 @@
     %div{:class => "timestamp" }
         Posted on
         = post.created_at.strftime("%m/%d/%Y at %l:%M%p")
+<<<<<<< HEAD
+    //%div{:class => "social-share-button-facebook"}
+    //    = soial_share_button_tag("My Post")
+    %div{:class => "comments"}
+        =form_tag do 
+            = link_to "Comments", tagged_post_taggedcomments_path(post), :id => 'comments_link'
+            = toggle_like_tag_button(post,current_user)
+            = post.likes.count
+            = toggle_help_tag_button(post,current_user)
+            = post.helps.count
+            = toggle_inspire_tag_button(post,current_user)
+            = post.inspires.count
+        %section{:id => 'comment_section'}
+            - post.taggedcomments.each do |c|
+                = render 'shared/indiv_comment', :comment => c 
+            = form_for [post, post.taggedcomments.new] do |f|
+                = label :taggedcomment, :body, "Your Comment:"
+                = text_field :taggedcomment, :body, rows: 2, cols:30, placeholder: "Write your comment here!"
+                = check_box_tag :anonymous, 0
+                = label_tag :anonymous, "Anonymous"
+                = submit_tag 'Create'
+=======
         
     %div{:class => "social-share-button"}
         = social_share_button_tag("My Post")
@@ -27,4 +49,5 @@
             =link_to "#{post.taggedcomments.count} Comments", tagged_post_taggedcomments_path(post)
             =toggle_like_tag_button(post,current_user)
             ="(#{post.likes.count})"
+>>>>>>> 741a307d9f684ca8930ab8a468acd9cbe04b79f2
 %br
