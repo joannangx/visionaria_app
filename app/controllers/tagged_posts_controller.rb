@@ -2,7 +2,7 @@ class TaggedPostsController < ApplicationController
     before_filter :authenticate_user!
 
     def tagged_post_params
-        params.require(:post).permit(:user_id, :content, :tag, :category, :public)
+        params.require(:tagged_post).permit(:user_id, :content, :tag, :category, :public)
     end 
 
     def index

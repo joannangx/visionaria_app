@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20161121061700) do
-=======
-ActiveRecord::Schema.define(version: 20161118012115) do
->>>>>>> 741a307d9f684ca8930ab8a468acd9cbe04b79f2
+ActiveRecord::Schema.define(version: 20161121212227) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "username"
@@ -62,6 +58,30 @@ ActiveRecord::Schema.define(version: 20161118012115) do
   add_index "likes", ["post_id"], name: "index_likes_on_post_id"
   add_index "likes", ["tagged_post_id"], name: "index_likes_on_tagged_post_id"
   add_index "likes", ["user_id"], name: "index_likes_on_user_id"
+
+  create_table "points", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "regular",      default: 0
+    t.integer "poverty",      default: 0
+    t.integer "hunger",       default: 0
+    t.integer "health",       default: 0
+    t.integer "education",    default: 0
+    t.integer "gender",       default: 0
+    t.integer "sanitation",   default: 0
+    t.integer "energy",       default: 0
+    t.integer "economy",      default: 0
+    t.integer "industry",     default: 0
+    t.integer "inequalities", default: 0
+    t.integer "cities",       default: 0
+    t.integer "consumption",  default: 0
+    t.integer "climate",      default: 0
+    t.integer "water",        default: 0
+    t.integer "land",         default: 0
+    t.integer "peace",        default: 0
+    t.integer "partnerships", default: 0
+  end
+
+  add_index "points", ["user_id"], name: "index_points_on_user_id"
 
   create_table "posts", force: :cascade do |t|
     t.text     "content"
@@ -133,6 +153,7 @@ ActiveRecord::Schema.define(version: 20161118012115) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.boolean  "spanish",                default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -41,6 +41,26 @@ Given(/^I log out of my account$/) do
   step %Q{I follow "Logout"}
 end  
 
+Given(/^pending$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^I should see a notification for it on my navigation bar$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I click "([^"]*)"$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I view my profile$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I click "([^"]*)" and submit a file$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
 #Given /facebook login/  do
 #  find(:css, 'a.facebook').click
 #end

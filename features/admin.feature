@@ -1,4 +1,4 @@
-Feature: Create admin users in order to moderate sire
+Feature: Create admin users in order to moderate site
   As an admin social media username
   In order to monitor activities and ensure a safe space
   I want to be able to delete posts that are offensive
