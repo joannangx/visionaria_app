@@ -12,6 +12,8 @@ class PostsController < ApplicationController
     def create
         @user = current_user
         @post = @user.posts.create!(post_params)
+        @point = Point.where('variety = ? AND user_id = ?', 'vision', current_user.id).first
+        @point.determine_op_and_update('add')
 
         flash[:notice] = "Post successfully saved!"
         redirect_to posts_path
@@ -40,6 +42,9 @@ class PostsController < ApplicationController
            like.destroy! 
         end
         @post.destroy!
+        @point = Point.where('variety = ? AND user_id = ?', 'vision', @post.user.id).first
+        @point.determine_op_and_update('sub')
+
         flash[:notice] = "Post successfully deleted!"
         redirect_to posts_path
     end

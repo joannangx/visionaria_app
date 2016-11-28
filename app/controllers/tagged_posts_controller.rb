@@ -23,6 +23,8 @@ class TaggedPostsController < ApplicationController
     def create
         @user = current_user
         @post = @user.tagged_posts.create!(tagged_post_params)
+        @point = Point.where('variety = ? AND user_id = ?', @post.tag, current_user.id).first
+        @point.determine_op_and_update('add')
 
         flash[:notice] = "Post successfully saved!"
         redirect_to tagged_posts_path
@@ -51,6 +53,9 @@ class TaggedPostsController < ApplicationController
            like.destroy! 
         end
         @post.destroy!
+        @point = Point.where('variety = ? AND user_id = ?', @post.tag, current_user.id).first
+        @point.determine_op_and_update('sub')
+        
         flash[:notice] = "Tagged post successfully deleted!"
         redirect_to tagged_posts_path
     end

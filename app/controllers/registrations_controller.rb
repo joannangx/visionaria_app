@@ -1,5 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
   after_filter :build_profile, only: :create
+  after_filter :initiate_points_sys, only: :create
 
   private
 
@@ -30,4 +31,13 @@ class RegistrationsController < Devise::RegistrationsController
     @user.profile = @profile
   end  
 
+  def initiate_points_sys
+    @user = current_user
+    @vision_point = @user.points.create({:variety => "vision"})
+    @goals = TaggedPost.all_un_goals
+    @goals.each do |goal|
+      @user.points.create({:variety => goal})
+    end  
+  end  
+  
 end
