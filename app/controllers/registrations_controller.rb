@@ -33,7 +33,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def initiate_points_sys
     @user = current_user
-    @vision_point = @user.points.create({:variety => "vision"})
+    @vision_point = @user.points.create({:variety => "Visions"})
     @goals = TaggedPost.all_un_goals
     @goals.each do |goal|
       @user.points.create({:variety => goal})

@@ -1,10 +1,20 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   after_filter :build_profile
+  after_filter :initiate_points_sys
     
   def build_profile
       @user = current_user
       @profile = Profile.create({:user_id => @user.id})
       @user.profile = @profile
+  end  
+  
+  def initiate_points_sys
+    @user = current_user
+    @vision_point = @user.points.create({:variety => "Visions"})
+    @goals = TaggedPost.all_un_goals
+    @goals.each do |goal|
+      @user.points.create({:variety => goal})
+    end  
   end  
     
   def facebook
