@@ -17,6 +17,8 @@ class ProfilesController < ApplicationController
         end
         @posts = @viewed_user.public_posts
         @tagged = @viewed_user.public_tagged_posts
+        @points_sys = Point.where('user_id = ?', @viewed_user.id).order('amount DESC')
+        
     end    
     
     def update

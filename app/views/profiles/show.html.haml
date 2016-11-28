@@ -42,7 +42,8 @@
         %a{:href =>"#", :class => "journal tab", :id => "tab4"} JOURNAL
     %div{:class => "profile_tab", :id => "my_points"}
         %br
-        COMING SOON
+        - @points_sys.each do |p|
+            = render 'shared/indiv_point', :point => p
         %br
         %br
         %br

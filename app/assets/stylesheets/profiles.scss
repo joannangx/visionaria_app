@@ -114,3 +114,16 @@
     color: #42A3AC;
     border-bottom: 3px solid #42A3AC;
 }
+
+#points_and_level {
+    display: flex;
+}
+
+#level {
+    float:left;
+}
+
+#points {
+    float:left;
+    flex:1;
+}
