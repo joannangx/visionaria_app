@@ -26,9 +26,6 @@ class TaggedPostsController < ApplicationController
         @point = Point.where('variety = ? AND user_id = ?', @post.tag, current_user.id).first
         @point.determine_op_and_update('add')
 
-
-        puts "HELLLOOOOOO WOOOORRRRLLLLDDD"
-        puts @user.spanish
         flash[:notice] = "Post successfully saved!"
         redirect_to tagged_posts_path
     end

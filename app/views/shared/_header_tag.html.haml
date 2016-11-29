@@ -1,9 +1,17 @@
 %div{:class => "sidenav", :id => "mySidenav"}
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     = image_tag(current_user.avatar.url(:thumb), :class => "round_thumb_profile")
-    = link_to 'Home', posts_path, :method => :get
-    = link_to "Profile", profile_path(current_user), :method => :get
-    = link_to 'Logout', destroy_user_session_path, :method => :delete
+    - if current_user.spanish
+        = link_to 'Inicio', posts_path, :method => :get
+        = link_to "Perfil", profile_path(current_user), :method => :get
+        = link_to 'Salir', destroy_user_session_path, :method => :delete
+    - else
+        = link_to 'Home', posts_path, :method => :get
+        = link_to "Profile", profile_path(current_user), :method => :get
+        = link_to 'Logout', destroy_user_session_path, :method => :delete
+    %div{:class =>"language_selection"}
+        = link_to 'English', {:controller => "users", :action => "view_english"}, :method => :post
+        = link_to 'Español', {:controller => "users", :action => "view_spanish"}, :method => :post
     
 %div{:class => "header_nav_bar"}
     %ul{:class => "header_nav_links"}
@@ -14,6 +22,9 @@
 %br
 %br
 %div{:class => "welcome_user"}
-    - if user_signed_in?
+    - if current_user.spanish
+        Bienvenido,
+        = current_user.username
+    - else
         Welcome, 
         = current_user.username

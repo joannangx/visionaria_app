@@ -16,7 +16,6 @@ class User < ActiveRecord::Base
   has_one :profile, :dependent => :destroy
 
   validates_presence_of :username
-  validates :username, uniqueness: true
   
   has_attached_file :avatar, styles: { :medium => "300x300>", :thumb =>"100x100>" }, :default_url => ":style/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
@@ -32,7 +31,7 @@ class User < ActiveRecord::Base
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.email = auth.info.email
         user.admin = true if User.admins.include?(user.email) 
-        user.username = auth.info.email
+        user.username = auth.info.name
         user.password = Devise.friendly_token[0,20]
         user.name = auth.info.name
         if (auth.provider == "facebook")

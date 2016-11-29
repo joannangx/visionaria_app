@@ -1,0 +1,22 @@
+%br
+%br
+%div{:class => "new_post_form"}
+    = form_tag :action => 'create', :method => :post do
+        %div{:class => "content_label"}
+            = label :tagged_post, :content, 'Tus pensamientos'
+        %br
+        = text_area :tagged_post, :content
+        
+        %div{:class => "sort_labels"}
+            = label :tagged_post, :category, 'Categoría'
+            = select :tagged_post, :category, TaggedPost.all_categories
+        
+            = label :tagged_post, :tag, 'Sustainable UN Goal'
+            = select :tagged_post, :tag, TaggedPost.all_un_goals
+
+        %div{:class => "privacy"}
+            = label :tagged_post, :public, 'Privado'
+            = radio_button :tagged_post, :public, false
+
+        %div{:class => "post_submit"}
+            = submit_tag 'Someter'

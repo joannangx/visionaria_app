@@ -5,10 +5,10 @@
         %div{:class => "user_name" }     
             = link_to "#{post.find_username}", profile_path(post.user), :class => "profile_link"
         - if current_user.username == post.find_username
-            = link_to 'Delete', tagged_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }
-            = link_to 'Edit', edit_tagged_post_path(post)
+            = link_to 'Borrar', tagged_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }
+            = link_to 'Editar', edit_tagged_post_path(post)
         - elsif current_user.admin?
-            = link_to 'Delete', tagged_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }
+            = link_to 'Borrar', tagged_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }
     %br
     %div{:class => "content_wrap" }
         %div{:class => "filters_tag" }
@@ -18,11 +18,11 @@
         %div{:class => "filters_cat" }
             = link_to image_tag("#{post.category}.png", alt: "#{post.category}"), tagged_posts_path(:sort_category => post.category), :class => "tag_sort"
     %div{:class => "timestamp" }
-        Posted on
+        Publicado en
         = post.created_at.strftime("%m/%d/%Y at %l:%M%p")
     %div{:class => "comments"}
         =form_tag do 
-            = link_to "Comments", tagged_post_taggedcomments_path(post), :id => 'comments_link'
+            = link_to "Comentarios", tagged_post_taggedcomments_path(post), :id => 'comments_link'
             = toggle_like_tag_button(post,current_user)
             = post.likes.count
             = toggle_help_tag_button(post,current_user)
@@ -33,9 +33,9 @@
             - post.taggedcomments.each do |c|
                 = render 'shared/indiv_comment', :comment => c 
             = form_for [post, post.taggedcomments.new] do |f|
-                = label :taggedcomment, :body, "Your Comment:"
-                = text_field :taggedcomment, :body, rows: 2, cols:30, placeholder: "Write your comment here!"
+                = label :taggedcomment, :body, "Tu comentario:"
+                = text_field :taggedcomment, :body, rows: 2, cols:30, placeholder: "¡Escribe tu comentario aquí!"
                 = check_box_tag :anonymous, 0
-                = label_tag :anonymous, "Anonymous"
-                = submit_tag 'Create'
+                = label_tag :anonymous, "Anónimo"
+                = submit_tag 'Crear'
 %br

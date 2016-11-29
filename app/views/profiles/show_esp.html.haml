@@ -1,0 +1,71 @@
+= render 'shared/header'
+
+%div{:class => "profile_page"}
+    %div{:class => "user_info_wrap"}
+        %div{:class => "profile_image_wrap"}
+            = image_tag @viewed_user.avatar.url(:medium), :class => "profile_image"
+            
+        %div{:class => "about_me"}
+            %p{:class => "prof_user"}= @viewed_user.username 
+            %b{:class => "loc_label"} Locación: 
+            %br
+            %p 
+                %b{:class => "prof_label"} Información
+                - if @owned
+                    %div{:class => "edit_input_wrap"}
+                        %p= best_in_place @profile, :info, :class => "info_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
+                - else
+                    %div{:class => "input_wrap"}
+                        %p= @info
+            %p 
+                %b{:class => "prof_label"} Lo que me motiva...
+                - if @owned
+                    %div{:class => "edit_input_wrap"}
+                        %p= best_in_place @profile, :motivations, :class => "motivs_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
+                - else
+                    %div{:class => "input_wrap"}
+                        %p= @motivations
+            %p 
+                %b{:class => "prof_label"} Mis prioridades comunitarias...
+                - if @owned
+                    %div{:class => "edit_input_wrap"}
+                        %p= best_in_place @profile, :priorities, :class => "prios_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
+                - else    
+                    %div{:class => "input_wrap"}
+                        %p= @priorities
+    %br
+    //%div{:class => "user_posts_wrap"}
+    %div{:class => "user_tabs"}
+        %a{:href =>"#", :class => "points tab", :id => "tab1"} POINTS
+        %a{:href =>"#", :class => "posts tab", :id => "tab2"} YO
+        %a{:href =>"#", :class => "tagged tab", :id => "tab3"} PROGRESO
+        %a{:href =>"#", :class => "journal tab", :id => "tab4"} JOURNAL
+    %div{:class => "profile_tab", :id => "my_points"}
+        %br
+        %br
+        - @points_sys.each do |p|
+            = render 'shared/indiv_point_esp', :point => p
+        %br
+    %div{:class => "profile_tab", :id => "my_posts"}
+        %br
+        - @posts.each do |p|
+            = render 'shared/indiv_post_esp', :post => p
+        %br
+        %br
+        %br
+    %div{:class => "profile_tab", :id => "my_tagged"}
+        %br
+        - @tagged.each do |p|
+            = render 'shared/indiv_tagged_post_esp', :post => p
+        %br
+        %br
+        %br
+    %div{:class => "profile_tab", :id => "my_journal"}
+        %br
+        COMING SOON
+        %br
+        %br
+        %br
+    %br
+    %br
+    %br
