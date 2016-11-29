@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     def create
         @user = current_user
         @post = @user.posts.create!(post_params)
-        @point = Point.where('variety = ? AND user_id = ?', 'vision', current_user.id).first
+        @point = Point.where('variety = ? AND user_id = ?', 'Visions', current_user.id).first
         @point.determine_op_and_update('add')
 
         flash[:notice] = "Post successfully saved!"

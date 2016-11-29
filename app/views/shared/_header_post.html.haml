@@ -5,8 +5,8 @@
     = link_to "Profile", profile_path(current_user), :method => :get
     = link_to 'Logout', destroy_user_session_path, :method => :delete
     %div{:class =>"language_selection"}
-        = link_to 'English'
-        = link_to 'Spanish'
+        = link_to 'English', {:controller => "users", :action => "view_english"}, :method => :post
+        = link_to 'Spanish', {:controller => "users", :action => "view_spanish"}, :method => :post
 
 %div{:class => "header_nav_bar"}
     %ul{:class => "header_nav_links"}
