@@ -1,4 +1,4 @@
-class postfilterController < ApplicationController
+class FiltersController < ApplicationController
 
   def index
     @filterrific = initialize_filterrific(
