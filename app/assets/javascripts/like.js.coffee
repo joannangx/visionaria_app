@@ -4,7 +4,6 @@ $(document).on 'ajax:success', 'a.like', (status,data,xhr)->
 
   # toggle links
   $("a.like[data-id=#{data.id}]").each ->
-    console.log("YOYOYOYO")
     $a = $(this)
     $img = $($a.children()[0])
     src = $img.attr("src")
