@@ -11,10 +11,10 @@ $(document).on 'ajax:success', 'a.like', (status,data,xhr)->
     href = $a.attr 'href'
     $a.attr('href', $a.data('toggle-href'))
     $a.data('toggle-href', href) 
-    if toggle_src is "assets/like.png"
-        src = "assets/unlike.png"
+    if toggle_src is "like.png"
+        src = "unlike.png"
     else
-        src = "assets/like.png"
+        src = "like.png"
     $a.data('toggle-src', src)
     return
 

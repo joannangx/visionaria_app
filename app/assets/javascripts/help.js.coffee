@@ -9,10 +9,10 @@ $(document).on 'ajax:success', 'a.help', (status,data,xhr)->
     href = $a.attr 'href'
     toggle_src = $a.data("toggle-src")
     $img.attr('src', toggle_src)
-    if toggle_src is "assets/help.png"
-        src = "assets/unhelp.png"
+    if toggle_src is "help.png"
+        src = "unhelp.png"
     else
-        src = "assets/help.png"
+        src = "help.png"
     $a.data('toggle-src', src)
     $a.attr('href', $a.data('toggle-href'))
     $a.data('toggle-href', href) 
