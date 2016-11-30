@@ -284,4 +284,5 @@ Devise.setup do |config|
   config.authentication_keys = [ :email ]
   
   config.scoped_views = true
+  config.secret_key = '9936a5f859f466b8cd03791355c20e34ff7ed88cd90ae84d497f3abe2fa4557b745561b09ce5a8c14fa13817aecf952b203ea72d1abdd23e260308d9ebb954ae'
 end
