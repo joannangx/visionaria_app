@@ -1,5 +1,5 @@
 class PostfiltersController < ApplicationController
-
+=begin
   def index
     @filterrific = initialize_filterrific(
       postfilter,
@@ -16,5 +16,5 @@ class PostfiltersController < ApplicationController
       format.js
     end
   end
-
+=end
 end

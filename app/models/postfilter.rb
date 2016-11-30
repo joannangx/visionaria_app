@@ -1,5 +1,5 @@
 class Postfilter < ActiveRecord::Base
-
+=begin
   filterrific :default_filter_params => { :sorted_by => 'created_at_desc' },
               :available_filters => %w[
                 sorted_by
@@ -50,5 +50,5 @@ class Postfilter < ActiveRecord::Base
   def decorated_created_at
     created_at.to_date.to_s(:long)
   end
-
+=end
 end
