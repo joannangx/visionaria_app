@@ -15,6 +15,8 @@ $(document).on 'ajax:success', 'a.like', (status,data,xhr)->
         src = "/assets/unlike-c7271b2d6a58a051f1b3780f285d65ecd40119582c1fa9b0c79de083acd3d82b.png"
     else
         src = "/assets/like-1aeedb4437c2ee1f1f2d3cf168ed58c6b7c59260a582c8c3722d33b7373a5381.png"
+    console.log(toggle_src)
+    console.log(src)
     $a.data('toggle-src', src)
     return
 
