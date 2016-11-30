@@ -29,6 +29,8 @@ gem 'omniauth-google-oauth2'
 gem 'paperclip', '~> 4.1'
 
 gem 'best_in_place'
+#for filter 
+gem "smart_listing"
 
 # haml
 gem 'haml'

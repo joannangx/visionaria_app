@@ -173,6 +173,9 @@ GEM
     json (1.8.3)
     json_pure (2.0.2)
     jwt (1.5.6)
+    kaminari (0.17.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     loofah (2.0.3)
@@ -342,6 +345,11 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
+    smart_listing (1.2.0)
+      coffee-rails
+      jquery-rails
+      kaminari (~> 0.17)
+      rails (>= 3.2)
     social-share-button (0.8.4)
       coffee-rails
       sass-rails
@@ -416,6 +424,7 @@ DEPENDENCIES
   sass-rails (~> 5.0.3)
   sdoc (~> 0.4.0)
   simplecov
+  smart_listing
   social-share-button
   spring
   sqlite3

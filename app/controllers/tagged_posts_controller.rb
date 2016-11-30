@@ -13,6 +13,20 @@ class TaggedPostsController < ApplicationController
         if params[:sort_category]
             @taggedposts = @taggedposts.where('category = ?', params[:sort_category]).order('created_at DESC')
         end
+        #filter
+        @all_categories = TaggedPost.all_categories
+        @selected_categories = params[:categories] || session[:categories] || {}
+    
+        if @selected_categories == {}
+           @selected_categories = Hash[@all_categories.map {|category| [category, category]}]
+        end
+    
+        if params[:sort] != session[:sort] or params[:categories] != session[:categories]
+            session[:sort] = sort
+            session[:categories] = @selected_categories
+            redirect_to :sort => sort, :categories => @selected_categories and return
+        end
+        @movies = TaggedPost.where(rating: @selected_categories.keys).order(ordering)
     end
 
     def new
