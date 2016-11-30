@@ -6,14 +6,11 @@ $(document).on 'ajax:success', 'a.inspire', (status,data,xhr)->
   $("a.inspire[data-id=#{data.id}]").each ->
     $a = $(this)
     $img = $($a.children()[0])
-    href = $a.attr 'href'
-    toggle_src = $a.data("toggle-src")
+    src = $img.attr("src")
+    toggle_src = $img.attr("data-toggle-src")
     $img.attr('src', toggle_src)
-    if toggle_src is "/assets/inspire.png"
-        src = "/assets/uninspire.png"
-    else
-        src = "/assets/inspire.png"
-    $a.data('toggle-src', src)
+    $img.attr('data-toggle-src', src)
+    href = $a.attr 'href'
     $a.attr('href', $a.data('toggle-href'))
     $a.data('toggle-href', href) 
     return

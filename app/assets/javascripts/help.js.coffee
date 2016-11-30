@@ -6,14 +6,11 @@ $(document).on 'ajax:success', 'a.help', (status,data,xhr)->
   $("a.help[data-id=#{data.id}]").each ->
     $a = $(this)
     $img = $($a.children()[0])
-    href = $a.attr 'href'
-    toggle_src = $a.data("toggle-src")
+    src = $img.attr("src")
+    toggle_src = $img.attr("data-toggle-src")
     $img.attr('src', toggle_src)
-    if toggle_src is "/assets/help.png"
-        src = "/assets/unhelp.png"
-    else
-        src = "/assets/help.png"
-    $a.data('toggle-src', src)
+    $img.attr('data-toggle-src', src)
+    href = $a.attr 'href'
     $a.attr('href', $a.data('toggle-href'))
     $a.data('toggle-href', href) 
     return
