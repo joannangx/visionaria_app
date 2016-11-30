@@ -9,10 +9,10 @@ $(document).on 'ajax:success', 'a.inspire', (status,data,xhr)->
     href = $a.attr 'href'
     toggle_src = $a.data("toggle-src")
     $img.attr('src', toggle_src)
-    if toggle_src is "inspire.png"
-        src = "uninspire.png"
+    if toggle_src is "/assets/inspire.png"
+        src = "/assets/uninspire.png"
     else
-        src = "inspire.png"
+        src = "/assets/inspire.png"
     $a.data('toggle-src', src)
     $a.attr('href', $a.data('toggle-href'))
     $a.data('toggle-href', href) 
