@@ -9,9 +9,12 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :show, :create, :like, :destroy] do
     resources :comments
     member do
-      get 'like'
-      get 'help'
-      get 'inspire'
+      put 'like'
+      put 'dislike'
+      put 'help'
+      put 'unhelp'
+      put 'inspire'
+      put 'uninspire'
     end
   end
   get 'posts/:id/edit', to: 'posts#edit', as: :edit_post
@@ -19,9 +22,12 @@ Rails.application.routes.draw do
   resources :tagged_posts, only: [:index, :show, :create, :like, :destroy] do
     resources :taggedcomments
     member do
-      get 'like'
-      get 'help'
-      get 'inspire'
+      put 'like'
+      put 'dislike'
+      put 'help'
+      put 'unhelp'
+      put 'inspire'
+      put 'uninspire'
     end
   end
   get 'tagged_posts/:id/edit', to: 'tagged_posts#edit', as: :edit_tagged_post

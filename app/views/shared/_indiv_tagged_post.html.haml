@@ -24,11 +24,11 @@
         =form_tag do 
             = link_to "Comments", tagged_post_taggedcomments_path(post), :id => 'comments_link'
             = toggle_like_tag_button(post,current_user)
-            = post.likes.count
+            %span.likes_count{"data-id" => "#{post.id}"}= post.likes.count
             = toggle_help_tag_button(post,current_user)
-            = post.helps.count
+            %span.helps_count{"data-id" => "#{post.id}"}= post.helps.count
             = toggle_inspire_tag_button(post,current_user)
-            = post.inspires.count
+            %span.inspires_count{"data-id" => "#{post.id}"}= post.inspires.count
         %section{:id => 'comment_section'}
             - post.taggedcomments.each do |c|
                 = render 'shared/indiv_comment', :comment => c 

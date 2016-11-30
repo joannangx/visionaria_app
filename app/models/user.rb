@@ -50,25 +50,25 @@ class User < ActiveRecord::Base
   
   def liked?(post)
     if post.classname == 'post'
-      Like.find_by(:post_id => post.id, :user_id => self.id)
+      !Like.find_by(:post_id => post.id, :user_id => self.id).nil?
     else
-      Like.find_by(:tagged_post_id => post.id, :user_id => self.id)
+      !Like.find_by(:tagged_post_id => post.id, :user_id => self.id).nil?
     end
   end
   
   def helped?(post)
     if post.classname == 'post'
-      Help.find_by(:post_id => post.id, :user_id => self.id)
+      !Help.find_by(:post_id => post.id, :user_id => self.id).nil?
     else
-      Help.find_by(:tagged_post_id => post.id, :user_id => self.id)
+      !Help.find_by(:tagged_post_id => post.id, :user_id => self.id).nil?
     end
   end
   
   def inspired?(post)
     if post.classname == 'post'
-      Inspire.find_by(:post_id => post.id, :user_id => self.id)
+      !Inspire.find_by(:post_id => post.id, :user_id => self.id).nil?
     else
-      Inspire.find_by(:tagged_post_id => post.id, :user_id => self.id)
+      !Inspire.find_by(:tagged_post_id => post.id, :user_id => self.id).nil?
     end
   end
 
