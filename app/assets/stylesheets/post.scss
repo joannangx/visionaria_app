@@ -2,6 +2,11 @@
 // Place all the styles related to the Post controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    background: #F1F1F1;
+}
+
 .post, .tag_post {
     margin: auto;
     background-color: white;
