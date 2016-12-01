@@ -1,5 +1,5 @@
 body {
-    background-color: #F1F1F1;
+    background-color: #1879D8;
     margin:0;
 }
 
@@ -46,10 +46,17 @@ li a:hover:not(.active) {
 }
 
 h2 {
-    font-family: "Lucida Console", Monaco, monospace;
-    font-size: 60px;
+    font-family: "Lato", Monaco, monospace;
+    font-size: 48px;
     text-align: center;
-    color: lightslategrey;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.page_title {
+    margin-top: 10%;
+    margin-bottom: 8%;
 }
 
 .welcome_user {
