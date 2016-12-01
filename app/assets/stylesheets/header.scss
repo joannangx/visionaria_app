@@ -64,4 +64,15 @@ h2 {
     font-size: 20px;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     color: darkslategrey;
+    margin-top: 20px;
+}
+
+.alert {
+    color: #ffda24;
+    text-align: center;
+    font-size: 16px;
+    position: absolute;
+    top: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
 }
