@@ -136,12 +136,21 @@ body {
     border: 1px solid #dddfe2;;
 }
 
+.new_comment, input[type=submit] {
+    text-align: right;
+}
+
+
 .new_taggedcomment input[type=text] {
     margin-top: 5px;
     background: white;
     padding: 10px;
     color: black;
     border: 1px solid #dddfe2;;
+}
+
+.new_taggedcomment input[type=submit] {
+    float: right;
 }
 
 #comment_section {
