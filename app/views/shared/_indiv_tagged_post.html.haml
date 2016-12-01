@@ -4,11 +4,11 @@
             = image_tag(post.user.avatar.url(:thumb), :class => "post_thumb_profile")
         %div{:class => "user_name" }     
             = link_to "#{post.find_username}", profile_path(post.user), :class => "profile_link"
-        - if current_user.username == post.find_username
-            = link_to 'Delete', tagged_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }
-            = link_to 'Edit', edit_tagged_post_path(post)
-        - elsif current_user.admin?
-            = link_to 'Delete', tagged_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }
+            - if current_user.username == post.find_username
+                = link_to 'Delete', tagged_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }
+                = link_to 'Edit', edit_tagged_post_path(post)
+            - elsif current_user.admin?
+                = link_to 'Delete', tagged_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }
     %br
     %div{:class => "content_wrap" }
         %div{:class => "filters_tag" }
@@ -33,7 +33,6 @@
             - post.taggedcomments.each do |c|
                 = render 'shared/indiv_comment', :comment => c 
             = form_for [post, post.taggedcomments.new] do |f|
-                = label :taggedcomment, :body, "Your Comment:"
                 = text_field :taggedcomment, :body, rows: 2, cols:30, placeholder: "Write your comment here!"
                 = check_box_tag :anonymous, 0
                 = label_tag :anonymous, "Anonymous"

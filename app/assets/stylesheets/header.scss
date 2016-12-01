@@ -4,7 +4,7 @@ body {
 }
 
 .open_nav {
-    color: #42A3AC;
+    color: white;
     margin-top: 3px;
     cursor: pointer;
 }
@@ -14,35 +14,37 @@ ul.header_nav_links {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: white;
+    background-color: #1879D8;
     position: fixed;
     top: 0;
     width: 100%;
     box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .15);
+    z-index: 20;
 }
 
 li {
     float: right;
-    width:48%;
+    width:45%;
 }
 
 li a {
     display: block;
-    color: gray;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 li a:hover:not(.active) {
-    color: #42A3AC;
-    border-bottom: 3px solid #42A3AC;
+    color: white;
+    border-bottom: 3px solid white;
+    font-weight: 900;
 }
 
 .active {
-    background-color: white;
-    color: #42A3AC;
-    border-bottom: 3px solid #42A3AC;
+    color: white;
+    border-bottom: 3px solid white;
+    font-weight: 900;
 }
 
 h2 {
