@@ -5,8 +5,14 @@ body {
     font-family: "Lato", sans-serif;
 }
 
-.Welcome {
-    background-color: #fff4e0;
+.login_bg {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    background: #1879D8;
+    top: 0px;
+    left: 0px;
 }
 
 #overlay {
@@ -59,14 +65,14 @@ h1 {
 }
 
 .Visionaria img {
-    height: 150px;
+    height: 120px;
     margin-bottom: 30px;
 }
 
 .sign_ins{
     text-align: center;
     font-size: 18px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-family: "Lato", sans-serif;
     width: 400px;
     margin: 0 auto;
     margin-top: 0px;
@@ -75,7 +81,7 @@ h1 {
 a.logins, a.facebook, a.google {
     width: 195px;
     margin: 10px auto;
-    padding: 8px 0px;
+    padding: 10px 0px;
     border-radius: 5px;
     font-size: 16px;
     text-decoration: none;
@@ -87,7 +93,8 @@ a.logins, a.facebook, a.google {
 a.logins {
     transition: 0.2s ease;
     display: block;
-    font-weight: 900;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 a.facebook, a.google {
@@ -108,33 +115,82 @@ a:visited {
 }
 
 input[type=text], input[type=email], input[type=password] {
-    width: 35%;
-    padding: 8px 20px;
-    margin: 8px 0;
+    width: 100%;
+    padding: 8px 0px;
+    margin-bottom: 20px;
     box-sizing: border-box;
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 18px;
+}
+
+input:focus {
+    outline: none;
 }
 
 .field, .actions {
     color: #00008B;
     text-align: center;
+    width: 35%;
+    margin: 0 auto;
 }
 
 .sign_in_label {
     float: left;
-    margin-left: 33%;
+    color: white;
+}
+
+.sign_in_label_container a {
+    color: white;
+}
+
+.sign_in_label_container {
+    width: 35%;
+    margin-left: 32.5%;
+    margin-top: 30px;
+    line-height: 1.5;
 }
 
 .sign_in {
     float: right;
-    margin-right: 33%;
+    font-size: 16px;
+    padding: 8px 30px;
+    border-radius: 5px;
+    text-align: center;
+    background: #37AA8B;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
-.remember {
+.field .remember {
     float: right;
-    margin-right: 0.3%;
+    color: white;
+}
+
+#user_remember_me[type=checkbox] {
+    margin-left: 10px;
+    height: 20px;
+    width: 20px;
 }
 
 .min_chars {
     float: left;
-    margin-left: 0.5%;
+    margin-left: 5px;
+    color: white;
+}
+
+#user_avatar {
+   margin-bottom: 35px;
+   color: white;
+}
+
+@media (max-width:600px) {
+    #home-bg {
+        display: none;
+    }
+    
 }

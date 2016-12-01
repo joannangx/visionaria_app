@@ -2,6 +2,11 @@
 // Place all the styles related to the Post controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    background: #F1F1F1;
+}
+
 .post, .tag_post {
     margin: auto;
     background-color: white;
@@ -159,8 +164,27 @@ a.profile_link {
     img { width: 100% }
 }
 
+.content_wrapper {
+    min-height: calc(100vh - 50px);
+}
+
 .facebook_share {
-    text-align: right;
-    float:right;
-    margin-right: 30px;
+    width: 100%;
+    line-height: 1.5;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    background: #1879D8;
+    padding: 8px;
+}
+
+.fb-share-button a {
+    color: white;
+    padding: 3px 8px;
+    background: #3B5998;
+    text-decoration: none;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    margin-left: 5px;
 }

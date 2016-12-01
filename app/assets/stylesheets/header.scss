@@ -1,6 +1,6 @@
 body {
-    background-color: #F1F1F1;
     margin:0;
+    background-color: #F1F1F1;;
 }
 
 .open_nav {
@@ -46,10 +46,17 @@ li a:hover:not(.active) {
 }
 
 h2 {
-    font-family: "Lucida Console", Monaco, monospace;
-    font-size: 60px;
+    font-family: "Lato", Monaco, monospace;
+    font-size: 48px;
     text-align: center;
-    color: lightslategrey;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.page_title {
+    margin-top: 8vh;
+    margin-bottom: 5vh;
 }
 
 .welcome_user {
@@ -57,4 +64,15 @@ h2 {
     font-size: 20px;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     color: darkslategrey;
+    margin-top: 20px;
+}
+
+.alert {
+    color: #ffda24;
+    text-align: center;
+    font-size: 16px;
+    position: absolute;
+    top: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
 }
