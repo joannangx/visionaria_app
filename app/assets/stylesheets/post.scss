@@ -14,7 +14,9 @@ body {
     min-width: 300px;
     border-radius: 3px;
 	box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
-	border: 1px solid rgba(0, 0, 0, .09);
+	border: 1px solid;
+	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+	line-height: 1;
 }
 
 .post:hover, .tag_post:hover{
@@ -56,12 +58,22 @@ body {
     flex: 1;
     margin-top: 10px;
     margin-left: 10px;
+    color: white;
 }
+
+.user_name a:not(.profile_link) {
+    color: white;
+    float: right;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
 
 .user {
     display: flex;
     text-align: left;
     padding-left: 10px;
+    padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 3px;
     font-size: 12px;
@@ -81,7 +93,7 @@ body {
 
 .filters_cat, .timestamp {
     padding-right: 10px;
-    color: #e5e5e5;
+    color: #b7b7b7;
 }
 
 .filters_tag {
@@ -92,8 +104,53 @@ body {
 }
 
 .comments {
-    padding-left: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
+    padding-bottom: 0px;
+    border-top: 1px solid #e5e5e5;
+    width: calc(100% - 40px);
+    margin: 0px auto;
+    margin-top: 30px;
+}
+
+.comment {
+    border-bottom: 1px solid rgba(133, 162, 154, 0.33)
+}
+
+.comment .body p {
+    padding: 0px;
+    margin: 0px;
+}
+
+.comment .user {
+    background: none;
+    padding: 0px;
+    margin: 0px;
+    color: gray;
+}
+
+.new_comment input[type=text] {
+    margin-top: 5px;
+    background: white;
+    padding: 10px;
+    color: black;
+    border: 1px solid #dddfe2;;
+}
+
+.new_taggedcomment input[type=text] {
+    margin-top: 5px;
+    background: white;
+    padding: 10px;
+    color: black;
+    border: 1px solid #dddfe2;;
+}
+
+#comment_section {
+    background: rgba(149, 178, 170, 0.17);
+    margin-top: 13px;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    left: -20px;
 }
 
 .social-share-button-facebook {
