@@ -75,7 +75,7 @@ h1 {
 a.logins, a.facebook, a.google {
     width: 195px;
     margin: 10px auto;
-    padding: 7px 0px;
+    padding: 10px 0px;
     border-radius: 5px;
     font-size: 16px;
     text-decoration: none;
@@ -87,7 +87,8 @@ a.logins, a.facebook, a.google {
 a.logins {
     transition: 0.2s ease;
     display: block;
-    font-weight: 900;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 a.facebook, a.google {
