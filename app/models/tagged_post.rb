@@ -1,12 +1,9 @@
 class TaggedPost < ActiveRecord::Base
-  #has_merit
-  
     belongs_to :user
-    has_many :taggedcomments
-    has_many :points
-    has_many :likes
-    has_many :helps
-    has_many :inspires
+    has_many :taggedcomments, :dependent => :destroy
+    has_many :likes, :dependent => :destroy
+    has_many :helps, :dependent => :destroy
+    has_many :inspires, :dependent => :destroy
     has_many :liking_users, :through => :likes, :source => :user
     validates :content, :presence => true
     validates :tag, :presence => true

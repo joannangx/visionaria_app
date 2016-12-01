@@ -5,14 +5,14 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :google_oauth2], 
          :authentication_keys => [:email]
   
-  has_many :points
-  has_many :posts
-  has_many :tagged_posts
-  has_many :comments
-  has_many :taggedcomments
-  has_many :likes, :source => :posts
-  has_many :helps, :source => :posts
-  has_many :inspires, :source => :posts
+  has_many :points, :dependent => :destroy
+  has_many :posts, :dependent => :destroy
+  has_many :tagged_posts, :dependent => :destroy
+  has_many :comments, :dependent => :destroy
+  has_many :taggedcomments, :dependent => :destroy
+  has_many :likes, :source => :posts, :dependent => :destroy
+  has_many :helps, :source => :posts, :dependent => :destroy
+  has_many :inspires, :source => :posts, :dependent => :destroy
   has_one :profile, :dependent => :destroy
 
   validates_presence_of :username

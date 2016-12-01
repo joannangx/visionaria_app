@@ -1,10 +1,9 @@
 class Post < ActiveRecord::Base
     belongs_to :user
-    has_many :comments
-    has_many :points
-    has_many :likes
-    has_many :helps
-    has_many :inspires
+    has_many :comments, :dependent => :destroy
+    has_many :likes, :dependent => :destroy
+    has_many :helps, :dependent => :destroy
+    has_many :inspires, :dependent => :destroy
     has_many :liking_users, :through => :likes, :source => :user
     validates :content, :presence => true
     def classname
