@@ -12,10 +12,14 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20161118074536) do
 =======
 ActiveRecord::Schema.define(version: 20161121212227) do
 >>>>>>> 8a7bf459918aaab1eaf8fc16cb188fe2bbf43843
+=======
+ActiveRecord::Schema.define(version: 20161129014208) do
+>>>>>>> 242279f4b56a03a34a83f4c0e6f006ea1bcd3e0f
 
   create_table "comments", force: :cascade do |t|
     t.string   "username"
@@ -64,25 +68,12 @@ ActiveRecord::Schema.define(version: 20161121212227) do
   add_index "likes", ["user_id"], name: "index_likes_on_user_id"
 
   create_table "points", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "regular",      default: 0
-    t.integer "poverty",      default: 0
-    t.integer "hunger",       default: 0
-    t.integer "health",       default: 0
-    t.integer "education",    default: 0
-    t.integer "gender",       default: 0
-    t.integer "sanitation",   default: 0
-    t.integer "energy",       default: 0
-    t.integer "economy",      default: 0
-    t.integer "industry",     default: 0
-    t.integer "inequalities", default: 0
-    t.integer "cities",       default: 0
-    t.integer "consumption",  default: 0
-    t.integer "climate",      default: 0
-    t.integer "water",        default: 0
-    t.integer "land",         default: 0
-    t.integer "peace",        default: 0
-    t.integer "partnerships", default: 0
+    t.integer  "user_id"
+    t.integer  "amount",     default: 0
+    t.string   "variety"
+    t.integer  "level",      default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "points", ["user_id"], name: "index_points_on_user_id"
@@ -102,11 +93,11 @@ ActiveRecord::Schema.define(version: 20161121212227) do
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "location"
-    t.text     "info",        default: "Click on text to edit user info.",        null: false
-    t.text     "motivations", default: "Click on text to edit user motivations.", null: false
-    t.text     "priorities",  default: "Click on text to edit user priorities.",  null: false
-    t.datetime "created_at",                                                      null: false
-    t.datetime "updated_at",                                                      null: false
+    t.text     "info",        default: ""
+    t.text     "motivations", default: ""
+    t.text     "priorities",  default: ""
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
@@ -166,6 +157,6 @@ ActiveRecord::Schema.define(version: 20161121212227) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["username"], name: "index_users_on_username", unique: true
+  add_index "users", ["username"], name: "index_users_on_username"
 
 end

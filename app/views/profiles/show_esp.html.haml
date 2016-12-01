@@ -7,10 +7,10 @@
             
         %div{:class => "about_me"}
             %p{:class => "prof_user"}= @viewed_user.username 
-            %b{:class => "loc_label"} Location: 
+            %b{:class => "loc_label"} Locación: 
             %br
             %p 
-                %b{:class => "prof_label"} Info
+                %b{:class => "prof_label"} Información
                 - if @owned
                     %div{:class => "edit_input_wrap"}
                         %p= best_in_place @profile, :info, :class => "info_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
@@ -18,7 +18,7 @@
                     %div{:class => "input_wrap"}
                         %p= @info
             %p 
-                %b{:class => "prof_label"} What Motivates Me...
+                %b{:class => "prof_label"} Lo que me motiva...
                 - if @owned
                     %div{:class => "edit_input_wrap"}
                         %p= best_in_place @profile, :motivations, :class => "motivs_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
@@ -26,7 +26,7 @@
                     %div{:class => "input_wrap"}
                         %p= @motivations
             %p 
-                %b{:class => "prof_label"} My Top Community Priorities...
+                %b{:class => "prof_label"} Mis prioridades comunitarias...
                 - if @owned
                     %div{:class => "edit_input_wrap"}
                         %p= best_in_place @profile, :priorities, :class => "prios_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
@@ -44,19 +44,19 @@
         %br
         %br
         - @points_sys.each do |p|
-            = render 'shared/indiv_point', :point => p
+            = render 'shared/indiv_point_esp', :point => p
         %br
     %div{:class => "profile_tab", :id => "my_posts"}
         %br
         - @posts.each do |p|
-            = render 'shared/indiv_post', :post => p
+            = render 'shared/indiv_post_esp', :post => p
         %br
         %br
         %br
     %div{:class => "profile_tab", :id => "my_tagged"}
         %br
         - @tagged.each do |p|
-            = render 'shared/indiv_tagged_post', :post => p
+            = render 'shared/indiv_tagged_post_esp', :post => p
         %br
         %br
         %br

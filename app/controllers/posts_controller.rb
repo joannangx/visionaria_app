@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
     before_filter :authenticate_user!
+    respond_to :js, :json, :html
     
     def post_params
         params.require(:post).permit(:user_id, :content, :public)
@@ -12,8 +13,9 @@ class PostsController < ApplicationController
     def create
         @user = current_user
         @post = @user.posts.create!(post_params)
+        @point = Point.where('variety = ? AND user_id = ?', 'Visions', current_user.id).first
+        @point.determine_op_and_update('add')
 
-        flash[:notice] = "Post successfully saved!"
         redirect_to posts_path
     end
     
@@ -40,23 +42,18 @@ class PostsController < ApplicationController
            like.destroy! 
         end
         @post.destroy!
-        flash[:notice] = "Post successfully deleted!"
+        @point = Point.where('variety = ? AND user_id = ?', 'Visions', @post.user.id).first
+        @point.determine_op_and_update('sub')
+
         redirect_to posts_path
     end
     
     def like
         if params[:id]!=nil
             @post = Post.find(params[:id])
-        
-            if current_user.liked?(@post)
-               @like = Like.find_by(:post_id => @post.id, :user_id => current_user.id)
-               @like.destroy
-               flash[:notice] = "You unliked the post!"
-            else
-                @like = @post.likes.create(@post_id)
-                current_user.likes << @like
-                flash[:notice] = "You liked the post!"
-            end
+            
+            @like = @post.likes.create(@post_id)
+            current_user.likes << @like
             @post.save
         end
         
@@ -67,19 +64,28 @@ class PostsController < ApplicationController
         end
     end
     
+    def dislike
+        if params[:id]!=nil
+            @post = Post.find(params[:id])
+            
+            @like = Like.find_by(:post_id => @post.id, :user_id => current_user.id)
+            @like.destroy
+            @post.save
+        end
+        
+        if request.xhr?
+            render json: { count: @post.likes.count, id: params[:id] }
+        else
+            redirect_to posts_path
+        end
+    end    
+    
     def help
         if params[:id]!=nil
             @post = Post.find(params[:id])
         
-            if current_user.helped?(@post)
-               @help = Help.find_by(:post_id => @post.id, :user_id => current_user.id)
-               @help.destroy
-               flash[:notice] = "That post doesn't help!"
-            else
-                @help = @post.helps.create(@post_id)
-                current_user.helps << @help
-                flash[:notice] = "That post helps!"
-            end
+            @help = @post.helps.create(@post_id)
+            current_user.helps << @help
             @post.save
         end
         
@@ -90,19 +96,28 @@ class PostsController < ApplicationController
         end
     end
     
-    def inspire
+    def unhelp
         if params[:id]!=nil
             @post = Post.find(params[:id])
         
-            if current_user.inspired?(@post)
-               @inspire = Inspire.find_by(:post_id => @post.id, :user_id => current_user.id)
-               @inspire.destroy
-               flash[:notice] = "That post doesn't inspire you!"
-            else
-                @inspire = @post.inspires.create(@post_id)
-                current_user.inspires << @inspire
-                flash[:notice] = "That post inspires you!"
-            end
+            @help = Help.find_by(:post_id => @post.id, :user_id => current_user.id)
+            @help.destroy    
+            @post.save
+        end
+        
+        if request.xhr?
+            render json: { count: @post.helps.count, id: params[:id] }
+        else
+            redirect_to posts_path
+        end
+    end    
+    
+    def inspire
+        if params[:id]!=nil
+            @post = Post.find(params[:id])
+
+            @inspire = @post.inspires.create(@post_id)
+            current_user.inspires << @inspire
             @post.save
         end
         
@@ -112,5 +127,21 @@ class PostsController < ApplicationController
             redirect_to posts_path
         end
     end
+    
+    def uninspire
+        if params[:id]!=nil
+            @post = Post.find(params[:id])
+        
+            @inspire = Inspire.find_by(:post_id => @post.id, :user_id => current_user.id)
+            @inspire.destroy
+            @post.save
+        end
+        
+        if request.xhr?
+            render json: { count: @post.inspires.count, id: params[:id] }
+        else
+            redirect_to posts_path
+        end
+    end    
     
 end

@@ -16,6 +16,7 @@ class LikesController < ApplicationController
     end
     
     def destroy
+        puts "Hello?"
         self.destroy
     end
 end

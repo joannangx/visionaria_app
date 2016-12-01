@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  #has_merit
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -18,7 +16,6 @@ class User < ActiveRecord::Base
   has_one :profile, :dependent => :destroy
 
   validates_presence_of :username
-  validates :username, uniqueness: true
   
   has_attached_file :avatar, styles: { :medium => "300x300>", :thumb =>"100x100>" }, :default_url => ":style/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
@@ -34,7 +31,7 @@ class User < ActiveRecord::Base
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.email = auth.info.email
         user.admin = true if User.admins.include?(user.email) 
-        user.username = auth.info.email
+        user.username = auth.info.name
         user.password = Devise.friendly_token[0,20]
         user.name = auth.info.name
         if (auth.provider == "facebook")
@@ -53,25 +50,25 @@ class User < ActiveRecord::Base
   
   def liked?(post)
     if post.classname == 'post'
-      Like.find_by(:post_id => post.id, :user_id => self.id)
+      !Like.find_by(:post_id => post.id, :user_id => self.id).nil?
     else
-      Like.find_by(:tagged_post_id => post.id, :user_id => self.id)
+      !Like.find_by(:tagged_post_id => post.id, :user_id => self.id).nil?
     end
   end
   
   def helped?(post)
     if post.classname == 'post'
-      Help.find_by(:post_id => post.id, :user_id => self.id)
+      !Help.find_by(:post_id => post.id, :user_id => self.id).nil?
     else
-      Help.find_by(:tagged_post_id => post.id, :user_id => self.id)
+      !Help.find_by(:tagged_post_id => post.id, :user_id => self.id).nil?
     end
   end
   
   def inspired?(post)
     if post.classname == 'post'
-      Inspire.find_by(:post_id => post.id, :user_id => self.id)
+      !Inspire.find_by(:post_id => post.id, :user_id => self.id).nil?
     else
-      Inspire.find_by(:tagged_post_id => post.id, :user_id => self.id)
+      !Inspire.find_by(:tagged_post_id => post.id, :user_id => self.id).nil?
     end
   end
 

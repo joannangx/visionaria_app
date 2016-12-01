@@ -17,5 +17,6 @@
 /tmp
 
 
-#*.swp
+*.swp
 #coverage/assets/*
+public/assets/**
