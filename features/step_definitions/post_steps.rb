@@ -30,6 +30,18 @@ Then(/^I should not see a delete option for the post "([^"]*)" by "([^"]*)"$/) d
   pending # Write code here that turns the phrase above into concrete actions
 end
 
+Given(/^I press "([^"]*)" on the post with content "([^"]*)"$/) do |arg1, arg2|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^someone comments on my post$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^someone likes my post$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
 Then(/^I confirm my deletion$/) do
   selenium.get_alert.should eql("Are you sure?")
   selenium.chooseOkOnNextConfirmation();

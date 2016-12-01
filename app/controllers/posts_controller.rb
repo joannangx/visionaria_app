@@ -59,7 +59,58 @@ class PostsController < ApplicationController
             end
             @post.save
         end
-        redirect_to posts_path
+        
+        if request.xhr?
+            render json: { count: @post.likes.count, id: params[:id] }
+        else
+            redirect_to posts_path
+        end
+    end
+    
+    def help
+        if params[:id]!=nil
+            @post = Post.find(params[:id])
+        
+            if current_user.helped?(@post)
+               @help = Help.find_by(:post_id => @post.id, :user_id => current_user.id)
+               @help.destroy
+               flash[:notice] = "That post doesn't help!"
+            else
+                @help = @post.helps.create(@post_id)
+                current_user.helps << @help
+                flash[:notice] = "That post helps!"
+            end
+            @post.save
+        end
+        
+        if request.xhr?
+            render json: { count: @post.helps.count, id: params[:id] }
+        else
+            redirect_to posts_path
+        end
+    end
+    
+    def inspire
+        if params[:id]!=nil
+            @post = Post.find(params[:id])
+        
+            if current_user.inspired?(@post)
+               @inspire = Inspire.find_by(:post_id => @post.id, :user_id => current_user.id)
+               @inspire.destroy
+               flash[:notice] = "That post doesn't inspire you!"
+            else
+                @inspire = @post.inspires.create(@post_id)
+                current_user.inspires << @inspire
+                flash[:notice] = "That post inspires you!"
+            end
+            @post.save
+        end
+        
+        if request.xhr?
+            render json: { count: @post.inspires.count, id: params[:id] }
+        else
+            redirect_to posts_path
+        end
     end
     
 end

@@ -1,0 +1,183 @@
+%div{:class => "levels"}
+    - if @viewed_user.point.regular < 5
+        - if @viewed_user.point.regular >= 2
+            %p{:class => "reg"}= "LEVEL 1"
+        - else
+            %p{:class => "reg"}= "LEVEL 0"
+    - else
+        %p{:class => "reg"}= "LEVEL #{(@viewed_user.point.regular / 5) + 1}"
+    %br
+    - if @viewed_user.point.poverty < 5
+        - if @viewed_user.point.poverty >= 2
+            %p{:class => "pov"}= "LEVEL 1"
+        - else
+            %p{:class => "pov"}= "LEVEL 0"
+    - else
+        %p{:class => "pov"}= "LEVEL #{(@viewed_user.point.poverty / 5) + 1}" 
+    %br
+    - if @viewed_user.point.hunger < 5
+        - if @viewed_user.point.hunger >= 2
+            %p{:class => "hun"}= "LEVEL 1"
+        - else
+            %p{:class => "hun"}= "LEVEL 0"
+    - else
+        %p{:class => "hun"}= "LEVEL #{(@viewed_user.point.hunger / 5) + 1}" 
+    %br
+    - if @viewed_user.point.health < 5
+        - if @viewed_user.point.health >= 2
+            %p{:class => "heal"}= "LEVEL 1"
+        - else
+            %p{:class => "heal"}= "LEVEL 0"
+    - else
+        %p{:class => "heal"}= "LEVEL #{(@viewed_user.point.health / 5) + 1}" 
+    %br
+    - if @viewed_user.point.education < 5
+        - if @viewed_user.point.education >= 2
+            %p{:class => "edu"}= "LEVEL 1"
+        - else
+            %p{:class => "edu"}= "LEVEL 0"
+    - else
+        %p{:class => "edu"}= "LEVEL #{(@viewed_user.point.education / 5) + 1}" 
+    %br
+    - if @viewed_user.point.gender < 5
+        - if @viewed_user.point.gender >= 2
+            %p{:class => "gen"}= "LEVEL 1"
+        - else
+            %p{:class => "gen"}= "LEVEL 0"
+    - else
+        %p{:class => "gen"}= "LEVEL #{(@viewed_user.point.gender / 5) + 1}" 
+    %br
+    - if @viewed_user.point.sanitation < 5
+        - if @viewed_user.point.sanitation >= 2
+            %p{:class => "san"}= "LEVEL 1"
+        - else
+            %p{:class => "san"}= "LEVEL 0"
+    - else
+        %p{:class => "san"}= "LEVEL #{(@viewed_user.point.sanitation / 5) + 1}" 
+    %br
+    - if @viewed_user.point.energy < 5
+        - if @viewed_user.point.energy >= 2
+            %p{:class => "ener"}= "LEVEL 1"
+        - else
+            %p{:class => "ener"}= "LEVEL 0"
+    - else
+        %p{:class => "ener"}= "LEVEL #{(@viewed_user.point.energy / 5) + 1}" 
+    %br
+    - if @viewed_user.point.economy < 5
+        - if @viewed_user.point.economy >= 2
+            %p{:class => "econ"}= "LEVEL 1"
+        - else
+            %p{:class => "econ"}= "LEVEL 0"
+    - else    
+        %p{:class => "econ"}= "LEVEL #{(@viewed_user.point.economy / 5) + 1}" 
+    %br
+    - if @viewed_user.point.industry < 5
+        - if @viewed_user.point.industry >= 2
+            %p{:class => "ind"}= "LEVEL 1"
+        - else
+            %p{:class => "ind"}= "LEVEL 0"
+    - else
+        %p{:class => "ind"}= "LEVEL #{(@viewed_user.point.industry / 5) + 1}" 
+    %br
+    - if @viewed_user.point.inequalities < 5
+        - if @viewed_user.point.inequalities >= 2
+            %p{:class => "ineq"}= "LEVEL 1"
+        - else
+            %p{:class => "ineq"}= "LEVEL 0"
+    - else
+        %p{:class => "ineq"}= "LEVEL #{(@viewed_user.point.inequalities / 5) + 1}" 
+    %br
+    - if @viewed_user.point.cities < 5
+        - if @viewed_user.point.cities >= 2
+            %p{:class => "city"}= "LEVEL 1"
+        - else
+            %p{:class => "city"}= "LEVEL 0"
+    - else
+        %p{:class => "city"}= "LEVEL #{(@viewed_user.point.cities / 5) + 1}" 
+    %br
+    - if @viewed_user.point.consumption < 5
+        - if @viewed_user.point.consumption >= 2
+            %p{:class => "cons"}= "LEVEL 1"
+        - else
+            %p{:class => "cons"}= "LEVEL 0"
+    - else
+        %p{:class => "cons"}= "LEVEL #{(@viewed_user.point.consumption / 5) + 1}" 
+    %br
+    - if @viewed_user.point.climate < 5
+        - if @viewed_user.point.climate >= 2
+            %p{:class => "cli"}= "LEVEL 1"
+        - else
+            %p{:class => "cli"}= "LEVEL 0"
+    - else
+        %p{:class => "cli"}= "LEVEL #{(@viewed_user.point.climate / 5) + 1}" 
+    %br
+    - if @viewed_user.point.water < 5
+        - if @viewed_user.point.water >= 2
+            %p{:class => "wat"}= "LEVEL 1"
+        - else
+            %p{:class => "wat"}= "LEVEL 0"
+    - else
+        %p{:class => "wat"}= "LEVEL #{(@viewed_user.point.water / 5) + 1}" 
+    %br
+    - if @viewed_user.point.land < 5
+        - if @viewed_user.point.land >= 2
+            %p{:class => "land"}= "LEVEL 1"
+        - else
+            %p{:class => "land"}= "LEVEL 0"
+    - else
+        %p{:class => "land"}= "LEVEL #{(@viewed_user.point.land / 5) + 1}" 
+    %br
+    - if @viewed_user.point.peace < 5
+        - if @viewed_user.point.peace >= 2
+            %p{:class => "pea"}= "LEVEL 1"
+        - else
+            %p{:class => "pea"}= "LEVEL 0"
+    - else
+        %p{:class => "pea"}= "LEVEL #{(@viewed_user.point.peace / 5) + 1}" 
+    %br
+    - if @viewed_user.point.partnerships < 5
+        - if @viewed_user.point.partnerships >= 2
+            %p{:class => "part"}= "LEVEL 1"
+        - else
+            %p{:class => "part"}= "LEVEL 0"
+    - else
+        %p{:class => "part"}= "LEVEL #{(@viewed_user.point.partnerships / 5) + 1}" 
+    %br
+
+%div{:class => "earned"}
+    %p= "#{@viewed_user.point.regular} Visions post"
+    %br
+    %p= "#{@viewed_user.point.poverty} Posts about 'No Poverty'"
+    %br
+    %p= "#{@viewed_user.point.hunger} Posts about 'Zero Hunger'"
+    %br
+    %p= "#{@viewed_user.point.health} Posts about 'Good Health and Well-Being'"
+    %br
+    %p= "#{@viewed_user.point.education} Posts about 'Quality Education'"
+    %br
+    %p= "#{@viewed_user.point.gender} Posts about 'Gender Equality'"
+    %br
+    %p= "#{@viewed_user.point.sanitation} Posts about 'Clean Water and Sanitation'"
+    %br
+    %p= "#{@viewed_user.point.energy} Posts about 'Affordable and Clean Energy'"
+    %br
+    %p= "#{@viewed_user.point.economy} Posts about 'Decent Work and Economic Growth'"
+    %br
+    %p= "#{@viewed_user.point.industry} Posts about 'Industry, Innovation and Infrastructure'"
+    %br
+    %p= "#{@viewed_user.point.inequalities} Posts about 'Reduced Inequalities'"
+    %br
+    %p= "#{@viewed_user.point.cities} Posts about 'Sustainale Cities and Communities'"
+    %br
+    %p= "#{@viewed_user.point.consumption} Posts about 'Responsible Consumption and Production'"
+    %br
+    %p= "#{@viewed_user.point.climate} Posts about 'Climate Action'"
+    %br
+    %p= "#{@viewed_user.point.water} Posts about 'Life Below Water'"
+    %br
+    %p= "#{@viewed_user.point.land} Posts about 'Life on Land'"
+    %br
+    %p= "#{@viewed_user.point.peace} Posts about 'Peace, Justice and Strong Institutions'"
+    %br
+    %p= "#{@viewed_user.point.partnerships} Posts about 'Partnerships for the Goals'"
+    %br

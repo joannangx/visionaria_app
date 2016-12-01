@@ -29,6 +29,7 @@ Background:
     And   I sign up as "dodo" with "dodosrule", email "dodo@dodo.com", and name "Dodo"
     
     Scenario: Successfully make a post comment with username
+      Given pending
       When  I follow "1 Comments"
       And   I fill in "Your Comment" with "Good"
       And   I press "Create"
@@ -38,6 +39,7 @@ Background:
       Then  I should see "2 Comments"
       
     Scenario: Successfully make a post comment anonymously
+      Given pending
       When  I follow "0 Comments"
       And   I fill in "Your Comment" with "Secret"
       And   I check "Anonymous"
@@ -46,6 +48,7 @@ Background:
       
     Scenario: Successfully make a tagged post comment with username
       When  I follow "PROGRESO"
+      Given pending
       When  I follow "0 Comments"
       And   I fill in "Your Comment" with "Good"
       And   I press "Create"
@@ -56,6 +59,7 @@ Background:
       
     Scenario: Successfully make a tagged post comment anonymously
       When  I follow "PROGRESO"  
+      Given pending
       When  I follow "0 Comments"
       And   I fill in "Your Comment" with "Secret"
       And   I check "Anonymous"

@@ -11,7 +11,7 @@ class TaggedcommentsController < ApplicationController
             @taggedcomment.username = current_user.username
         end
         @taggedcomment.save
-        redirect_to tagged_post_taggedcomments_path(@taggedpost)
+        redirect_to tagged_posts_path
     end
     
     def index
