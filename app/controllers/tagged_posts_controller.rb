@@ -14,6 +14,15 @@ class TaggedPostsController < ApplicationController
         if params[:sort_category]
             @taggedposts = @taggedposts.where('category = ?', params[:sort_category]).order('created_at DESC')
         end
+        #filter
+        @all_categories = TaggedPost.all_categories
+        @selected_categories = params[:categories]
+    
+        if @selected_categories == nil
+           @selected_categories = Hash[@all_categories.map {|category| [category, category]}]
+        end
+    
+        @taggedposts = @taggedposts.where(category: @selected_categories.keys).order('created_at DESC')
     end
 
     def new
