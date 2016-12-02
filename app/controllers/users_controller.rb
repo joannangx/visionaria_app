@@ -12,4 +12,19 @@ class UsersController < ApplicationController
         @user.update_attribute(:spanish, false)
         redirect_to(:back)
     end    
+    
+    def index
+          @users = User.all
+
+        csv_string_users = CSV.generate do |csv|
+               csv << ["Id", "Username", "Name", "Email"]
+               @users.each do |user|
+                 csv << [user.id, user.username, user.name, user.email]
+               end
+          end         
+        
+        send_data csv_string_users,
+        :type => 'text/csv; charset=iso-8859-1; header=present',
+        :disposition => "attachment; filename=users.csv" 
+    end    
 end

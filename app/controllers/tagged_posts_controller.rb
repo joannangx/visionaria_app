@@ -15,6 +15,22 @@ class TaggedPostsController < ApplicationController
             @taggedposts = @taggedposts.where('category = ?', params[:sort_category]).order('created_at DESC')
         end
     end
+    
+    def export
+        @posts = TaggedPost.all
+        
+        csv_string_goals = CSV.generate do |csv|
+           csv << ["User Id", "Content", "Category", "Goal", "Date", "Public"]
+           @posts.each do |post|
+             csv << [post.user_id, post.content, post.category, post.tag, post.created_at, post.public]
+           end
+        end         
+        
+        send_data csv_string_goals,
+        :type => 'text/csv; charset=iso-8859-1; header=present',
+        :disposition => "attachment; filename=goals.csv" 
+    end
+
 
     def new
         @all_categories = TaggedPost.all_categories

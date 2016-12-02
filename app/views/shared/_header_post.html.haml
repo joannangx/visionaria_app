@@ -4,10 +4,14 @@
     - if current_user.spanish
         = link_to 'Inicio', posts_path, :method => :get
         = link_to "Perfil", profile_path(current_user), :method => :get
+        - if current_user.admin
+            = link_to "Exports", exports_path, :method => :get
         = link_to 'Salir', destroy_user_session_path, :method => :delete
     - else
         = link_to 'Home', posts_path, :method => :get
         = link_to "Profile", profile_path(current_user), :method => :get
+        - if current_user.admin
+            = link_to "Exports", exports_path, :method => :get
         = link_to 'Logout', destroy_user_session_path, :method => :delete
     %div{:class =>"language_selection"}
         = link_to 'English', {:controller => "users", :action => "view_english"}, :method => :post

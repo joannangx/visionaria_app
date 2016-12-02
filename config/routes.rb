@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   post 'view_english' => 'users#view_english'
   post 'view_spanish' => 'users#view_spanish'
   
+  get 'exports', to: 'admins#exports'
+  resources :users, only: [:index]
+  get 'posts_export', to: 'posts#export'
+  get 'tagged_export', to: 'tagged_posts#export'
+  
   resources :profiles, only: [:show, :edit, :update]
   resources :posts, only: [:index, :show, :create, :like, :destroy] do
     resources :comments
