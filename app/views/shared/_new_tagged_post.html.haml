@@ -5,7 +5,7 @@
         %div{:class => "content_label"}
             = label :tagged_post, :content, 'Your Thoughts'
         %br
-        = text_area :tagged_post, :content, :maxlength => 280, :id => 'tagged_content'
+        = text_area :tagged_post, :content, :maxlength => 140, :id => 'content_area'
         Chars left: <span id="counter" data-maximum-length="<%= @maximum_length %>">#{@maximum_length}</span>
         
         %div{:class => "sort_labels"}
