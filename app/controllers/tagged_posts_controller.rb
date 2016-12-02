@@ -35,6 +35,7 @@ class TaggedPostsController < ApplicationController
     def new
         @all_categories = TaggedPost.all_categories
         @all_un_goals = TaggedPost.all_un_goals
+        @maximum_length = TaggedPost.validators_on( :content ).first.options[:maximum]
     end    
 
     def create

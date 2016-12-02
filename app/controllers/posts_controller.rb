@@ -30,6 +30,7 @@ class PostsController < ApplicationController
         @post = @user.posts.create!(post_params)
         @point = Point.where('variety = ? AND user_id = ?', 'Visions', current_user.id).first
         @point.determine_op_and_update('add')
+        @maximum_length = Post.validators_on( :content ).first.options[:maximum]
 
         redirect_to posts_path
     end
