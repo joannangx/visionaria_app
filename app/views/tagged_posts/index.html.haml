@@ -8,12 +8,13 @@
     = render 'shared/new_tagged_post'
 %div{:class => "filter"}
     = form_tag tagged_posts_path, :method => :get, :id => 'categories_form' do
-        -@all_categories.each do |category|
-            = category
-            = check_box_tag "categories[#{category}]", 1, @selected_categories.include?(category), :id => "categories_#{category}"
-        
+        -@all_un_goals.each do |tag|
+            = tag
+            = check_box_tag "goals[#{tag}]", 1, @selected_goals.include?(tag), :id => "goals#{tag}"
         = submit_tag 'Refresh', :id => 'categories_submit'
     
+%br
+%br
 %br
 - @taggedposts.each do |p|
     - if current_user.spanish
