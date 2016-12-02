@@ -777,8 +777,8 @@
         1,
         null,
         null,
-        21,
-        28,
+        19,
+        26,
         null,
         null,
         null,
@@ -799,8 +799,8 @@
         1,
         null,
         null,
-        35,
-        66,
+        33,
+        62,
         null,
         null,
         null,
@@ -828,11 +828,11 @@
         null,
         null,
         1,
-        10,
-        10,
-        10,
-        10,
-        10,
+        8,
+        8,
+        8,
+        8,
+        8,
         null,
         null,
         1,
@@ -840,7 +840,7 @@
         null,
         null,
         1,
-        2,
+        0,
         null,
         null,
         1,
@@ -872,8 +872,8 @@
       "/home/ubuntu/workspace/visionaria_app/app/controllers/welcome_controller.rb": [
         1,
         1,
-        77,
-        44,
+        73,
+        42,
         null,
         null,
         null
@@ -1105,7 +1105,7 @@
         null,
         null,
         1,
-        53,
+        51,
         null,
         null,
         1,
@@ -1674,6 +1674,6 @@
         null
       ]
     },
-    "timestamp": 1480663743
+    "timestamp": 1480663884
   }
 }
