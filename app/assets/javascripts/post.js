@@ -18,3 +18,31 @@ $(document).ready(function() {
    
 
 });
+
+jQuery(function() {
+  $(document).ready(function() {
+    return $('.tutorial').show();
+  });
+});
+
+jQuery(function() {
+  $(document).ready(function() {
+    $('.tutorial_close').click(function() {
+      return $('.tutorial').slideUp();
+    });
+  });
+});
+
+jQuery(function() {
+  $(document).ready(function() {
+    return $('.comment_section').hide();
+  });
+});
+
+jQuery(function() {
+  $(document).ready(function() {
+    $('.comments_link').click(function() {
+      return $(this).parent().siblings('.comment_section').slideToggle();
+    });
+  });
+});
