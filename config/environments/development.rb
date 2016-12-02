@@ -39,9 +39,7 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   
-  config.web_console.whitelisted_ips = '136.152.142.24'
-  config.web_console.whitelisted_ips = '24.130.121.38'
-  config.web_console.whitelisted_ips = '98.210.146.158'
+  config.web_console.whiny_requests = false
   Paperclip.options[:command_path] = "/usr/bin/convert"
   
 end
