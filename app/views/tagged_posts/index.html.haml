@@ -1,19 +1,31 @@
 -#  This file is app/views/tagged_posts/index.html.haml
+<div class="content_wrapper">
 = render 'shared/header_tag'
-%div{:class => "facebook_share"}
-    Like us? Share us with your friends on facebook! 
-    <div class="fb-share-button" data-href="https://visionaria-app.herokuapp.com" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fvisionaria-app.herokuapp.com%2F&amp;src=sdkpreparse">Share</a></div>
-= render 'shared/new_tagged_post'
 
+- if current_user.spanish
+    = render 'shared/new_tagged_post_esp'
+- else
+    = render 'shared/new_tagged_post'
 
-
- 
-- @taggedposts.each do |category|
-    = category
-    = check_box_tag "categories[#{category}]", 1, @selected_categories.include?(category), :id => "categories_#{category}"
-  = submit_tag 'Refresh', :id => 'categories_submit'
-
+= form_tag tagged_posts_path, :method => :get, :id => 'categories_form' do
+    -@all_categories.each do |category|
+        = category
+        = check_box_tag "categories[#{category}]", 1, @selected_categories.include?(category), :id => "categories_#{category}"
+        
+    = submit_tag 'Refresh', :id => 'categories_submit'
 
 %br
 - @taggedposts.each do |p|
-    = render 'shared/indiv_tagged_post', :post => p
+    - if current_user.spanish
+        = render 'shared/indiv_tagged_post_esp', :post => p
+    - else
+        = render 'shared/indiv_tagged_post', :post => p
+</div>
+
+%div{:class => "facebook_share"}
+    - if current_user.spanish
+        Compártenos con tus amigos en Facebook.
+        <span class="fb-share-button" data-href="https://visionaria-app.herokuapp.com/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fvisionaria-app.herokuapp.com%2F&amp;src=sdkpreparse">Compartir</a></span>
+    - else
+        Like us? Share us with your friends on facebook! 
+        <span class="fb-share-button" data-href="https://visionaria-app.herokuapp.com/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fvisionaria-app.herokuapp.com%2F&amp;src=sdkpreparse">Share</a></span>
