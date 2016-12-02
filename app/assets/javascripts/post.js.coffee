@@ -5,10 +5,22 @@ jQuery ->
     $(document).ready ->
         $('.tutorial').show();
     return
+
+jQuery ->
+    $(document).ready ->
+        $('.comment_section').hide();
+    return
     
 jQuery ->
     $(document).ready ->
         $('.tutorial_close').click ->
             $('.tutorial').slideUp();
+        return
+    return
+
+jQuery ->
+    $(document).ready ->
+        $('.comments_link').click ->
+            $(this).parent().siblings('.comment_section').slideToggle();
         return
     return

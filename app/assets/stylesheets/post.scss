@@ -77,7 +77,8 @@ body {
     padding-top: 5px;
     padding-bottom: 3px;
     font-size: 12px;
-    background-color: #37AA8B;
+    //background-color: #37AA8B;
+    background-color: #3890E8;
 }
 
 .user .profile_link {
@@ -153,7 +154,7 @@ body {
     float: right;
 }
 
-#comment_section {
+.comment_section {
     background: rgba(149, 178, 170, 0.17);
     margin-top: 13px;
     width: 100%;
@@ -272,5 +273,15 @@ a.profile_link {
 }
 
 .tutorial_close:hover {
+    cursor: pointer;
+}
+
+.comments_link {
+    width: 18px;
+    height: 18px;
+    float: right;
+}
+
+.comments_link:hover {
     cursor: pointer;
 }
