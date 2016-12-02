@@ -3,17 +3,13 @@
 // You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready(function() {
-   var post_content = $("#post_content");
+   var content_area = $("#content_area");
    var tagged_content = $("#tagged_content");
    var counter     = $("#counter");
-   var max_length_post  = 140;
-   var max_length_tagged  = 280;
+   var max_length  = 140;
    
-   post_content.keyup(function() {
-      counter.text(max_length_post - $(this).val().length);
-   });
-   tagged_content.keyup(function() {
-      counter.text(max_length_tagged - $(this).val().length);
+   content_area.keyup(function() {
+      counter.text(max_length - $(this).val().length);
    });
    
 
