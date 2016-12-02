@@ -25,17 +25,13 @@ Background:
     
     Scenario: Successfully like and unlike a post
       When  I follow image link "like"
-      Then  I should see "You liked the post!"
       And   I should see "1"
       When  I follow image link "unlike"
-      Then  I should see "You unliked the post!"
       And   I should see "0"
     
     Scenario: Successfully like and unlike a tagged post
       When  I follow "PROGRESO"
       And   I follow image link "like"
-      Then  I should see "You liked the post!"
       And   I should see "1"
       When  I follow image link "unlike"
-      Then  I should see "You unliked the post!"
       And   I should see "0"

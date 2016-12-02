@@ -25,7 +25,7 @@ Feature: Sign up and login
     When  I follow "Login"
     And   I fill in "Email" with "dodo@example.com"
     And   I fill in "Password" with "dodosrule"
-    And   I press "Log in"
+    And   I press "Login"
     Then  I should see "dodobird"
     And   I should not see "edasaur"
     Given I am on the homepage
@@ -35,7 +35,7 @@ Feature: Sign up and login
     When  I follow "Login"
     And   I fill in "Email" with "dodo@example.com"
     And   I fill in "Password" with "dodo"
-    And   I press "Log in"
+    And   I press "Login"
     Then  I should see "Invalid Email or password."
     And   I should not see "dodobird"
     
@@ -43,6 +43,6 @@ Feature: Sign up and login
     When  I follow "Login"
     And   I fill in "Email" with "DodosAreTheBest"
     And   I fill in "Password" with "987657"
-    And   I press "Log in"
+    And   I press "Login"
     Then  I should see "Invalid Email or password."
     
