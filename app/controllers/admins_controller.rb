@@ -1,5 +1,6 @@
 class AdminsController < UsersController
   before_filter :ensure_admin!
+  require 'csv'
   
   private
   

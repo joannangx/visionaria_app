@@ -1,0 +1,15 @@
+= render 'shared/header'
+%br
+%br
+%br
+%div{:class => "export_links", :id => "export_users"}
+    %h Click to export User data
+    = link_to "Export User Data", users_path(format: :csv)
+%br
+%div{:class => "export_links", :id => "export_posts"}
+    %h Click to export Vision post data 
+    = link_to "Export YO Post Data", posts_export_path(format: :csv)
+%br
+%div{:class => "export_links", :id => "export_tagged"}
+    %h Click to export Goal post data
+    = link_to "Export PROGRESO Post Data", tagged_export_path(format: :csv)

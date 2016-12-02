@@ -85,11 +85,11 @@ ActiveRecord::Schema.define(version: 20161129014208) do
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "location"
-    t.text     "info",        default: "Click on text to edit user info.",        null: false
-    t.text     "motivations", default: "Click on text to edit user motivations.", null: false
-    t.text     "priorities",  default: "Click on text to edit user priorities.",  null: false
-    t.datetime "created_at",                                                      null: false
-    t.datetime "updated_at",                                                      null: false
+    t.text     "info",        default: ""
+    t.text     "motivations", default: ""
+    t.text     "priorities",  default: ""
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
@@ -145,6 +145,6 @@ ActiveRecord::Schema.define(version: 20161129014208) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["username"], name: "index_users_on_username", unique: true
+  add_index "users", ["username"], name: "index_users_on_username"
 
 end
