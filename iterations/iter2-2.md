@@ -4,5 +4,5 @@
 - Make public and Private posts<br>
 - Google translate?<br>
 
-<p>Features not implemented from Iter1-1:<br>
+<p>Features not implemented from Iter2-2:<br>
 - Facebook share </p>

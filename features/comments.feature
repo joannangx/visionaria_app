@@ -28,35 +28,31 @@ Background:
     And   I sign up as "dodo" with "dodosrule", email "dodo@dodo.com", and name "Dodo"
     
     Scenario: Successfully make a post comment with username
-      When  I follow "Comments"
-      And   I fill in "Your Comment" with "Good"
+      When  I click the comments image
+      And   I fill in "comment[body]" with "Good"
       And   I press "Create"
       Then  I should see "Good"
       And   I should see "dodo"
-      When  I am on the home page
-      Then  I should see "Good"
       
     Scenario: Successfully make a post comment anonymously
-      When  I follow "Comments"
-      And   I fill in "Your Comment" with "Secret"
+      When  I click the comments image
+      And   I fill in "comment[body]" with "Secret"
       And   I check "Anonymous"
       And   I press "Create"
       Then  I should see "Anonymous"
       
     Scenario: Successfully make a tagged post comment with username
       When  I follow "PROGRESO"
-      When  I follow "Comments"
-      And   I fill in "Your Comment" with "Good"
+      When  I click the comments image
+      And   I fill in "taggedcomment[body]" with "Good"
       And   I press "Create"
       Then  I should see "Good"
       And   I should see "dodo"
-      When  I look at the tagged posts
-      Then  I should see "Good"
       
     Scenario: Successfully make a tagged post comment anonymously
       When  I follow "PROGRESO"  
-      When  I follow "Comments"
-      And   I fill in "Your Comment" with "Secret"
+      When  I click the comments image
+      And   I fill in "taggedcomment[body]" with "Secret"
       And   I check "Anonymous"
       And   I press "Create"
       Then  I should see "Anonymous"

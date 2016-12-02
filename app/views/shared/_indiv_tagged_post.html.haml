@@ -22,14 +22,15 @@
         = post.created_at.strftime("%m/%d/%Y at %l:%M%p")
     %div{:class => "comments"}
         =form_tag do 
-            = link_to "Comments", tagged_post_taggedcomments_path(post), :id => 'comments_link'
             = toggle_like_tag_button(post,current_user)
             %span.likes_count{"data-id" => "#{post.id}"}= post.likes.count
             = toggle_help_tag_button(post,current_user)
             %span.helps_count{"data-id" => "#{post.id}"}= post.helps.count
             = toggle_inspire_tag_button(post,current_user)
             %span.inspires_count{"data-id" => "#{post.id}"}= post.inspires.count
-        %section{:id => 'comment_section'}
+            = image_tag "comment-round.png", :class => 'comments_link'
+        %br
+        %section{:class => 'comment_section'}
             - post.taggedcomments.each do |c|
                 = render 'shared/indiv_comment', :comment => c 
             = form_for [post, post.taggedcomments.new] do |f|

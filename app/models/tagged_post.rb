@@ -5,7 +5,7 @@ class TaggedPost < ActiveRecord::Base
     has_many :helps, :dependent => :destroy
     has_many :inspires, :dependent => :destroy
     has_many :liking_users, :through => :likes, :source => :user
-    validates :content, :presence => true
+    validates :content, :presence => true, length: { maximum: 140, too_long: "%{count} characters is the maximum allowed" }
     validates :tag, :presence => true
     validates :category, :presence => true
     

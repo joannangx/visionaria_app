@@ -77,7 +77,8 @@ body {
     padding-top: 5px;
     padding-bottom: 3px;
     font-size: 12px;
-    background-color: #37AA8B;
+    //background-color: #37AA8B;
+    background-color: #3890E8;
 }
 
 .user .profile_link {
@@ -153,7 +154,7 @@ body {
     float: right;
 }
 
-#comment_section {
+.comment_section {
     background: rgba(149, 178, 170, 0.17);
     margin-top: 13px;
     width: 100%;
@@ -252,4 +253,42 @@ a.profile_link {
     letter-spacing: 0.5px;
     font-size: 12px;
     margin-left: 5px;
+}
+
+.tutorial {
+    color: #1a3035;
+    background: #8fcad8;
+    width: 55%;
+    margin: auto;
+    padding: 1px 7px;
+}
+
+.tutorial_head {
+    color: #269381;
+}
+
+.tutorial_close {
+    color: white;
+    text-align: right;
+}
+
+.tutorial_close:hover {
+    cursor: pointer;
+}
+
+.comments_link {
+    width: 18px;
+    height: 18px;
+    float: right;
+}
+
+.comments_link:hover {
+    cursor: pointer;
+}
+
+.chars_remaining {
+    margin-top: 5px;
+    margin-left: 8px;
+    font-size: 12px;
+    color: #212D38;
 }

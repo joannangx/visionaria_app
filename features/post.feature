@@ -20,7 +20,7 @@ Feature: Make posts
     And   I sign up as "dodo" with "dodosrule", email "dodo@dodo.com", and name "Dodo"
   
   Scenario: Successfully make a post
-    When  I fill in "Your Thoughts" with "comments3"
+    When  I fill in "content_area" with "comments3"
     And   I press "Submit"
     Then  I should see "comments3"
     

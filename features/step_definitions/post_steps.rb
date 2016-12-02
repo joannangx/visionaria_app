@@ -10,6 +10,10 @@ When /I look at the posts/ do
   visit '/posts'
 end
 
+When(/^I click the comments image/) do
+  find(".comments_link").click
+end  
+
 When(/^I delete the post with "([^"]*)"$/) do |arg1|
   pending # Write code here that turns the phrase above into concrete actions
 end
