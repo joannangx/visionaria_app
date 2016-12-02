@@ -24,16 +24,10 @@ Feature: Allow admin users to view user information/activity and download it as 
     And     I am on the homepage
       
   Scenario: As an admin, I can view all user info and download
-    Given   pending
-    When    I follow "view user info"
-    Then    I should see "Joanna Ng"
-    And     I should see "dodo@example.com"
-    And     I should see "dodobird"
-    And     I should see "download as .csv"
+    When    I follow "Exports"
+    Then    I should see "Export User Data"
   
   Scenario: As an admin, I can view all user acivity and download
-    Given   pending
-    When    I follow "view user activity"
-    Then    I should see "comments"
-    And     I should see "comments2"
-    And     I should see "download as .csv"
+    When    I follow "Exports"
+    Then    I should see "Export YO Post Data"
+    And     I should see "Export PROGRESO Post Data"

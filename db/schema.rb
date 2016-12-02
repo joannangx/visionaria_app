@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129014208) do
+ActiveRecord::Schema.define(version: 20161202054616) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "username"
@@ -84,7 +84,6 @@ ActiveRecord::Schema.define(version: 20161129014208) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "location"
     t.text     "info",        default: ""
     t.text     "motivations", default: ""
     t.text     "priorities",  default: ""
@@ -141,6 +140,7 @@ ActiveRecord::Schema.define(version: 20161129014208) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.boolean  "spanish",                default: false
+    t.string   "location"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

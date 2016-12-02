@@ -9,41 +9,37 @@ Feature: Give users the ability to upadte their user information
     
       | username      | password          | email             |
       | dodobird      | dodosrule         | dodo@example.com  |
+    
+    And   the following profiles exist
+      | user_id       |
+      | 1             |
   
     And     I am signed in with username "dodobird", email "dodo@example.com" and password "dodosrule"
     
   Scenario: Can update username
-    Given   pending
-    When    I follow "Settings"
-    And     I click "Edit"
+    When    I follow "User Info"
     And     I fill in "Username" with "Dodo"
-    And     I press "Submit"
+    And     I fill in "Current password" with "dodosrule"
+    And     I press "Update"
     Then    I should see "Dodo"
     And     I should not see "dodobird"
     
-  Scenario: Can update password
-    Given   pending
-    When    I follow "Settings"
-    And     I click "Change Password"
-    And     I fill in "New Password" with "dodo123456"
-    And     I fill in "New Password Confirmation" with "dodo123456"
-    And     I fill in "Old Password" with "dodosrule"
-    And     I press "Submit"
-    Then    I should see "password change successful"
-    
   Scenario: Can change user location
-    Given   pending
-    When    I follow "Settings"
-    And     I click "Edit"
+    When    I follow "User Info"
     And     I fill in "Location" with "Fajardo, Puerto Rico"
-    And     I press "Submit"
-    When    I view my profile
+    And     I fill in "Current password" with "dodosrule"
+    And     I press "Update"
+    And     I follow "Profile"
     Then    I should see "Fajardo, Puerto Rico"
     
   Scenario: Can change user avatar
-    Given   pending
-    When    I follow "Settings"
-    And     I click "Edit"
-    And     I click "Upload image" and submit a file
-    And     I press "Submit"
-    Then    I should see "user avatar successfully updated"
+    When    I follow "User Info"
+    Then    I should see "Avatar" 
+    
+  Scenario: Can update password
+    When    I follow "User Info"
+    And     I fill in "Password" with "dodo123456"
+    And     I fill in "Password confirmation" with "dodo123456"
+    And     I fill in "Current password" with "dodosrule"
+    And     I press "Update"
+    

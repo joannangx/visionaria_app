@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post 'view_spanish' => 'users#view_spanish'
   
   get 'exports', to: 'admins#exports'
-  resources :users, only: [:index]
+  resources :users, only: [:index, :edit, :update]
   get 'posts_export', to: 'posts#export'
   get 'tagged_export', to: 'tagged_posts#export'
   

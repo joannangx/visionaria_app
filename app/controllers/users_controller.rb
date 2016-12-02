@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
     before_filter :authenticate_user!
     
+    def user_params
+        params.require(:user).permit(:username, :name, :email, :avatar)
+    end    
+    
     def view_spanish
         @user = current_user
         @user.update_attribute(:spanish, true)
@@ -26,5 +30,13 @@ class UsersController < ApplicationController
         send_data csv_string_users,
         :type => 'text/csv; charset=iso-8859-1; header=present',
         :disposition => "attachment; filename=users.csv" 
+    end    
+    
+    def edit
+        
+    end
+    
+    def update
+        
     end    
 end

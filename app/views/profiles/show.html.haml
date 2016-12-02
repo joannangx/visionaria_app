@@ -7,7 +7,8 @@
             
         %div{:class => "about_me"}
             %p{:class => "prof_user"}= @viewed_user.username 
-            //%b{:class => "loc_label"} Location: 
+            %b{:class => "loc_label"}Location: 
+            = @viewed_user.location
             %br
             %p 
                 %b{:class => "prof_label"} Info
