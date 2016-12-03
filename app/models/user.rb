@@ -77,6 +77,6 @@ class User < ActiveRecord::Base
   def self.process_uri(uri)
     avatar_url = URI.parse(uri)
     avatar_url.scheme = 'https'
-      avatar_url.to_s << "?type=large"
+    avatar_url.to_s << "?type=large"
   end
 end
