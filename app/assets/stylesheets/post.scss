@@ -266,15 +266,21 @@ a.profile_link {
 
 .tutorial_head {
     color: #269381;
+    font-size: 19px;
 }
 
 .tutorial_close {
-    color: white;
     text-align: right;
+    color: #3A5F85;
 }
 
 .tutorial_close:hover {
     cursor: pointer;
+    color: #D8E5F2;
+}
+
+.tutorial_bold {
+    font-weight: bold;
 }
 
 .comments_link {
