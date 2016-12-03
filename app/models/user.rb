@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
         user.password = Devise.friendly_token[0,20]
         user.name = auth.info.name
         if (auth.provider == "facebook")
-          process_uri = process_uri(auth.info.image)
+          processed_uri = process_uri(auth.info.image)
           user.avatar = URI.parse(processed_uri)
         end
     end
