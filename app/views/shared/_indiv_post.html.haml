@@ -5,14 +5,21 @@
         %div{:class => "user_name" }    
             = link_to "#{post.find_username}", profile_path(post.user), :class => "profile_link"
             - if current_user.username == post.find_username
-                = link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }
-                = link_to 'Edit', edit_post_path(post)
+                - if current_user.spanish?
+                    = link_to 'Borrar', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }
+                    = link_to 'Editar', edit_post_path(post)
+                - else
+                    = link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }
+                    = link_to 'Edit', edit_post_path(post)
             - elsif current_user.admin?
                 = link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }
     %div{:class => "content" }
         %p= post.content
     %div{:class => "timestamp" }
-        Posted on
+        - if current_user.spanish?
+            Publicado en
+        - else
+            Posted on
         = post.created_at.strftime("%m/%d/%Y at %l:%M%p")
     //%div{:class => "social-share-button"}
     //    =social_share_button_tag(post.content, :url => "http://myapp.com/foo/bar")
@@ -32,14 +39,18 @@
             - post.comments.each do |c|
                 = render 'shared/indiv_comment', :comment => c 
             = form_for [post, post.comments.new] do |f|
-                = text_field :comment, :body, rows: 2, cols:30, placeholder: "Write your comment here!"
+                - if current_user.spanish?
+                    = text_field :comment, :body, rows: 2, cols:30, placeholder: "¡Escribe tu comentario aquí!"
+                - else
+                    = text_field :comment, :body, rows: 2, cols:30, placeholder: "Write your comment here!"
                 = check_box_tag :anonymous, 0
-                = label_tag :anonymous, "Anonymous"
-                = submit_tag 'Create'
+                - if current_user.spanish?
+                    = label_tag :anonymous, "Anónimo"
+                    = submit_tag 'Crear'
+                - else
+                    = label_tag :anonymous, "Anonymous"
+                    = submit_tag 'Create'
 %br
-            
-
-    
 %br
 
 

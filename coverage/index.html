@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-02T23:28:32+00:00">2016-12-02T23:28:32+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-03T05:23:08+00:00">2016-12-03T05:23:08+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">72.06%</span></span>
+    (<span class="covered_percent"><span class="red">71.74%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.94
+         4.91
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>52</b> files in total.
-    <b>680</b> relevant lines. 
+    <b>683</b> relevant lines. 
     <span class="green"><b>490</b> lines covered</span> and
-    <span class="red"><b>190</b> lines missed </span>
+    <span class="red"><b>193</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -92,11 +92,11 @@
       
       <tr>
         <td class="strong"><a href="#7bc597b40817ed0a643629e7c33db3baf9c4f447" class="src_link" title="app/controllers/profiles_controller.rb">app/controllers/profiles_controller.rb</a></td>
-        <td class="red strong">59.38 %</td>
-        <td>51</td>
-        <td>32</td>
-        <td>19</td>
-        <td>13</td>
+        <td class="red strong">60.0 %</td>
+        <td>48</td>
+        <td>30</td>
+        <td>18</td>
+        <td>12</td>
         <td>1.5</td>
       </tr>
       
@@ -132,11 +132,11 @@
       
       <tr>
         <td class="strong"><a href="#a143b4236da0efb242799e6b54a0ab19457c03ed" class="src_link" title="app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></td>
-        <td class="red strong">66.67 %</td>
-        <td>42</td>
-        <td>21</td>
-        <td>14</td>
-        <td>7</td>
+        <td class="red strong">65.22 %</td>
+        <td>46</td>
+        <td>23</td>
+        <td>15</td>
+        <td>8</td>
         <td>0.7</td>
       </tr>
       
@@ -342,12 +342,12 @@
       
       <tr>
         <td class="strong"><a href="#c6d0e3b485e8cf0b5293a358c243f579f8eb9285" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
-        <td class="red strong">80.0 %</td>
-        <td>79</td>
-        <td>45</td>
+        <td class="red strong">75.0 %</td>
+        <td>82</td>
+        <td>48</td>
         <td>36</td>
-        <td>9</td>
-        <td>12.4</td>
+        <td>12</td>
+        <td>11.6</td>
       </tr>
       
       <tr>
@@ -1065,313 +1065,313 @@
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">    def export</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="14">
-          
-          
-          <code class="ruby">        @posts = Post.all</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby">      </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="16">
-          
-          
-          <code class="ruby">        csv_string_visions = CSV.generate do |csv|</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="17">
-          
-          
-          <code class="ruby">           csv &lt;&lt; [&quot;User Id&quot;, &quot;Content&quot;, &quot;Date&quot;, &quot;Public&quot;]</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="18">
-          
-          
-          <code class="ruby">           @posts.each do |post|</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="19">
-          
-          
-          <code class="ruby">             csv &lt;&lt; [post.user_id, post.content, post.created_at, post.public]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby">           end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
-          
-          
-          <code class="ruby">        end         </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby">        </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="23">
-          
-          
-          <code class="ruby">        send_data csv_string_visions,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby">        :type =&gt; &#39;text/csv; charset=iso-8859-1; header=present&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="25">
-          
-          
-          <code class="ruby">        :disposition =&gt; &quot;attachment; filename=visions.csv&quot; </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="26">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
-          <code class="ruby">    </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="28">
-          <span class="hits">1</span>
-          
           <code class="ruby">    def create</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
           <code class="ruby">        @user = current_user</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="30">
+        <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
           <code class="ruby">        @post = @user.posts.create!(post_params)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="31">
+        <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
           <code class="ruby">        @point = Point.where(&#39;variety = ? AND user_id = ?&#39;, &#39;Visions&#39;, current_user.id).first</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
           <code class="ruby">        @point.determine_op_and_update(&#39;add&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">        @maximum_length = Post.validators_on( :content ).first.options[:maximum]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="35">
+        <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
           <code class="ruby">        redirect_to posts_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">    def edit</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="39">
+        <li class="missed" data-hits="0" data-linenumber="24">
           
           
           <code class="ruby">        @post = Post.find(params[:id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="40">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
           <code class="ruby">    def update</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="43">
+        <li class="missed" data-hits="0" data-linenumber="28">
           
           
           <code class="ruby">        @post = Post.find(params[:id])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="44">
+        <li class="missed" data-hits="0" data-linenumber="29">
           
           
           <code class="ruby">        @post.update(post_params)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="45">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">            </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="46">
+        <li class="missed" data-hits="0" data-linenumber="31">
           
           
           <code class="ruby">        flash[:notice] = &quot;Post successfully edited!&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="47">
+        <li class="missed" data-hits="0" data-linenumber="32">
           
           
           <code class="ruby">        redirect_to posts_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="48">
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="49">
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="50">
+        <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
           <code class="ruby">    def destroy</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="51">
+        <li class="missed" data-hits="0" data-linenumber="36">
           
           
           <code class="ruby">        @post = Post.find(params[:id])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="52">
+        <li class="missed" data-hits="0" data-linenumber="37">
           
           
           <code class="ruby">        @comments = @post.comments</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="53">
+        <li class="missed" data-hits="0" data-linenumber="38">
           
           
           <code class="ruby">        @comments.each do |comment|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="54">
+        <li class="missed" data-hits="0" data-linenumber="39">
           
           
           <code class="ruby">           comment.destroy! </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="56">
+        <li class="missed" data-hits="0" data-linenumber="41">
           
           
           <code class="ruby">        @likes = @post.likes</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="57">
+        <li class="missed" data-hits="0" data-linenumber="42">
           
           
           <code class="ruby">        @likes.each do |like|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="58">
+        <li class="missed" data-hits="0" data-linenumber="43">
           
           
           <code class="ruby">           like.destroy! </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="never" data-hits="" data-linenumber="44">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="60">
+        <li class="missed" data-hits="0" data-linenumber="45">
           
           
           <code class="ruby">        @post.destroy!</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="61">
+        <li class="missed" data-hits="0" data-linenumber="46">
           
           
           <code class="ruby">        @point = Point.where(&#39;variety = ? AND user_id = ?&#39;, &#39;Visions&#39;, @post.user.id).first</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="62">
+        <li class="missed" data-hits="0" data-linenumber="47">
           
           
           <code class="ruby">        @point.determine_op_and_update(&#39;sub&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="64">
+        <li class="missed" data-hits="0" data-linenumber="49">
           
           
           <code class="ruby">        redirect_to posts_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="50">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="51">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="52">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def export</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="53">
+          
+          
+          <code class="ruby">        @posts = Post.all</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby">      </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="55">
+          
+          
+          <code class="ruby">        csv_string_visions = CSV.generate do |csv|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="56">
+          
+          
+          <code class="ruby">           csv &lt;&lt; [&quot;User Id&quot;, &quot;Content&quot;, &quot;Date&quot;, &quot;Public&quot;]</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="57">
+          
+          
+          <code class="ruby">           @posts.each do |post|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="58">
+          
+          
+          <code class="ruby">             csv &lt;&lt; [post.user_id, post.content, post.created_at, post.public]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby">           end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby">        end         </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
+          <code class="ruby">        </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="62">
+          
+          
+          <code class="ruby">        send_data csv_string_visions,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby">        :type =&gt; &#39;text/csv; charset=iso-8859-1; header=present&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="64">
+          
+          
+          <code class="ruby">        :disposition =&gt; &quot;attachment; filename=visions.csv&quot; </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="65">
@@ -1975,11 +1975,11 @@
         <div class="source_table" id="7bc597b40817ed0a643629e7c33db3baf9c4f447">
   <div class="header">
     <h3>app/controllers/profiles_controller.rb</h3>
-    <h4><span class="red">59.38 %</span> covered</h4>
+    <h4><span class="red">60.0 %</span> covered</h4>
     <div>
-      <b>32</b> relevant lines. 
-      <span class="green"><b>19</b> lines covered</span> and
-      <span class="red"><b>13</b> lines missed.</span>
+      <b>30</b> relevant lines. 
+      <span class="green"><b>18</b> lines covered</span> and
+      <span class="red"><b>12</b> lines missed.</span>
     </div>
   </div>
   
@@ -2178,88 +2178,88 @@
           <code class="ruby">        @points_sys = Point.where(&#39;user_id = ?&#39;, @viewed_user.id).order(&#39;amount DESC&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="33">
-          <span class="hits">4</span>
-          
-          <code class="ruby">        if current_user.spanish</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="34">
-          
-          
-          <code class="ruby">            render &#39;profiles/show_esp&#39; </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="35">
-          
-          
-          <code class="ruby">        end    </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby">    end    </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
+        <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
           <code class="ruby">    def update</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="39">
+        <li class="missed" data-hits="0" data-linenumber="36">
           
           
           <code class="ruby">        @profile = current_user.profile</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="40">
+        <li class="missed" data-hits="0" data-linenumber="37">
           
           
           <code class="ruby">        @profile.update(profile_params)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="41">
+        <li class="missed" data-hits="0" data-linenumber="38">
           
           
           <code class="ruby">        if current_user.spanish</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="42">
+        <li class="missed" data-hits="0" data-linenumber="39">
           
           
           <code class="ruby">            @profile.check_params(&#39;esp&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby">        else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="44">
+        <li class="missed" data-hits="0" data-linenumber="41">
           
           
           <code class="ruby">            @profile.check_params(&#39;eng&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="45">
+        <li class="never" data-hits="" data-linenumber="42">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="46">
+        <li class="missed" data-hits="0" data-linenumber="43">
           
           
           <code class="ruby">        @profile.save!</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="45">
+          
+          
+          <code class="ruby">        respond_with @profile</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
@@ -2268,25 +2268,7 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="48">
-          
-          
-          <code class="ruby">        respond_with @profile</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="49">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="50">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="51">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby">end</code>
@@ -3859,11 +3841,11 @@
         <div class="source_table" id="a143b4236da0efb242799e6b54a0ab19457c03ed">
   <div class="header">
     <h3>app/controllers/users_controller.rb</h3>
-    <h4><span class="red">66.67 %</span> covered</h4>
+    <h4><span class="red">65.22 %</span> covered</h4>
     <div>
-      <b>21</b> relevant lines. 
-      <span class="green"><b>14</b> lines covered</span> and
-      <span class="red"><b>7</b> lines missed.</span>
+      <b>23</b> relevant lines. 
+      <span class="green"><b>15</b> lines covered</span> and
+      <span class="red"><b>8</b> lines missed.</span>
     </div>
   </div>
   
@@ -3987,109 +3969,109 @@
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">    def index</code>
+          <code class="ruby">    def self.spanish?</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="21">
           
           
-          <code class="ruby">          @users = User.all</code>
+          <code class="ruby">       return self.spanish </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="23">
-          
-          
-          <code class="ruby">        csv_string_users = CSV.generate do |csv|</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="24">
-          
-          
-          <code class="ruby">               csv &lt;&lt; [&quot;Id&quot;, &quot;Username&quot;, &quot;Name&quot;, &quot;Email&quot;]</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="25">
-          
-          
-          <code class="ruby">               @users.each do |user|</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="26">
-          
-          
-          <code class="ruby">                 csv &lt;&lt; [user.id, user.username, user.name, user.email]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
-          <code class="ruby">               end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby">          end         </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="29">
-          
-          
-          <code class="ruby">        </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="30">
-          
-          
-          <code class="ruby">        send_data csv_string_users,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="31">
-          
-          
-          <code class="ruby">        :type =&gt; &#39;text/csv; charset=iso-8859-1; header=present&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="32">
-          
-          
-          <code class="ruby">        :disposition =&gt; &quot;attachment; filename=users.csv&quot; </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="33">
-          
-          
           <code class="ruby">    end    </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="35">
+        <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
-          <code class="ruby">    def edit</code>
+          <code class="ruby">    def index</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="missed" data-hits="0" data-linenumber="25">
+          
+          
+          <code class="ruby">          @users = User.all</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="27">
+          
+          
+          <code class="ruby">        csv_string_users = CSV.generate do |csv|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="28">
+          
+          
+          <code class="ruby">               csv &lt;&lt; [&quot;Id&quot;, &quot;Username&quot;, &quot;Name&quot;, &quot;Email&quot;]</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="29">
+          
+          
+          <code class="ruby">               @users.each do |user|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="30">
+          
+          
+          <code class="ruby">                 csv &lt;&lt; [user.id, user.username, user.name, user.email]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">               end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">          end         </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby">        </code>
         </li>
       
+        <li class="missed" data-hits="0" data-linenumber="34">
+          
+          
+          <code class="ruby">        send_data csv_string_users,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">        :type =&gt; &#39;text/csv; charset=iso-8859-1; header=present&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">        :disposition =&gt; &quot;attachment; filename=users.csv&quot; </code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="37">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">    end    </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">
@@ -4101,7 +4083,7 @@
         <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
-          <code class="ruby">    def update</code>
+          <code class="ruby">    def edit</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="40">
@@ -4113,10 +4095,34 @@
         <li class="never" data-hits="" data-linenumber="41">
           
           
-          <code class="ruby">    end    </code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def update</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby">        </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby">    end    </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby">end</code>
@@ -5599,11 +5605,11 @@
         <div class="source_table" id="c6d0e3b485e8cf0b5293a358c243f579f8eb9285">
   <div class="header">
     <h3>app/models/user.rb</h3>
-    <h4><span class="red">80.0 %</span> covered</h4>
+    <h4><span class="red">75.0 %</span> covered</h4>
     <div>
-      <b>45</b> relevant lines. 
+      <b>48</b> relevant lines. 
       <span class="green"><b>36</b> lines covered</span> and
-      <span class="red"><b>9</b> lines missed.</span>
+      <span class="red"><b>12</b> lines missed.</span>
     </div>
   </div>
   
@@ -5835,250 +5841,268 @@
         <li class="missed" data-hits="0" data-linenumber="38">
           
           
-          <code class="ruby">          user.avatar = process_facebook_image(auth.uid, &quot;large&quot;)</code>
+          <code class="ruby">          processed_uri = process_uri(auth.info.image)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="missed" data-hits="0" data-linenumber="39">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">          user.avatar = URI.parse(processed_uri)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="40">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="42">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="43">
+        <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
           <code class="ruby">  def public_posts</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="44">
+        <li class="covered" data-hits="4" data-linenumber="45">
           <span class="hits">4</span>
           
           <code class="ruby">    self.posts.where(&#39;public = ?&#39;, true).order(&#39;created_at DESC&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="45">
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby">  end  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="46">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="47">
+        <li class="covered" data-hits="1" data-linenumber="48">
           <span class="hits">1</span>
           
           <code class="ruby">  def public_tagged_posts</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="48">
+        <li class="covered" data-hits="4" data-linenumber="49">
           <span class="hits">4</span>
           
           <code class="ruby">    self.tagged_posts.where(&#39;public = ?&#39;, true).order(&#39;created_at DESC&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="49">
+        <li class="never" data-hits="" data-linenumber="50">
           
           
           <code class="ruby">  end  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="51">
+        <li class="covered" data-hits="1" data-linenumber="52">
           <span class="hits">1</span>
           
           <code class="ruby">  def liked?(post)</code>
         </li>
       
-        <li class="covered" data-hits="84" data-linenumber="52">
+        <li class="covered" data-hits="84" data-linenumber="53">
           <span class="hits">84</span>
           
           <code class="ruby">    if post.classname == &#39;post&#39;</code>
         </li>
       
-        <li class="covered" data-hits="45" data-linenumber="53">
+        <li class="covered" data-hits="45" data-linenumber="54">
           <span class="hits">45</span>
           
           <code class="ruby">      !Like.find_by(:post_id =&gt; post.id, :user_id =&gt; self.id).nil?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="39" data-linenumber="55">
+        <li class="covered" data-hits="39" data-linenumber="56">
           <span class="hits">39</span>
           
           <code class="ruby">      !Like.find_by(:tagged_post_id =&gt; post.id, :user_id =&gt; self.id).nil?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="57">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="58">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="59">
+        <li class="covered" data-hits="1" data-linenumber="60">
           <span class="hits">1</span>
           
           <code class="ruby">  def helped?(post)</code>
         </li>
       
-        <li class="covered" data-hits="84" data-linenumber="60">
+        <li class="covered" data-hits="84" data-linenumber="61">
           <span class="hits">84</span>
           
           <code class="ruby">    if post.classname == &#39;post&#39;</code>
         </li>
       
-        <li class="covered" data-hits="45" data-linenumber="61">
+        <li class="covered" data-hits="45" data-linenumber="62">
           <span class="hits">45</span>
           
           <code class="ruby">      !Help.find_by(:post_id =&gt; post.id, :user_id =&gt; self.id).nil?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="62">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="39" data-linenumber="63">
+        <li class="covered" data-hits="39" data-linenumber="64">
           <span class="hits">39</span>
           
           <code class="ruby">      !Help.find_by(:tagged_post_id =&gt; post.id, :user_id =&gt; self.id).nil?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="65">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="66">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="67">
+        <li class="covered" data-hits="1" data-linenumber="68">
           <span class="hits">1</span>
           
           <code class="ruby">  def inspired?(post)</code>
         </li>
       
-        <li class="covered" data-hits="84" data-linenumber="68">
+        <li class="covered" data-hits="84" data-linenumber="69">
           <span class="hits">84</span>
           
           <code class="ruby">    if post.classname == &#39;post&#39;</code>
         </li>
       
-        <li class="covered" data-hits="45" data-linenumber="69">
+        <li class="covered" data-hits="45" data-linenumber="70">
           <span class="hits">45</span>
           
           <code class="ruby">      !Inspire.find_by(:post_id =&gt; post.id, :user_id =&gt; self.id).nil?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="71">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="39" data-linenumber="71">
+        <li class="covered" data-hits="39" data-linenumber="72">
           <span class="hits">39</span>
           
           <code class="ruby">      !Inspire.find_by(:tagged_post_id =&gt; post.id, :user_id =&gt; self.id).nil?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="never" data-hits="" data-linenumber="75">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="75">
+        <li class="covered" data-hits="1" data-linenumber="76">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="76">
+        <li class="covered" data-hits="1" data-linenumber="77">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.process_facebook_image(uid, type) </code>
+          <code class="ruby">  def self.process_uri(uri)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="77">
+        <li class="missed" data-hits="0" data-linenumber="78">
           
           
-          <code class="ruby">    &quot;https://graph.facebook.com/#{uid}/picture?type=#{type}&quot;</code>
+          <code class="ruby">    avatar_url = URI.parse(uri)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="78">
+        <li class="missed" data-hits="0" data-linenumber="79">
           
           
-          <code class="ruby">  end  </code>
+          <code class="ruby">    avatar_url.scheme = &#39;https&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="79">
+        <li class="missed" data-hits="0" data-linenumber="80">
+          
+          
+          <code class="ruby">    avatar_url.to_s &lt;&lt; &quot;?type=large&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="81">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="82">
           
           
           <code class="ruby">end</code>

@@ -1,4 +1,8 @@
 %div{:class => "points_and_level"}
-    %p{:class => "level", :id => "#{point.variety}"}= "LEVEL #{point.level}"
-    %p{:class => "amounts"}= "#{point.amount}  Posts about #{point.variety}"
+    - if current_user.spanish?
+        %p{:class => "level", :id => "#{point.variety}"}= "NIVEL  #{point.level}"
+        %p{:class => "amounts"}= "#{point.amount}  mensajes sobre #{point.variety}"
+    - else
+        %p{:class => "level", :id => "#{point.variety}"}= "LEVEL #{point.level}"
+        %p{:class => "amounts"}= "#{point.amount}  Posts about #{point.variety}"
 %br

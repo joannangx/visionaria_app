@@ -7,11 +7,17 @@
             
         %div{:class => "about_me"}
             %p{:class => "prof_user"}= @viewed_user.username 
-            %b{:class => "loc_label"}Location: 
+            - if current_user.spanish?
+                %b{:class => "loc_label"} Locación: 
+            - else
+                %b{:class => "loc_label"}Location: 
             = @viewed_user.location
             %br
             %p 
-                %b{:class => "prof_label"} Info
+                - if current_user.spanish?
+                    %b{:class => "prof_label"} Información
+                - else
+                    %b{:class => "prof_label"} Info
                 - if @owned
                     %div{:class => "edit_input_wrap"}
                         %p= best_in_place @profile, :info, :class => "info_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
@@ -19,7 +25,10 @@
                     %div{:class => "input_wrap"}
                         %p= @info
             %p 
-                %b{:class => "prof_label"} What Motivates Me...
+                - if current_user.spanish?
+                    %b{:class => "prof_label"} Lo que me motiva...
+                - else
+                    %b{:class => "prof_label"} What Motivates Me...
                 - if @owned
                     %div{:class => "edit_input_wrap"}
                         %p= best_in_place @profile, :motivations, :class => "motivs_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
@@ -27,7 +36,10 @@
                     %div{:class => "input_wrap"}
                         %p= @motivations
             %p 
-                %b{:class => "prof_label"} My Top Community Priorities...
+                - if current_user.spanish?
+                    %b{:class => "prof_label"} Mis prioridades comunitarias...
+                - else
+                    %b{:class => "prof_label"} My Top Community Priorities...
                 - if @owned
                     %div{:class => "edit_input_wrap"}
                         %p= best_in_place @profile, :priorities, :class => "prios_put", :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', :url => profile_path
@@ -37,7 +49,10 @@
     %br
     //%div{:class => "user_posts_wrap"}
     %div{:class => "user_tabs"}
-        %a{:href =>"#", :class => "points tab", :id => "tab1"} POINTS
+        - if current_user.spanish?
+            %a{:href =>"#", :class => "points tab", :id => "tab1"} PUNTOS
+        - else
+            %a{:href =>"#", :class => "points tab", :id => "tab1"} POINTS
         %a{:href =>"#", :class => "posts tab", :id => "tab2"} YO
         %a{:href =>"#", :class => "tagged tab", :id => "tab3"} PROGRESO
         %a{:href =>"#", :class => "journal tab", :id => "tab4"} JOURNAL
@@ -63,7 +78,6 @@
         %br
     %div{:class => "profile_tab", :id => "my_journal"}
         %br
-        COMING SOON
         %br
         %br
         %br

@@ -17,6 +17,10 @@ class UsersController < ApplicationController
         redirect_to(:back)
     end    
     
+    def self.spanish?
+       return self.spanish 
+    end    
+    
     def index
           @users = User.all
 
