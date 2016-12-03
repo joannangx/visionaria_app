@@ -11,6 +11,7 @@
         %div{:class => "privacy"}
             = label :post, :public, 'Private'
             = radio_button :post, :public, false
+            //= check_box_tag :post, :public, false
 
         %div{:class => "post_submit"}
             = submit_tag 'Submit'

@@ -47,6 +47,7 @@ body {
     text-align: center;
     float: left;
     padding-top: 15px;
+    margin-right: 20px;
 }
 
 .user_image {
@@ -279,7 +280,10 @@ a.profile_link {
 .comments_link {
     width: 18px;
     height: 18px;
-    float: right;
+}
+
+.comments_links {
+    float: right;  
 }
 
 .comments_link:hover {

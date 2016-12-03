@@ -24,7 +24,9 @@
             %span.helps_count{"data-id" => "#{post.id}"}= post.helps.count
             = toggle_inspire_button(post,current_user)
             %span.inspires_count{"data-id" => "#{post.id}"}= post.inspires.count
-            = image_tag "comment-round.png", :class => 'comments_link'
+            %div{:class => "comments_links"}
+                = image_tag "comment-round.png", :class => 'comments_link'
+                = post.comments.count
         %br
         %section{:class => 'comment_section'}
             - post.comments.each do |c|
