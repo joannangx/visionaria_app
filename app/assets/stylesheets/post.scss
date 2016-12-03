@@ -256,12 +256,20 @@ a.profile_link {
     margin-left: 5px;
 }
 
+textarea {
+    border: 0;
+    outline: none;
+    background: transparent;
+    border-bottom: 2px solid gray;
+    resize: none;
+}
+
 .tutorial {
     color: #1a3035;
     background: #8fcad8;
-    width: 55%;
+    width: 52%;
     margin: auto;
-    padding: 1px 7px;
+    padding: 1px 23px;
 }
 
 .tutorial_head {
@@ -279,7 +287,7 @@ a.profile_link {
     color: #D8E5F2;
 }
 
-.tutorial_bold {
+.tutorial_bold, .tutorial_label {
     font-weight: bold;
 }
 
