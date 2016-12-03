@@ -34,8 +34,6 @@ class User < ActiveRecord::Base
         user.username = auth.info.name
         user.password = Devise.friendly_token[0,20]
         user.name = auth.info.name
-        puts "HELLOOOOO WWOOOORRRLLLDDD"
-        puts auth.info.image
         if (auth.provider == "facebook")
           uri = process_uri(auth.info.image)
           user.avatar = URI.parse(processed_uri)
@@ -76,7 +74,7 @@ class User < ActiveRecord::Base
   end
 
   private
-  def self.process_uri(uri, provider)
+  def self.process_uri(uri)
     avatar_url = URI.parse(uri)
     avatar_url.scheme = 'https'
       avatar_url.to_s << "?type=large"
