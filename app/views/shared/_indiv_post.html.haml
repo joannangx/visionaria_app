@@ -33,7 +33,8 @@
             %span.inspires_count{"data-id" => "#{post.id}"}= post.inspires.count
             %div{:class => "comments_links"}
                 = image_tag "comment-round.png", :class => 'comments_link'
-                = post.comments.count
+                %span{:class => "comments_count"}
+                    = post.comments.count
         %br
         %section{:class => 'comment_section'}
             - post.comments.each do |c|
