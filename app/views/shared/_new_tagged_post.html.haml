@@ -1,15 +1,21 @@
 %div{:class => "new_post_form"}
     = form_tag :action => 'create', :method => :post do
         %div{:class => "content_label"}
-            %p{:class => "tutorial_label"} MAKE IT RELEVANT & ACHIEVEABLE
             - if current_user.spanish?
-                = label :tagged_post, :content, 'Tus pensamientos'
+                %p{:class => "tutorial_label"} HÁGALO PERTINENTE Y LOGRABLE
+            - else
+                %p{:class => "tutorial_label"} MAKE IT RELEVANT & ACHIEVABLE
+            - if current_user.spanish?
+                = label :tagged_post, :content, 'Comparta una observación, oportunidad o innovación que ve acerca de...'
             - else
                 = label :tagged_post, :content, 'Share an observation, opportunity, or innovation you see about...'
         %br
         = text_area :tagged_post, :content, :maxlength => 140, :id => 'content_area'
-        %div{:class => "chars_remaining"} [<span id="counter" data-maximum-length="<%= @maximum_length %>">#{@maximum_length}</span> characters remaining]
-        
+        %div{:class => "chars_remaining"} 
+            - if current_user.spanish?
+                [<span id="counter" data-maximum-length="<%= @maximum_length %>">#{@maximum_length}</span> caracteres restantes]
+            - else
+                [<span id="counter" data-maximum-length="<%= @maximum_length %>">#{@maximum_length}</span> characters remaining]
         %div{:class => "sort_labels"}
             - if current_user.spanish? 
                 = label :tagged_post, :category, 'Categoría'

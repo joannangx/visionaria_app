@@ -12,7 +12,3 @@
     = f.label :public, 'Private'
     = f.radio_button :public, false
     = f.submit "Save changes"
-    
-- if user_signed_in?
-    = link_to 'Back to Visions', tagged_posts_path, :method => :get, :class => "submits"
-    = link_to 'Logout', destroy_user_session_path, :method => :delete, :class => "logins"
