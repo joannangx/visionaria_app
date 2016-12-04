@@ -13,6 +13,17 @@
 
 ActiveRecord::Schema.define(version: 20161202054616) do
 
+  create_table "badges_sashes", force: :cascade do |t|
+    t.integer  "badge_id"
+    t.integer  "sash_id"
+    t.boolean  "notified_user", default: false
+    t.datetime "created_at"
+  end
+
+  add_index "badges_sashes", ["badge_id", "sash_id"], name: "index_badges_sashes_on_badge_id_and_sash_id"
+  add_index "badges_sashes", ["badge_id"], name: "index_badges_sashes_on_badge_id"
+  add_index "badges_sashes", ["sash_id"], name: "index_badges_sashes_on_sash_id"
+
   create_table "comments", force: :cascade do |t|
     t.string   "username"
     t.text     "body"
@@ -59,6 +70,39 @@ ActiveRecord::Schema.define(version: 20161202054616) do
   add_index "likes", ["tagged_post_id"], name: "index_likes_on_tagged_post_id"
   add_index "likes", ["user_id"], name: "index_likes_on_user_id"
 
+  create_table "merit_actions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "action_method"
+    t.integer  "action_value"
+    t.boolean  "had_errors",    default: false
+    t.string   "target_model"
+    t.integer  "target_id"
+    t.text     "target_data"
+    t.boolean  "processed",     default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "merit_activity_logs", force: :cascade do |t|
+    t.integer  "action_id"
+    t.string   "related_change_type"
+    t.integer  "related_change_id"
+    t.string   "description"
+    t.datetime "created_at"
+  end
+
+  create_table "merit_score_points", force: :cascade do |t|
+    t.integer  "score_id"
+    t.integer  "num_points", default: 0
+    t.string   "log"
+    t.datetime "created_at"
+  end
+
+  create_table "merit_scores", force: :cascade do |t|
+    t.integer "sash_id"
+    t.string  "category", default: "default"
+  end
+
   create_table "points", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "amount",     default: 0
@@ -84,14 +128,20 @@ ActiveRecord::Schema.define(version: 20161202054616) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
-    t.text     "info",        default: ""
-    t.text     "motivations", default: ""
-    t.text     "priorities",  default: ""
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "location"
+    t.text     "info",        default: "Click on text to edit user info.",        null: false
+    t.text     "motivations", default: "Click on text to edit user motivations.", null: false
+    t.text     "priorities",  default: "Click on text to edit user priorities.",  null: false
+    t.datetime "created_at",                                                      null: false
+    t.datetime "updated_at",                                                      null: false
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
+
+  create_table "sashes", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tagged_posts", force: :cascade do |t|
     t.datetime "created_at",                null: false
@@ -103,6 +153,8 @@ ActiveRecord::Schema.define(version: 20161202054616) do
     t.integer  "user_id"
     t.integer  "likes"
     t.boolean  "public",     default: true
+    t.integer  "sash_id"
+    t.integer  "level",      default: 0
   end
 
   add_index "tagged_posts", ["user_id"], name: "index_tagged_posts_on_user_id"
@@ -135,16 +187,19 @@ ActiveRecord::Schema.define(version: 20161202054616) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.integer  "sash_id"
+    t.integer  "level",                  default: 0
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.boolean  "is_spanish",             default: false
     t.boolean  "spanish",                default: false
     t.string   "location",               default: "Unknown"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["username"], name: "index_users_on_username"
+  add_index "users", ["username"], name: "index_users_on_username", unique: true
 
 end
