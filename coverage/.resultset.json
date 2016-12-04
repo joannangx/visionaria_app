@@ -793,12 +793,12 @@
         null,
         null,
         1,
-        6,
+        7,
         null,
         null,
         null,
         1,
-        1,
+        4,
         null
       ],
       "/home/ubuntu/workspace/visionaria_app/features/step_definitions/user_steps.rb": [
@@ -1683,6 +1683,6 @@
         null
       ]
     },
-    "timestamp": 1480758422
+    "timestamp": 1480846081
   }
 }
