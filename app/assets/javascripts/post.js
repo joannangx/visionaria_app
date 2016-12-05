@@ -11,8 +11,6 @@ $(document).ready(function() {
    content_area.keyup(function() {
       counter.text(max_length - $(this).val().length);
    });
-   
-
 });
 
 jQuery(function() {
@@ -40,5 +38,11 @@ jQuery(function() {
     $('.comments_link').click(function() {
       return $(this).parent().parent().siblings('.comment_section').slideToggle();
     });
+  });
+});
+
+jQuery(function() {
+  $(document).ready(function() {
+    return $('.edit_content').hide();
   });
 });

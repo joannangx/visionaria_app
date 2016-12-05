@@ -65,7 +65,7 @@
     %div{:class => "profile_tab", :id => "my_posts"}
         %br
         - @posts.each do |p|
-            = render 'shared/indiv_post', :post => p
+            = render 'posts/post', :post => p
         %br
         %br
         %br

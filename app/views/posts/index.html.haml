@@ -10,10 +10,8 @@
 
 = render 'shared/new_post'
 
-%br
-- @posts.each do |p|
-    = render 'shared/indiv_post', :post => p
-</div>
+%div{:class => "posts", :id => "all_posts"}
+    = render @posts
 
 %div{:class => "facebook_share"}
     - if current_user.spanish

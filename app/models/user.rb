@@ -38,6 +38,7 @@ class User < ActiveRecord::Base
           processed_uri = process_uri(auth.info.image)
           user.avatar = URI.parse(processed_uri)
         end
+        user.save!
     end
   end
   

@@ -1,0 +1,6 @@
+$('#post_<%= @post.id %>').fadeOut(1000, function() {
+    $(this).remove();
+    $("#all_posts").prepend('<%= j render(@post) %>');
+    $('#post_edit_form_<%= @post.id %>').hide();
+    $("#post_<%= @post.id %>").hide().fadeIn(1000);
+});

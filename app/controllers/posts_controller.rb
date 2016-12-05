@@ -17,19 +17,31 @@ class PostsController < ApplicationController
         @point.determine_op_and_update('add')
         @maximum_length = Post.validators_on( :content ).first.options[:maximum]
 
-        redirect_to posts_path
+        respond_to do |format|
+            format.html { redirect_to posts_path }
+            format.js
+        end
     end
     
     def edit
         @post = Post.find(params[:id])
+        
+        respond_to do |format|
+            format.html { redirect_to edit_post_path(@post) }
+            format.js
+        end
     end
     
     def update
         @post = Post.find(params[:id])
         @post.update(post_params)
             
-        flash[:notice] = "Post successfully edited!"
-        redirect_to posts_path
+        #flash[:notice] = "Post successfully edited!"
+        
+        respond_to do |format|
+            format.html { redirect_to posts_path }
+            format.js
+        end
     end
     
     def destroy
@@ -46,7 +58,10 @@ class PostsController < ApplicationController
         @point = Point.where('variety = ? AND user_id = ?', 'Visions', @post.user.id).first
         @point.determine_op_and_update('sub')
 
-        redirect_to posts_path
+        respond_to do |format|
+            format.html { redirect_to posts_path }
+            format.js
+        end
     end
     
     def export

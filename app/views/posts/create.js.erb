@@ -1,0 +1,3 @@
+$(".post_content").val('');
+$("#all_posts").prepend('<%= j render(@post) %>');
+$("#post_<%= @post.id %>").hide().fadeIn(1000);
