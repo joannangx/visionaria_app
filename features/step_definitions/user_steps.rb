@@ -45,8 +45,13 @@ Given(/^pending$/) do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then(/^I should see a notification for it on my navigation bar$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should get a notification for a "([^"]*)" by "([^"]*)"$/) do |action, username|
+  case action
+  when "like"
+    step %Q{I should see "#{username} liked your post!"}
+  when "comment"
+    step %Q{I should see "#{username} commented on your post!"}
+  end
 end
 
 When(/^I click "([^"]*)"$/) do |arg1|

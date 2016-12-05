@@ -38,12 +38,27 @@ Given(/^I press "([^"]*)" on the post with content "([^"]*)"$/) do |arg1, arg2|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When(/^someone comments on my post$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^I comment on the (un)?tagged post$/) do |not_tagged|
+  if !not_tagged
+    step %Q{I follow "PROGRESO"}
+    step %Q{I click the comments image}
+    step %Q{I fill in "taggedcomment[body]" with "Good"}
+    step %Q(I press "Create")
+  else
+    step %Q{I follow "YO"}
+    step %Q{I click the comments image}
+    step %Q{I fill in "comment[body]" with "Good"}
+    step %Q(I press "Create")
+  end
 end
 
-When(/^someone likes my post$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^I like the (un)?tagged post$/) do |not_tagged|
+  if !not_tagged
+    step %Q{I follow "PROGRESO"}
+  else
+    step %Q{I follow "YO"}
+  end
+  step %Q{I follow image link "like"}
 end
 
 Then(/^I confirm my deletion$/) do

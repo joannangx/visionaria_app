@@ -13,6 +13,10 @@ class InspiresController < ApplicationController
         end
         @inspire.user_id = current_user.id
         @inspire.save!
+        if @inspire.user_id != @post.user_id
+            @notification_params = {action: "inspire", post: params[:name], action_id: @inspire.id, user_id: @post.user_id, post_id: @post.id}
+            @notification = Notification.create!(@notification_params)
+        end
     end
     
     def destroy
