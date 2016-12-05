@@ -14,7 +14,7 @@ class AdminsController < UsersController
     end
   end
 
-  def delete_other_posts
+  def send_notification
   end
 
 end

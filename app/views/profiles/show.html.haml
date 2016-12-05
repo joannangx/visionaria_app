@@ -7,6 +7,9 @@
             
         %div{:class => "about_me"}
             %p{:class => "prof_user"}= @viewed_user.username 
+            - if current_user.admin
+                %p= link_to image_tag("notif.png", :class => "user_notify"), new_notification_path({:id => @viewed_user.id}), :id => "notify_#{@viewed_user.id}", :remote => true
+                = render 'shared/new_notification'
             - if current_user.spanish?
                 %b{:class => "loc_label"} Locación: 
             - else

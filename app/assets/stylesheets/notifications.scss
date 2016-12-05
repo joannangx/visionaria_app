@@ -1,0 +1,32 @@
+.notif_delete_buttons {
+    width: 15px;
+    height: 15px;
+}
+
+.notification_show {
+    background-color: #eaebed;
+    padding: 25px 30px;
+    width: 60%;
+    margin: auto;
+    border-bottom: 1px solid gray;
+    color: #3d3f42;
+}
+
+.notif_delete {
+    float: right;
+}
+
+a.notif_post_link, a.notif_user_link {
+    text-decoration: none;
+    color: #88898c;
+}
+
+.notif_admin {
+    color: #d11717;
+    font-weight: bold;
+}
+
+.user_notify {
+    width: 35px;
+    height: 35px;
+}

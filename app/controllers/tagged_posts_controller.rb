@@ -50,6 +50,10 @@ class TaggedPostsController < ApplicationController
         end
     end
     
+    def show
+        @post = TaggedPost.find(params[:id])
+    end    
+    
     def edit
         @post = TaggedPost.find(params[:id])
         

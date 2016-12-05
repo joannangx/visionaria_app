@@ -11,6 +11,7 @@ jQuery ->
         $('#my_posts').hide();
         $('#my_tagged').hide();
         $('#my_journal').hide();
+        $('.admin_message').hide();
     return
 
 jQuery ->    

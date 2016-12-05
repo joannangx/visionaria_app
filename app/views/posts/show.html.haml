@@ -1,8 +1,7 @@
 = render 'shared/header'
 %br
 %br
-= render 'shared/indiv_post', :post => @post
-
-- if user_signed_in?
-    = link_to 'Back to Visions', posts_path, :method => :get, :class => "submits"
-    = link_to 'Logout', destroy_user_session_path, :method => :delete, :class => "logins"
+%br
+%br
+%br
+= render 'posts/post', :post => @post

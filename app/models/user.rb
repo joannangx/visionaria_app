@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_many :helps, :source => :posts, :dependent => :destroy
   has_many :inspires, :source => :posts, :dependent => :destroy
   has_one :profile, :dependent => :destroy
+  has_many :notifications, :dependent => :destroy
 
   validates_presence_of :username
   
