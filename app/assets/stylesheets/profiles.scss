@@ -15,13 +15,14 @@
 .profile_image_wrap {
     display: block;
     margin: auto;
-    width: 40%;
+    width: 30%;
 }
 
 .profile_image {
-    border: 1px solid;
     width: 100%;
     height: auto;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .24);
 }
 
 .prof_user {
@@ -46,13 +47,13 @@
 
 .edit_input_wrap, .input_wrap {
     padding: 5px 20px 5px 20px;
-    margin-left: 20px;
     margin-right: 20px;
     border-radius: 2px;
 }
 
 .edit_input_wrap {
-    background: #80b5ac;
+    background: white;
+    color: gray;
 }
 
 .input_wrap {
@@ -92,7 +93,7 @@
     width: 25%;
     font-size: 15px;
     text-decoration: none;
-    color: gray;
+    color: #1879D8;
 }
 
 .profile_tab {
@@ -106,13 +107,13 @@
 }
 
 .tab:hover {
-    color: #42A3AC;
-    border-bottom: 3px solid #42A3AC;
+    color: #1879D8;
+    border-bottom: 3px solid #1879D8;
 }
 
 #tab1.active, #tab2.active, #tab3.active, #tab4.active {
-    color: #42A3AC;
-    border-bottom: 3px solid #42A3AC;
+    color: #1879D8C;
+    border-bottom: 3px solid #1879D8;
 }
 
 .points_and_level {

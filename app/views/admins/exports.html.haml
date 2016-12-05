@@ -2,14 +2,17 @@
 %br
 %br
 %br
-%div{:class => "export_links", :id => "export_users"}
-    %h Click to export User data
-    = link_to "Export User Data", users_path(format: :csv)
-%br
-%div{:class => "export_links", :id => "export_posts"}
-    %h Click to export Vision post data 
-    = link_to "Export YO Post Data", posts_export_path(format: :csv)
-%br
-%div{:class => "export_links", :id => "export_tagged"}
-    %h Click to export Goal post data
-    = link_to "Export PROGRESO Post Data", tagged_export_path(format: :csv)
+%div{:id => "downloads_container"}
+    %div{:id => "downloads"} Downloads
+    %div{:id => "downloads_descrption"} Files download as .csv
+    %div{:class => "export_links", :id => "export_users"}
+        %h User Data
+        = link_to image_tag("download.png", :class => "download_button"), users_path(format: :csv)
+    %br
+    %div{:class => "export_links", :id => "export_posts"}
+        %h Vision Posts 
+        = link_to image_tag("download.png", :class => "download_button"), posts_export_path(format: :csv)
+    %br
+    %div{:class => "export_links", :id => "export_tagged"}
+        %h Goal Posts
+        = link_to image_tag("download.png", :class => "download_button"), tagged_export_path(format: :csv)
