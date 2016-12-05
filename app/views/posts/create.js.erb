@@ -3,6 +3,6 @@ $("#all_posts").prepend('<%= j render(@post) %>');
 $('#post_<%= @post.id %> #post_conts_<%= @post.id %> #post_comments_<%= @post.id %> form div .comments_link').on('click', function() {
       return $(this).parent().parent().siblings('.comment_section').slideToggle();
 });
-$("#post_comment_<%= @post.id %>").hide();
+$("#post_all_comms_<%= @post.id %>").hide();
 $('#post_edit_form_<%= @post.id %>').hide();
 $("#post_<%= @post.id %>").hide().fadeIn(1000);

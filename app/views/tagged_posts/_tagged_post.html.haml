@@ -41,20 +41,10 @@
                     = tagged_post.taggedcomments.count
         %br
         %section{:class => 'comment_section', :id => "tagged_post_comment_#{tagged_post.id}"}
-            - tagged_post.taggedcomments.each do |c|
-                = render 'shared/indiv_comment', :comment => c 
-            = form_for [tagged_post, tagged_post.taggedcomments.new] do |f|
-                - if current_user.spanish?
-                    = text_field :taggedcomment, :body, rows: 2, cols:30, placeholder: "¡Escribe tu comentario aquí!"
-                - else
-                    = text_field :taggedcomment, :body, rows: 2, cols:30, placeholder: "Write your comment here!"
-                = check_box_tag :anonymous, 0
-                - if current_user.spanish?
-                    = label_tag :anonymous, "Anónimo"
-                    = submit_tag 'Crear'
-                - else
-                    = label_tag :anonymous, "Anonymous"
-                    = submit_tag 'Create'
+            %div{:class => "tagged_post_comments", :id => "tagged_post_comms_#{tagged_post.id}"}
+                - @taggedcomments = tagged_post.taggedcomments
+                = render @taggedcomments
+            = render 'shared/new_taggedcomment', :tagged_post => tagged_post
 %div{:class => "post_spaces", :id => "tagged_post_space_#{tagged_post.id}"}
     %br
     %br

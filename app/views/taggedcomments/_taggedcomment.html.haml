@@ -1,0 +1,8 @@
+%div{:class => "taggedcomment", :id => "taggedcomment_#{taggedcomment.id}" }
+    %div{:class => "user" }
+        %p= link_to "#{taggedcomment.username}", profile_path(taggedcomment.user_id), :class => "comment_profiles"
+    %div{:class => "body"}
+        %p= taggedcomment.body
+    %div{:class => "timestamp" }
+        %p= taggedcomment.created_at
+%br

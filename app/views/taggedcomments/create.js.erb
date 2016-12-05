@@ -1,0 +1,3 @@
+$(".comment_body").val('');
+$("#tagged_post_comms_<%= @taggedpost.id %>").append('<%= j render(@taggedcomment) %>');
+$("#taggedcomment_<%= @taggedcomment.id %>").hide().slideDown();

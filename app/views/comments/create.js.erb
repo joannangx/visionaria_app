@@ -1,0 +1,4 @@
+$(".comment_body").val('');
+console.log($("#post_comms_<%= @post.id %>"));
+$("#post_comms_<%= @post.id %>").append('<%= j render(@comment) %>');
+$("#comment_<%= @comment.id %>").hide().slideDown();

@@ -1,6 +1,7 @@
 %div{:class => "comment" }
     %div{:class => "user" }
-        %p= comment.username
+        %p= link_to "#{comment.username}", profile_path(comment.user)
+        //= link_to "#{post.find_username}", profile_path(post.user), :class => "profile_link"
     %div{:class => "body"}
         %p= comment.body
     %div{:class => "timestamp" }

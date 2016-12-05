@@ -10,8 +10,13 @@ class CommentsController < ApplicationController
         else
             @comment.username = current_user.username
         end
+        @comment.user_id = current_user.id
         @comment.save
-        redirect_to posts_path
+        
+        respond_to do |format|
+            format.html { redirect_to posts_path }
+            format.js
+        end
     end
     
     def index

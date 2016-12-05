@@ -72,7 +72,7 @@
     %div{:class => "profile_tab", :id => "my_tagged"}
         %br
         - @tagged.each do |p|
-            = render 'shared/indiv_tagged_post', :post => p
+            = render 'tagged_posts/tagged_post', :tagged_post => p
         %br
         %br
         %br

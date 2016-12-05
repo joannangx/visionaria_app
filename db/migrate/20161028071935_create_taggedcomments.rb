@@ -4,6 +4,7 @@ class CreateTaggedcomments < ActiveRecord::Migration
       t.string :username
       t.text :body
       t.references :tagged_post, index: true, foreign_key: true
+      t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false
     end

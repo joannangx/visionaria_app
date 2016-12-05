@@ -10,8 +10,13 @@ class TaggedcommentsController < ApplicationController
         else
             @taggedcomment.username = current_user.username
         end
+        @taggedcomment.user_id = current_user.id
         @taggedcomment.save
-        redirect_to tagged_posts_path
+        
+        respond_to do |format|
+            format.html { redirect_to tagged_posts_path }
+            format.js
+        end
     end
     
     def index

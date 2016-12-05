@@ -114,16 +114,16 @@ body {
     margin-top: 30px;
 }
 
-.comment {
+.comment, .taggedcomment {
     border-bottom: 1px solid rgba(133, 162, 154, 0.33);
 }
 
-.comment .body p {
+.comment .body p, .taggedcomment .body p {
     padding: 0px;
     margin: 0px;
 }
 
-.comment .user {
+.comment .user, .taggedcomment .user {
     background: none;
     padding: 0px;
     margin: 0px;
