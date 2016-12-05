@@ -24,10 +24,10 @@ Feature: Create admin users in order to moderate site
     And   I am on the homepage
       
   Scenario: I can delete visions made by other users
-    When I look at the posts
-    Then I should see "Delete"
+    When  I look at the posts
+    Then  I should see the image "Delete"
     
   Scenario: I can delete goals made by other users
-    When I look at the tagged posts
-    Then I should see "Delete"
+    When  I look at the tagged posts
+    Then  I should see the image "Delete"
     

@@ -30,9 +30,6 @@ class ProfilesController < ApplicationController
         @posts = @viewed_user.public_posts
         @tagged = @viewed_user.public_tagged_posts
         @points_sys = Point.where('user_id = ?', @viewed_user.id).order('amount DESC')
-        if current_user.spanish
-            render 'profiles/show_esp' 
-        end    
     end    
     
     def update

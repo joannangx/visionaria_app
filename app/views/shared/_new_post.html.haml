@@ -1,16 +1,28 @@
-%br
-%br
 %div{:class => "new_post_form"}
     = form_tag :action => 'create', :method => :post do
         %div{:class => "content_label"}
-            = label :post, :content, 'Your Thoughts'
+            %p{:class => "tutorial_label"} ADELANTE
+            - if current_user.spanish?
+                = label :post, :content, '¿Qué te motiva hoy?'
+            - else
+                = label :post, :content, 'What motivates you today?'
         %br
-        = text_area :post, :content, :maxlength => 140, :id=>'content_area'
-        %div{:class => "chars_remaining"} [<span id="counter" data-maximum-length="<%= @maximum_length %>">#{@maximum_length}</span> characters remaining]
+        = text_area :post, :content, :maxlength => 140, :id=>'content_area', placeholder: "I/YO..."
+        %div{:class => "chars_remaining"} 
+            - if current_user.spanish?
+                [<span id="counter" data-maximum-length="<%= @maximum_length %>">#{@maximum_length}</span> caracteres restantes]
+            - else
+                [<span id="counter" data-maximum-length="<%= @maximum_length %>">#{@maximum_length}</span> characters remaining]
         
         %div{:class => "privacy"}
-            = label :post, :public, 'Private'
+            - if current_user.spanish?
+                = label :post, :public, 'Privado'
+            - else
+                = label :post, :public, 'Private'
             = radio_button :post, :public, false
 
         %div{:class => "post_submit"}
-            = submit_tag 'Submit'
+            - if current_user.spanish?
+                = submit_tag 'Someter'
+            - else
+                = submit_tag 'Submit'

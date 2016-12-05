@@ -10,21 +10,6 @@ class PostsController < ApplicationController
         @posts = Post.where('public = ? OR user_id = ?', true, current_user.id).order('created_at DESC')
     end
     
-    def export
-        @posts = Post.all
-      
-        csv_string_visions = CSV.generate do |csv|
-           csv << ["User Id", "Content", "Date", "Public"]
-           @posts.each do |post|
-             csv << [post.user_id, post.content, post.created_at, post.public]
-           end
-        end         
-        
-        send_data csv_string_visions,
-        :type => 'text/csv; charset=iso-8859-1; header=present',
-        :disposition => "attachment; filename=visions.csv" 
-    end
-    
     def create
         @user = current_user
         @post = @user.posts.create!(post_params)
@@ -66,6 +51,21 @@ class PostsController < ApplicationController
         @point.determine_op_and_update('sub')
 
         redirect_to posts_path
+    end
+    
+    def export
+        @posts = Post.all
+      
+        csv_string_visions = CSV.generate do |csv|
+           csv << ["User Id", "Content", "Date", "Public"]
+           @posts.each do |post|
+             csv << [post.user_id, post.content, post.created_at, post.public]
+           end
+        end         
+        
+        send_data csv_string_visions,
+        :type => 'text/csv; charset=iso-8859-1; header=present',
+        :disposition => "attachment; filename=visions.csv" 
     end
     
     def like

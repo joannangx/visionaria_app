@@ -4,7 +4,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-    background: #F1F1F1;
+    background: #fafafa;
 }
 
 .post, .tag_post {
@@ -47,6 +47,7 @@ body {
     text-align: center;
     float: left;
     padding-top: 15px;
+    margin-right: 20px;
 }
 
 .user_image {
@@ -129,6 +130,10 @@ body {
     color: gray;
 }
 
+form#new_comment.new_comment {
+    text-align: right;
+}
+
 .new_comment input[type=text] {
     margin-top: 5px;
     background: white;
@@ -137,10 +142,20 @@ body {
     border: 1px solid #dddfe2;;
 }
 
-.new_comment, input[type=submit] {
-    text-align: right;
+input[type=submit] {
+    -webkit-appearance: none;
+    padding: 7px 15px;
+    background: white;
+    border: 1px solid #3890E8;
+    box-shadow: none;
+    border-radius: 50px;
+    font-size: 14px;
+    color: #3890E8;
 }
 
+input[type=submit]:hover {
+    cursor: pointer;
+}
 
 .new_taggedcomment input[type=text] {
     margin-top: 5px;
@@ -161,6 +176,13 @@ body {
     padding: 20px;
     position: relative;
     left: -20px;
+}
+
+.comments_count {
+    color: gray;
+    position: relative;
+    top: -3px;
+    margin-left: 1px;
 }
 
 .social-share-button-facebook {
@@ -196,7 +218,13 @@ textarea:focus {
 
 .new_post_form {
     margin: auto;
-    width: 57%;
+    width: 53%;
+    padding: 10px;
+    margin-top: 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    border: 1px solid;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    background: white;
 }
 
 .content_label {
@@ -255,31 +283,52 @@ a.profile_link {
     margin-left: 5px;
 }
 
+textarea {
+    border: 0;
+    outline: none;
+    background: transparent;
+    border-bottom: 1.5px solid rgba(56, 144, 232, 0.68);
+    resize: none;
+    border-radius: 0px;
+}
+
 .tutorial {
     color: #1a3035;
-    background: #8fcad8;
-    width: 55%;
+    background: #fff;
+    width: 51%;
     margin: auto;
-    padding: 1px 7px;
+    padding: 1px 23px;
+    border: 1px solid;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
 .tutorial_head {
     color: #269381;
+    font-size: 19px;
 }
 
 .tutorial_close {
-    color: white;
     text-align: right;
+    color: #3A5F85;
 }
 
 .tutorial_close:hover {
     cursor: pointer;
+    color: #D8E5F2;
+}
+
+.tutorial_bold, .tutorial_label {
+    font-weight: bold;
 }
 
 .comments_link {
     width: 18px;
     height: 18px;
-    float: right;
+}
+
+.comments_links {
+    float: right;  
 }
 
 .comments_link:hover {
@@ -291,4 +340,9 @@ a.profile_link {
     margin-left: 8px;
     font-size: 12px;
     color: #212D38;
+}
+
+.delete, .edit {
+    width: 15px;
+    height: 15px;
 }

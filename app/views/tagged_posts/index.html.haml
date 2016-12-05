@@ -1,23 +1,18 @@
 -#  This file is app/views/tagged_posts/index.html.haml
 <div class="content_wrapper">
 = render 'shared/header_tag'
-
+%br
 %div{:class => "tutorial"}
     %p{:class => "tutorial_head"} Resolve -
-    %p PROGRESO - Progress continues toward global goals. Have you heard? You and your experiences are SO important. Come to the table
+    %span{:class => "tutorial_bold"} PROGRESO - Progress continues toward global goals. 
+    Have you heard? You and your experiences are SO important. Come to the table.
     %p{:class => "tutorial_close"} [CLOSE X]
 
-- if current_user.spanish
-    = render 'shared/new_tagged_post_esp'
-- else
-    = render 'shared/new_tagged_post'
+= render 'shared/new_tagged_post'
 
 %br
 - @taggedposts.each do |p|
-    - if current_user.spanish
-        = render 'shared/indiv_tagged_post_esp', :post => p
-    - else
-        = render 'shared/indiv_tagged_post', :post => p
+    = render 'shared/indiv_tagged_post', :post => p
 </div>
 
 %div{:class => "facebook_share"}

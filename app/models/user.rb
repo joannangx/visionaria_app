@@ -35,7 +35,8 @@ class User < ActiveRecord::Base
         user.password = Devise.friendly_token[0,20]
         user.name = auth.info.name
         if (auth.provider == "facebook")
-          user.avatar = process_facebook_image(auth.uid, "large")
+          processed_uri = process_uri(auth.info.image)
+          user.avatar = URI.parse(processed_uri)
         end
     end
   end
@@ -73,7 +74,9 @@ class User < ActiveRecord::Base
   end
 
   private
-  def self.process_facebook_image(uid, type) 
-    "https://graph.facebook.com/#{uid}/picture?type=#{type}"
-  end  
+  def self.process_uri(uri)
+    avatar_url = URI.parse(uri)
+    avatar_url.scheme = 'https'
+    avatar_url.to_s << "?type=large"
+  end
 end

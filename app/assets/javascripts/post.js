@@ -38,7 +38,7 @@ jQuery(function() {
 jQuery(function() {
   $(document).ready(function() {
     $('.comments_link').click(function() {
-      return $(this).parent().siblings('.comment_section').slideToggle();
+      return $(this).parent().parent().siblings('.comment_section').slideToggle();
     });
   });
 });

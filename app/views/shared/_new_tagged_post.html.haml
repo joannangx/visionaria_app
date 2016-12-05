@@ -1,23 +1,40 @@
-%br
-%br
 %div{:class => "new_post_form"}
     = form_tag :action => 'create', :method => :post do
         %div{:class => "content_label"}
-            = label :tagged_post, :content, 'Your Thoughts'
+            - if current_user.spanish?
+                %p{:class => "tutorial_label"} HÁGALO PERTINENTE Y LOGRABLE
+            - else
+                %p{:class => "tutorial_label"} MAKE IT RELEVANT & ACHIEVABLE
+            - if current_user.spanish?
+                = label :tagged_post, :content, 'Comparta una observación, oportunidad o innovación que ve acerca de...'
+            - else
+                = label :tagged_post, :content, 'Share an observation, opportunity, or innovation you see about...'
         %br
         = text_area :tagged_post, :content, :maxlength => 140, :id => 'content_area'
-        %div{:class => "chars_remaining"} [<span id="counter" data-maximum-length="<%= @maximum_length %>">#{@maximum_length}</span> characters remaining]
-        
+        %div{:class => "chars_remaining"} 
+            - if current_user.spanish?
+                [<span id="counter" data-maximum-length="<%= @maximum_length %>">#{@maximum_length}</span> caracteres restantes]
+            - else
+                [<span id="counter" data-maximum-length="<%= @maximum_length %>">#{@maximum_length}</span> characters remaining]
         %div{:class => "sort_labels"}
-            = label :tagged_post, :category, 'Category'
+            - if current_user.spanish? 
+                = label :tagged_post, :category, 'Categoría'
+            - else
+                = label :tagged_post, :category, 'Category'
             = select :tagged_post, :category, TaggedPost.all_categories
         
             = label :tagged_post, :tag, 'Sustainable UN Goal'
             = select :tagged_post, :tag, TaggedPost.all_un_goals
 
         %div{:class => "privacy"}
-            = label :tagged_post, :public, 'Private'
+            - if current_user.spanish?
+                = label :tagged_post, :public, 'Privado'
+            - else
+                = label :tagged_post, :public, 'Private'
             = radio_button :tagged_post, :public, false
 
         %div{:class => "post_submit"}
-            = submit_tag 'Submit'
+            - if current_user.spanish?
+                = submit_tag 'Someter'
+            - else
+                = submit_tag 'Submit'
