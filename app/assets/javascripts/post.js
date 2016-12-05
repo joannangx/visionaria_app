@@ -35,7 +35,7 @@ jQuery(function() {
 
 jQuery(function() {
   $(document).ready(function() {
-    $('.comments_link').click(function() {
+    $('.comments_link').on('click', function() {
       return $(this).parent().parent().siblings('.comment_section').slideToggle();
     });
   });

@@ -44,19 +44,29 @@ class TaggedPostsController < ApplicationController
         @point = Point.where('variety = ? AND user_id = ?', @post.tag, current_user.id).first
         @point.determine_op_and_update('add')
 
-        redirect_to tagged_posts_path
+        respond_to do |format|
+            format.html { redirect_to tagged_posts_path }
+            format.js
+        end
     end
     
     def edit
         @post = TaggedPost.find(params[:id])
+        
+        respond_to do |format|
+            format.html { redirect_to edit_tagged_post_path(@post) }
+            format.js
+        end
     end
     
     def update
         @post = TaggedPost.find(params[:id])
         @post.update(tagged_post_params)
-            
-        flash[:notice] = "Tagged post successfully edited!"
-        redirect_to tagged_posts_path
+        
+        respond_to do |format|
+            format.html { redirect_to tagged_posts_path }
+            format.js
+        end
     end
     
     def destroy
@@ -73,7 +83,10 @@ class TaggedPostsController < ApplicationController
         @point = Point.where('variety = ? AND user_id = ?', @post.tag, current_user.id).first
         @point.determine_op_and_update('sub')
         
-        redirect_to tagged_posts_path
+        respond_to do |format|
+            format.html { redirect_to tagged_posts_path }
+            format.js
+        end
     end
     
     def like

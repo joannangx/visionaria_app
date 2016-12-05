@@ -1,3 +1,8 @@
 $(".post_content").val('');
 $("#all_posts").prepend('<%= j render(@post) %>');
+$('.comments_link').on('click', function() {
+      return $(this).parent().parent().siblings('.comment_section').slideToggle();
+});
+$("#post_comment_<%= @post.id %>").hide();
+$('#post_edit_form_<%= @post.id %>').hide();
 $("#post_<%= @post.id %>").hide().fadeIn(1000);

@@ -7,9 +7,8 @@
             - if current_user.username == post.find_username
                 = link_to image_tag("delete.png", :class => "delete", :id => "post_delete_#{post.id}"), post, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true
                 = link_to image_tag("edit.png", :class => "edit", :id => "post_edit_#{post.id}"), edit_post_path(post), :remote => true
-                //= link_to image_tag("edit.png", :class => "edit", :id => "post_edit_#{post.id}"), post, :remote => true
             - elsif current_user.admin?
-                = link_to image_tag("delete.png", :class => "delete"), post_path(post), method: :delete, data: { confirm: 'Are you sure?' }
+                = link_to image_tag("delete.png", :class => "delete", :id => "post_delete_#{post.id}"), post, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true
     %div{:class => "post_contents", :id => "post_conts_#{post.id}"}
         %div{:class => "edit_content", :id => "post_edit_form_#{post.id}"}
             = render 'shared/indiv_edit_post', :post => post
@@ -21,8 +20,6 @@
             - else
                 Posted on
             = post.created_at.strftime("%m/%d/%Y at %l:%M%p")
-        //%div{:class => "social-share-button"}
-        //    =social_share_button_tag(post.content, :url => "http://myapp.com/foo/bar")
         %div{:class => "comments", :id => "post_comments_#{post.id}"}
             =form_tag do 
                 = toggle_like_button(post,current_user)
@@ -36,7 +33,7 @@
                     %span{:class => "comments_count"}
                         = post.comments.count
             %br
-            %section{:class => 'comment_section'}
+            %section{:class => 'comment_section', :id => "post_comment_#{post.id}"}
                 - post.comments.each do |c|
                     = render 'shared/indiv_comment', :comment => c 
                 = form_for [post, post.comments.new] do |f|

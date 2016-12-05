@@ -1,0 +1,60 @@
+%div{:class => "tag_post", :id => "tagged_post_#{tagged_post.id}" }
+    %div{:class => "user" }
+        %div{:class => "user_image" }
+            = image_tag(tagged_post.user.avatar.url(:thumb), :class => "post_thumb_profile")
+        %div{:class => "user_name" }     
+            = link_to "#{tagged_post.find_username}", profile_path(tagged_post.user), :class => "profile_link"
+            - if current_user.username == tagged_post.find_username
+                = link_to image_tag("delete.png", :class => "delete", :id => "tagged_post_delete_#{tagged_post.id}"), tagged_post, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true
+                //= link_to image_tag("edit.png", :class => "edit"), edit_tagged_post_path(tagged_post)
+                = link_to image_tag("edit.png", :class => "edit", :id => "tagged_post_edit_#{tagged_post.id}"), edit_tagged_post_path(tagged_post), :remote => true
+            - elsif current_user.admin?
+                = link_to image_tag("delete.png", :class => "delete", :id => "tagged_post_delete_#{tagged_post.id}"), tagged_post, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true
+    %br
+    %div{:class => "tagged_post_contents", :id => "tagged_post_conts_#{tagged_post.id}" }
+        %div{:class => "edit_content", :id => "tagged_post_edit_form_#{tagged_post.id}"}
+            = render 'shared/indiv_edit_tagged_post', :tagged_post => tagged_post
+        %div{:class => "content_wrap" }
+            %div{:class => "filters_tag", :id => "tagged_post_tag_#{tagged_post.id}" }
+                = link_to image_tag("#{tagged_post.tag}.jpg", alt: "#{tagged_post.tag}"), tagged_posts_path(:sort_tag => tagged_post.tag), :class => "tag_sort"
+            %div{:class => "tagged_content", :id => "tagged_post_content_#{tagged_post.id}"}
+                %p= tagged_post.content
+            %div{:class => "filters_cat", :id => "tagged_post_cat_#{tagged_post.id}" }
+                = link_to image_tag("#{tagged_post.category}.png", alt: "#{tagged_post.category}"), tagged_posts_path(:sort_category => tagged_post.category), :class => "tag_sort"
+    %div{:class => "timestamp", :id => "tagged_post_time_#{tagged_post.id}" }
+        - if current_user.spanish?
+            Publicado en
+        - else
+            Posted on
+        = tagged_post.created_at.strftime("%m/%d/%Y at %l:%M%p")
+    %div{:class => "comments", :id => "tagged_post_comments_#{tagged_post.id}"}
+        =form_tag do 
+            = toggle_like_tag_button(tagged_post,current_user)
+            %span.likes_count{"data-id" => "#{tagged_post.id}"}= tagged_post.likes.count
+            = toggle_help_tag_button(tagged_post,current_user)
+            %span.helps_count{"data-id" => "#{tagged_post.id}"}= tagged_post.helps.count
+            = toggle_inspire_tag_button(tagged_post,current_user)
+            %span.inspires_count{"data-id" => "#{tagged_post.id}"}= tagged_post.inspires.count
+            %div{:class => "comments_links"}
+                = image_tag "comment-round.png", :class => 'comments_link'
+                %span{:class => "comments_count"}
+                    = tagged_post.taggedcomments.count
+        %br
+        %section{:class => 'comment_section', :id => "tagged_post_comment_#{tagged_post.id}"}
+            - tagged_post.taggedcomments.each do |c|
+                = render 'shared/indiv_comment', :comment => c 
+            = form_for [tagged_post, tagged_post.taggedcomments.new] do |f|
+                - if current_user.spanish?
+                    = text_field :taggedcomment, :body, rows: 2, cols:30, placeholder: "¡Escribe tu comentario aquí!"
+                - else
+                    = text_field :taggedcomment, :body, rows: 2, cols:30, placeholder: "Write your comment here!"
+                = check_box_tag :anonymous, 0
+                - if current_user.spanish?
+                    = label_tag :anonymous, "Anónimo"
+                    = submit_tag 'Crear'
+                - else
+                    = label_tag :anonymous, "Anonymous"
+                    = submit_tag 'Create'
+%div{:class => "post_spaces", :id => "tagged_post_space_#{tagged_post.id}"}
+    %br
+    %br

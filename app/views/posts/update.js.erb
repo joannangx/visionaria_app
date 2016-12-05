@@ -1,6 +1,8 @@
-$('#post_<%= @post.id %>').fadeOut(1000, function() {
-    $(this).remove();
-    $("#all_posts").prepend('<%= j render(@post) %>');
-    $('#post_edit_form_<%= @post.id %>').hide();
-    $("#post_<%= @post.id %>").hide().fadeIn(1000);
+$('#post_<%= @post.id %>').replaceWith('<%= j render(@post) %>');
+$('.comments_link').on('click', function() {
+      return $(this).parent().parent().siblings('.comment_section').slideToggle();
 });
+$('#post_edit_form_<%= @post.id %>').hide();
+$("#post_comment_<%= @post.id %>").hide();
+$("#post_space_<%= @post.id %>").remove();
+$("#post_<%= @post.id %>").hide().fadeIn(1000);

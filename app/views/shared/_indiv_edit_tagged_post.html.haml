@@ -1,14 +1,18 @@
-%h2 Edit UN Sustainable goal
-- if !user_signed_in?
-    redirect_to root
-
-= form_for @post, method: "put"  do |f|
-    = f.label :content, "Your Thoughts"
+= form_for tagged_post, method: "put", :remote => true  do |f|
     = f.text_area :content
     = f.label :category, 'Category'
     = f.select :category, TaggedPost.all_categories
     = f.label :tag, 'Sustainable UN Goal'
     = f.select :tag, TaggedPost.all_un_goals
-    = f.label :public, 'Private'
-    = f.radio_button :public, false
-    = f.submit "Save changes"
+    %div{:class => "privacy"}
+        - if current_user.spanish?
+            f.label :public, 'Privado'
+        - else
+            = f.label :public, 'Private'
+        = f.radio_button :public, false
+    %div{:class => "post_submit"}
+        - if current_user.spanish?
+            = f.submit "Salvar cambios"
+        - else
+            = f.submit "Save changes"
+%br
