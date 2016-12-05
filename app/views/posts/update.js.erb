@@ -1,5 +1,5 @@
 $('#post_<%= @post.id %>').replaceWith('<%= j render(@post) %>');
-$('.comments_link').on('click', function() {
+$('#post_<%= @post.id %> #post_conts_<%= @post.id %> #post_comments_<%= @post.id %> form div .comments_link').on('click', function() {
       return $(this).parent().parent().siblings('.comment_section').slideToggle();
 });
 $('#post_edit_form_<%= @post.id %>').hide();

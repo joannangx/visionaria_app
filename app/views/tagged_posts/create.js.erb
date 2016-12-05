@@ -1,6 +1,6 @@
 $(".post_content").val('');
 $("#all_tagged_posts").prepend('<%= j render(@post) %>');
-$('.comments_link').on('click', function() {
+$('#tagged_post_<%= @post.id %> #tagged_post_comments_<%= @post.id %> form div .comments_link').on('click', function() {
       return $(this).parent().parent().siblings('.comment_section').slideToggle();
 });
 $("#tagged_post_comment_<%= @post.id %>").hide();
