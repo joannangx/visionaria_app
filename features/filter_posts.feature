@@ -26,13 +26,3 @@ Feature: Filter posts by 17 Sustainable Development Goals (Category)
     Then  I should see "comments"
     And   I should not see "comments2"
     And   I should not see "comments3"
-    
-  Scenario: Can make a post relating to one of the Sustainable Development Goals
-    When  I fill in "content_area" with "comments4"
-    And   I select "Clean Water And Sanitation" from "Sustainable UN Goal"
-    And   I select "Innovation" from "Category"
-    And   I press "Submit"
-    Then  I look at the tagged posts
-    When  I follow image link "Clean Water And Sanitation"
-    Then  I should see "comments4"
-    And   I should not see "comments2"

@@ -8,12 +8,3 @@ Given /I am signed in as an admin/ do
   click_button "Sign up"
   step %Q{I should see "admin"}
 end
-
-# Then /^I should be able to delete the post "([^"]*)"$/ do |content|
-#   step %Q{I should see "Delete"}
-#   click_link "Delete"
-#   page.accept_confirm do
-#     click_button('Yes')
-#   end
-#   step %Q{I should not see #{content}}
-# end

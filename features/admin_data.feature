@@ -25,9 +25,10 @@ Feature: Allow admin users to view user information/activity and download it as 
       
   Scenario: As an admin, I can view all user info and download
     When    I follow "Exports"
-    Then    I should see "Export User Data"
+    Then    I should see "download as .csv User Data"
   
   Scenario: As an admin, I can view all user acivity and download
     When    I follow "Exports"
-    Then    I should see "Export YO Post Data"
-    And     I should see "Export PROGRESO Post Data"
+    Then    I should see "download as .csv"
+    And     I should see "Vision Posts"
+    And     I should see "Goal Posts"

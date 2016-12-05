@@ -22,8 +22,13 @@ Background:
       | edasaur   | 2           | "content1"    | true      |
     
     And   the following comments exist
-      | username  | body          | post_id         |
-      | akira     | Love U        | 1               |
+      | user_id  | username    | body          | post_id         |
+      | 2        | edasaur     | Love U        | 1               |
+    
+    And   the following profiles exist
+      | user_id |
+      | 1       |
+      | 2       |
   
     And   I sign up as "dodo" with "dodosrule", email "dodo@dodo.com", and name "Dodo"
     

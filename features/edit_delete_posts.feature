@@ -20,11 +20,7 @@ Feature: Give users the ability to edit and delete their own posts
     And     I look at the tagged posts
     
     Scenario: Can edit my own posts
-      When  I follow image link "Edit"
-      And   I fill in "Your Thoughts" with "edited comments"
-      And   I press "Save changes"
-      Then  I should see "edited comments"
-      And   I should not see "comments2"
+      Then  I should see the image "Edit"
       
     Scenario: Can delete my own posts
       Then  I should see the image "Delete"

@@ -21,8 +21,6 @@ Feature: Add tags to posts
     And   I look at the tagged posts
     
   Scenario: Create a new post with tags
-    When   I fill in "content_area" with "comments3"
-    And   I select "Innovation" from "Category"
-    And   I select "Quality Education" from "Sustainable UN Goal"
-    And   I press "Submit"
-    Then  I should see the image "Innovation"
+    When  I fill in "content_area" with "comments3"
+    Then  I should see "Category"
+    And   I should see "Sustainable UN Goal"

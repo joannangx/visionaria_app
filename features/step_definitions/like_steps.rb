@@ -1,4 +1,4 @@
 When /I click on the image "(.*)"/ do |image|
     
-    find('#image').click
+    find("#{image}").click
 end
