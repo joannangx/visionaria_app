@@ -13,6 +13,10 @@ class TaggedcommentsController < ApplicationController
         @taggedcomment.user_id = current_user.id
         @taggedcomment.save
         
+        if current_user.id != @taggedpost.user_id
+            @notification_params = {action: "comment", post: "tagged", action_id: @taggedcomment.id, user_id: @taggedpost.user_id, tagged_post_id: @taggedpost.id}
+            @notification = Notification.create!(@notification_params)
+        end
         respond_to do |format|
             format.html { redirect_to tagged_posts_path }
             format.js

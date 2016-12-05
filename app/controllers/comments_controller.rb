@@ -13,6 +13,10 @@ class CommentsController < ApplicationController
         @comment.user_id = current_user.id
         @comment.save
         
+        if current_user.id != @post.user_id
+            @notification_params = {action: "comment", post: "post", action_id: @comment.id, user_id: @post.user_id, post_id: @post.id}
+            @notification = Notification.create!(@notification_params)
+        end
         respond_to do |format|
             format.html { redirect_to posts_path }
             format.js

@@ -52,6 +52,10 @@ class PostsController < ApplicationController
         @likes.each do |like|
            like.destroy! 
         end
+        @notifications = Notification.where(:post_id => @post.id)
+        @notifications.each do |notification|
+            notification.destroy!
+        end
         @post.destroy!
         @point = Point.where('variety = ? AND user_id = ?', 'Visions', @post.user.id).first
         @point.determine_op_and_update('sub')
@@ -83,6 +87,10 @@ class PostsController < ApplicationController
             
             @like = @post.likes.create(@post_id)
             current_user.likes << @like
+            if current_user.id != @post.user_id
+                @notification_params = {action: "like", post: "post", action_id: @like.id, user_id: @post.user_id, post_id: @post.id}
+                @notification = Notification.create!(@notification_params)
+            end
             @post.save
         end
         
@@ -98,6 +106,10 @@ class PostsController < ApplicationController
             @post = Post.find(params[:id])
             
             @like = Like.find_by(:post_id => @post.id, :user_id => current_user.id)
+            if current_user.id != @post.user_id
+                @notification = Notification.find_by(:action => "like", :post => "post", :post_id => @post.id, :action_id => @like.id)
+                @notification.destroy
+            end
             @like.destroy
             @post.save
         end
@@ -115,6 +127,10 @@ class PostsController < ApplicationController
         
             @help = @post.helps.create(@post_id)
             current_user.helps << @help
+            if current_user.id != @post.user_id
+                @notification_params = {action: "help", post: "post", action_id: @help.id, user_id: @post.user_id, post_id: @post.id}
+                @notification = Notification.create!(@notification_params)
+            end
             @post.save
         end
         
@@ -130,6 +146,10 @@ class PostsController < ApplicationController
             @post = Post.find(params[:id])
         
             @help = Help.find_by(:post_id => @post.id, :user_id => current_user.id)
+            if current_user.id != @post.user_id
+                @notification = Notification.find_by(:action => "help", :post => "post", :post_id => @post.id, :action_id => @help.id)
+                @notification.destroy
+            end
             @help.destroy    
             @post.save
         end
@@ -147,6 +167,10 @@ class PostsController < ApplicationController
 
             @inspire = @post.inspires.create(@post_id)
             current_user.inspires << @inspire
+            if current_user.id != @post.user_id
+                @notification_params = {action: "inspire", post: "post", action_id: @inspire.id, user_id: @post.user_id, post_id: @post.id}
+                @notification = Notification.create!(@notification_params)
+            end
             @post.save
         end
         
@@ -162,6 +186,10 @@ class PostsController < ApplicationController
             @post = Post.find(params[:id])
         
             @inspire = Inspire.find_by(:post_id => @post.id, :user_id => current_user.id)
+            if current_user.id != @post.user_id
+                @notification = Notification.find_by(:action => "inspire", :post => "post", :post_id => @post.id, :action_id => @inspire.id)
+                @notification.destroy
+            end
             @inspire.destroy
             @post.save
         end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :notifications
+  
   devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
   get 'view_english' => 'users#view_english'
   get 'view_spanish' => 'users#view_spanish'
