@@ -26,6 +26,8 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
+gem 'heroku'
+
 gem 'paperclip', '~> 4.1'
 
 gem 'best_in_place'
