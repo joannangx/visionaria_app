@@ -2,16 +2,17 @@
 <div class="content_wrapper">
 = render 'shared/header_post'
 %br
-%div{:class => "tutorial"}
-    %p{:class => "tutorial_head"} Listen -
-    %span{:class => "tutorial_bold"} YO - I know myself. 
-    I see things, I learn things. I know my strengths. I know that my hardships make me stronger.
-    %p{:class => "tutorial_close"} [CLOSE X]
+%div{:class => "posts_wraps"}
+    %div{:class => "tutorial"}
+        %p{:class => "tutorial_head"} Listen -
+        %span{:class => "tutorial_bold"} YO - I know myself. 
+        I see things, I learn things. I know my strengths. I know that my hardships make me stronger.
+        %p{:class => "tutorial_close"} [CLOSE X]
 
-= render 'shared/new_post'
+    = render 'shared/new_post'
 
-%div{:class => "posts", :id => "all_posts"}
-    = render @posts
+    %div{:class => "posts", :id => "all_posts"}
+        = render @posts
 
 %div{:class => "facebook_share"}
     - if current_user.spanish

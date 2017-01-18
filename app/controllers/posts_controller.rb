@@ -12,6 +12,8 @@ class PostsController < ApplicationController
     
     def create
         @user = current_user
+        puts "HELLOOOOOOOO WOOOOORRRLLDDD"
+        puts params
         @post = @user.posts.create!(post_params)
         @point = Point.where('variety = ? AND user_id = ?', 'Visions', current_user.id).first
         @point.determine_op_and_update('add')

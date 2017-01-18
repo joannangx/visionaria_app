@@ -4,7 +4,6 @@
     - if current_user.spanish
         = link_to 'Inicio', posts_path, :method => :get
         = link_to "Perfil", profile_path(current_user), :method => :get
-        = link_to "Usuario", edit_user_registration_path(current_user), :method => :get
         = link_to "Notificaciones", notifications_path(current_user), :method => :get
         - if current_user.admin
             = link_to "Exportaciones", exports_path, :method => :get
@@ -12,7 +11,6 @@
     - else
         = link_to 'Home', posts_path, :method => :get
         = link_to "Profile", profile_path(current_user), :method => :get
-        = link_to "User Info", edit_user_registration_path(current_user), :method => :get
         = link_to "Notifications", notifications_path(current_user), :method => :get
         - if current_user.admin
             = link_to "Exports", exports_path, :method => :get
@@ -20,6 +18,10 @@
     %div{:class =>"language_selection"}
         = link_to 'English', {:controller => "users", :action => "view_english"}, :method => :post
         = link_to 'Español', {:controller => "users", :action => "view_spanish"}, :method => :post
+        %br
+        %br
+        = link_to "About", about_path
+        = link_to "User Agreement", user_agreement_path
     
 %div{:class => "header_nav_bar"}
     %ul{:class => "header_nav_links"}

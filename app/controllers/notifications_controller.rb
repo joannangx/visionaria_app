@@ -36,4 +36,19 @@ class NotificationsController < ApplicationController
         end
     end    
     
+    def export
+        @notifications = Notification.all
+      
+        csv_string_visions = CSV.generate do |csv|
+           csv << ["User Id", "Type", "Vision Post ID", "Goal Post ID", "Message", "Date"]
+           @notifications.each do |notification|
+             csv << [notification.user_id, notification.action, notification.post_id, notification.tagged_post_id, notification.message, notification.created_at]
+           end
+        end         
+        
+        send_data csv_string_visions,
+        :type => 'text/csv; charset=iso-8859-1; header=present',
+        :disposition => "attachment; filename=notifications.csv" 
+    end
+    
 end    

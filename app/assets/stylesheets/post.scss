@@ -7,10 +7,22 @@ body {
     background: #fafafa;
 }
 
+.posts_wraps {
+    margin: auto;
+    width: 55%;
+}
+
+@media (max-width:900px) {
+    .posts_wraps {
+        width: 100%;
+    }
+    
+}
+
 .post, .tag_post {
     margin: auto;
     background-color: white;
-    width: 55%;
+    width: 100%;
     min-width: 300px;
     border-radius: 3px;
 	box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
@@ -218,7 +230,7 @@ textarea:focus {
 
 .new_post_form {
     margin: auto;
-    width: 53%;
+    width: 95%;
     padding: 10px;
     margin-top: 20px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
@@ -236,6 +248,7 @@ textarea:focus {
     padding-right: 10px;
     padding-top: 10px;
 }
+
 .post_submit input[type="submit"] {
 }
 
@@ -295,7 +308,7 @@ textarea {
 .tutorial {
     color: #1a3035;
     background: #fff;
-    width: 51%;
+    width: 90%;
     margin: auto;
     padding: 1px 23px;
     border: 1px solid;

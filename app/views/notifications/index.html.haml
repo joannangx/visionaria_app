@@ -11,14 +11,14 @@
                 %span= link_to "#{@other_user.username}", profile_path(@other_user), :class => "notif_user_link"
                 commented on your 
                 %span= link_to "post!", post_path(notif.post_id), :class => "notif_post_link"
-                %span= link_to image_tag("notif_delete.png", :class => "notif_delete_buttons"), notification_path(notif), method: :delete, :remote => true, :class => "notif_delete"
+                //%span= link_to image_tag("notif_delete.png", :class => "notif_delete_buttons"), notification_path(notif), method: :delete, :remote => true, :class => "notif_delete"
         - else
             - @other_user = User.find(Taggedcomment.find(notif.action_id).user_id)
             %p{:class => "notification_show", :id => "notif_#{notif.id}"}
                 %span= link_to "#{@other_user.username}", profile_path(@other_user), :class => "notif_user_link"
                 commented on your 
                 %span= link_to "post!", tagged_post_path(notif.tagged_post_id), :class => "notif_post_link"
-                %span= link_to image_tag("notif_delete.png", :class => "notif_delete_buttons"), notification_path(notif), method: :delete, :remote => true, :class => "notif_delete"
+                //%span= link_to image_tag("notif_delete.png", :class => "notif_delete_buttons"), notification_path(notif), method: :delete, :remote => true, :class => "notif_delete"
     - elsif notif.action == "like"
         - @other_user = User.find(Like.find(notif.action_id).user_id)
         %p{:class => "notification_show", :id => "notif_#{notif.id}"}
@@ -28,7 +28,7 @@
                 %span= link_to "post!", post_path(notif.post_id), :class => "notif_post_link"
             - else
                 %span= link_to "post!", tagged_post_path(notif.tagged_post_id), :class => "notif_post_link"
-            %span= link_to image_tag("notif_delete.png", :class => "notif_delete_buttons"), notification_path(notif), method: :delete, :remote => true, :class => "notif_delete"
+            //%span= link_to image_tag("notif_delete.png", :class => "notif_delete_buttons"), notification_path(notif), method: :delete, :remote => true, :class => "notif_delete"
     - elsif notif.action == "help"
         - @other_user = User.find(Help.find(notif.action_id).user_id)
         %p{:class => "notification_show", :id => "notif_#{notif.id}"}
@@ -39,7 +39,7 @@
             - else
                 %span= link_to "post", tagged_post_path(notif.tagged_post_id), :class => "notif_post_link"
             helpful!
-            %span= link_to image_tag("notif_delete.png", :class => "notif_delete_buttons"), notification_path(notif), method: :delete, :remote => true, :class => "notif_delete"
+            //%span= link_to image_tag("notif_delete.png", :class => "notif_delete_buttons"), notification_path(notif), method: :delete, :remote => true, :class => "notif_delete"
     - elsif notif.action == "inspire"
         - @other_user = User.find(Inspire.find(notif.action_id).user_id)
         %p{:class => "notification_show", :id => "notif_#{notif.id}"}
@@ -50,10 +50,10 @@
             - else
                 %span= link_to "post", tagged_post_path(notif.tagged_post_id), :class => "notif_post_link"
             inspiring!
-            %span= link_to image_tag("notif_delete.png", :class => "notif_delete_buttons"), notification_path(notif), method: :delete, :remote => true, :class => "notif_delete"
+            //%span= link_to image_tag("notif_delete.png", :class => "notif_delete_buttons"), notification_path(notif), method: :delete, :remote => true, :class => "notif_delete"
     - elsif notif.action == "admin"
         %p{:class => "notification_show", :id => "notif_#{notif.id}"}
             %span{:class => "notif_admin"}= "ADMIN NOTIFICATION "
             %span= notif.message
-            %span= link_to image_tag("notif_delete.png", :class => "notif_delete_buttons"), notification_path(notif), method: :delete, :remote => true, :class => "notif_delete"
+            //%span= link_to image_tag("notif_delete.png", :class => "notif_delete_buttons"), notification_path(notif), method: :delete, :remote => true, :class => "notif_delete"
     %br{:class => "notif_space", :id => "notif_space_#{notif.id}"}

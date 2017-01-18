@@ -4,6 +4,13 @@
     %div{:class => "user_info_wrap"}
         %div{:class => "profile_image_wrap"}
             = image_tag @viewed_user.avatar.url(:medium), :class => "profile_image"
+            - if @owned
+                %div{:class => "more_user_info"}
+                    %br
+                    - if current_user.spanish?
+                        = link_to "Más información del usuario", edit_user_registration_path(current_user), :method => :get, :class => "edit_user_link"
+                    - else
+                        = link_to "More User Info", edit_user_registration_path(current_user), :method => :get, :class => "edit_user_link"
             
         %div{:class => "about_me"}
             %p{:class => "prof_user"}= @viewed_user.username 

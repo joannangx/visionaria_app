@@ -17,7 +17,8 @@ Feature: Give users the ability to upadte their user information
     And     I am signed in with username "dodobird", email "dodo@example.com" and password "dodosrule"
     
   Scenario: Can update username
-    When    I follow "User Info"
+    When    I follow "Profile"
+    And     I follow "More User Info"
     And     I fill in "Username" with "Dodo"
     And     I fill in "Current password" with "dodosrule"
     And     I press "Update"
@@ -25,7 +26,8 @@ Feature: Give users the ability to upadte their user information
     And     I should not see "dodobird"
     
   Scenario: Can change user location
-    When    I follow "User Info"
+    When    I follow "Profile"
+    And     I follow "More User Info"
     And     I fill in "Location" with "Fajardo, Puerto Rico"
     And     I fill in "Current password" with "dodosrule"
     And     I press "Update"
@@ -33,13 +35,15 @@ Feature: Give users the ability to upadte their user information
     Then    I should see "Fajardo, Puerto Rico"
     
   Scenario: Can change user avatar
-    When    I follow "User Info"
+    When    I follow "Profile"
+    And     I follow "More User Info"
     Then    I should see "Avatar" 
     
   Scenario: Can update password
-    When    I follow "User Info"
-    And     I fill in "Password" with "dodo123456"
-    And     I fill in "Password confirmation" with "dodo123456"
-    And     I fill in "Current password" with "dodosrule"
-    And     I press "Update"
+    When    I follow "Profile"
+    And     I follow "More User Info"
+    And     I fill in "Password | Contraseña" with "dodo123456"
+    And     I fill in "Password Confirmation | Confirmación de contraseña" with "dodo123456"
+    And     I fill in "Current password | Contraseña actual" with "dodosrule"
+    And     I press "Update | Actualizar"
     

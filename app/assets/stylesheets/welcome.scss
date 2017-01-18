@@ -192,7 +192,6 @@ input:focus {
     #home-bg {
         display: none;
     }
-    
 }
 
 .edit_user label, i, em {
@@ -201,4 +200,22 @@ input:focus {
 
 .edit_user .form-group {
     text-align: center;
+}
+
+.visionaria_info {
+    color: #5f6063;
+    font-size: 200%;
+}
+
+.visionaria_info_wrap {
+    margin: auto;
+    width: 60%;
+    color: gray;
+    text-align: justify;
+}
+
+@media (max-width:600px) {
+    .visionaria_info_wrap {
+        width: 84%;
+    }
 }

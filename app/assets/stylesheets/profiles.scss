@@ -25,6 +25,20 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, .24);
 }
 
+.more_user_info {
+    text-align:center;
+}
+
+.edit_user_link, .edit_user_link:visited {
+    color: #4392ad;
+    text-decoration: none;
+}
+
+.edit_user_link:hover {
+    color: #b6dfed;
+    text-decoration: none;
+}
+
 .prof_user {
     font-size: 25px;
 }
@@ -57,7 +71,7 @@
 }
 
 .input_wrap {
-    background: #9cd8ce;
+    background: white;
 }
 
 .best_in_place:hover {

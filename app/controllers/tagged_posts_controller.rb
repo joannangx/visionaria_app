@@ -35,7 +35,6 @@ class TaggedPostsController < ApplicationController
     def new
         @all_categories = TaggedPost.all_categories
         @all_un_goals = TaggedPost.all_un_goals
-        @maximum_length = TaggedPost.validators_on( :content ).first.options[:maximum]
     end    
 
     def create
@@ -43,6 +42,7 @@ class TaggedPostsController < ApplicationController
         @post = @user.tagged_posts.create!(tagged_post_params)
         @point = Point.where('variety = ? AND user_id = ?', @post.tag, current_user.id).first
         @point.determine_op_and_update('add')
+        @maximum_length = TaggedPost.validators_on( :content ).first.options[:maximum]
 
         respond_to do |format|
             format.html { redirect_to tagged_posts_path }

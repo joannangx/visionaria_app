@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :edit, :update]
   get 'posts_export', to: 'posts#export'
   get 'tagged_export', to: 'tagged_posts#export'
+  get 'notifications_export', to: 'notifications#export'
   
   resources :profiles, only: [:show, :edit, :update]
   resources :posts, only: [:index, :show, :create, :like, :destroy] do
@@ -40,6 +41,8 @@ Rails.application.routes.draw do
   end
   get 'tagged_posts/:id/edit', to: 'tagged_posts#edit', as: :edit_tagged_post
   put 'tagged_posts/:id', to: 'tagged_posts#update'
+  get 'about' => 'welcome#about'
+  get 'user_agreement' => 'welcome#user_agreement'
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

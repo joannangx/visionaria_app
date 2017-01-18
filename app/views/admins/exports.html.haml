@@ -6,13 +6,18 @@
     %div{:id => "downloads"} Downloads
     %div{:id => "downloads_descrption"} Files download as .csv
     %div{:class => "export_links", :id => "export_users"}
-        %h User Data
         = link_to image_tag("download.png", :class => "download_button"), users_path(format: :csv)
+        %h User Data
     %br
     %div{:class => "export_links", :id => "export_posts"}
-        %h Vision Posts 
         = link_to image_tag("download.png", :class => "download_button"), posts_export_path(format: :csv)
+        %h Vision Posts 
     %br
     %div{:class => "export_links", :id => "export_tagged"}
-        %h Goal Posts
         = link_to image_tag("download.png", :class => "download_button"), tagged_export_path(format: :csv)
+        %h Goal Posts 
+    %br
+    %div{:class => "export_links", :id => "export_notifications"}
+        = link_to image_tag("download.png", :class => "download_button"), notifications_export_path(format: :csv)
+        %h Notifications
+        

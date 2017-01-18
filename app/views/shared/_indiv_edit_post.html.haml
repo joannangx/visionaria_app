@@ -3,10 +3,10 @@
     %br
     %div{:class => "privacy"}
         - if current_user.spanish?
-            f.label :public, 'Privado'
+            = f.label :public, 'Privado'
         - else
             = f.label :public, 'Private'
-        = f.radio_button :public, false
+        = f.check_box :public, {:class => "privacy_box"}, false, true
     %div{:class => "post_submit"}
         - if current_user.spanish?
             = f.submit "Salvar cambios"

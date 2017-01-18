@@ -2,16 +2,17 @@
 <div class="content_wrapper">
 = render 'shared/header_tag'
 %br
-%div{:class => "tutorial"}
-    %p{:class => "tutorial_head"} Resolve -
-    %span{:class => "tutorial_bold"} PROGRESO - Progress continues toward global goals. 
-    Have you heard? You and your experiences are SO important. Come to the table.
-    %p{:class => "tutorial_close"} [CLOSE X]
+%div{:class => "posts_wraps"}
+    %div{:class => "tutorial"}
+        %p{:class => "tutorial_head"} Resolve -
+        %span{:class => "tutorial_bold"} PROGRESO - Progress continues toward global goals. 
+        Have you heard? You and your experiences are SO important. Come to the table.
+        %p{:class => "tutorial_close"} [CLOSE X]
 
-= render 'shared/new_tagged_post'
+    = render 'shared/new_tagged_post'
 
-%div{:class => "tagged_posts", :id => "all_tagged_posts"}
-    = render @taggedposts
+    %div{:class => "tagged_posts", :id => "all_tagged_posts"}
+        = render @taggedposts
 
 %div{:class => "facebook_share"}
     - if current_user.spanish

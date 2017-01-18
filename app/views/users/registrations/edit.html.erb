@@ -5,23 +5,21 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="form-group">
-        <%= f.label :avatar, class: 'col-sm-2 control-label'  %>
-        <div class="col-sm-6">
-            <%= f.file_field :avatar %>
-        </div>
+  <div class="field">
+    <%= f.label :avatar, "Avatar | Foto", :class => 'sign_in_label'  %>
+    <%= f.file_field :avatar %>
   </div>
 
   <div class="field">
-    <p><%= f.label :username %><br />
+    <p><%= f.label :username, "Username | Usuario", :class => 'sign_in_label'%><br />
     <%= f.text_field :username %></p>
-    <%= f.label :name %><br />
+    <%= f.label :name, "Name | Nombre", :class => 'sign_in_label' %><br />
     <%= f.text_field :name %></p>
     <% if current_user.provider != "facebook" and current_user.provider != "google_oauth2" %>
-      <%= f.label :email %><br />
+      <%= f.label :email, "Email | Correo electrónico", :class => 'sign_in_label' %><br />
       <%= f.email_field :email, autofocus: true %>
     <% end %>
-    <%= f.label :location %><br />
+    <%= f.label :location, "Location | Locación", :class => 'sign_in_label' %><br />
     <%= f.text_field :location %></p>
   </div>
 
@@ -31,7 +29,7 @@
 
   <% if current_user.provider != "facebook" and current_user.provider != "google_oauth2" %>
     <div class="field">
-      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.label :password, "Password | Contraseña", :class => 'sign_in_label' %> <i>(leave blank if you don't want to change it/deje en blanco si no desea cambiarlo)</i><br />
       <%= f.password_field :password, autocomplete: "off" %>
       <% if @minimum_password_length %>
         <br />
@@ -40,18 +38,18 @@
     </div>
   
     <div class="field">
-      <%= f.label :password_confirmation %><br />
+      <%= f.label :password_confirmation, "Password Confirmation | Confirmación de contraseña", :class => 'sign_in_label'%><br />
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password, "Current password | Contraseña actual", :class => 'sign_in_label'%> <i>(enter current password to save changes/entrega tu contraseña para actualizar tu perfil)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update | Actualizar" %>
   </div>
   <br></br>
   <br></br>

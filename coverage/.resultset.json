@@ -1,14 +1,14 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/ubuntu/workspace/visionaria_app/config/environment.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/home/ubuntu/workspace/visionaria_app/config/application.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/config/application.rb": [
         1,
         null,
         1,
@@ -46,12 +46,12 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/config/boot.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/home/ubuntu/workspace/visionaria_app/config/environments/test.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/config/environments/test.rb": [
         1,
         null,
         null,
@@ -95,7 +95,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/config/initializers/assets.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -108,7 +108,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/config/initializers/backtrace_silencers.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -117,12 +117,12 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/config/initializers/cookies_serializer.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/home/ubuntu/workspace/visionaria_app/config/initializers/devise.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/config/initializers/devise.rb": [
         null,
         null,
         1,
@@ -411,13 +411,13 @@
         1,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/config/initializers/filter_parameter_logging.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/home/ubuntu/workspace/visionaria_app/config/initializers/inflections.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -435,23 +435,23 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/config/initializers/mime_types.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/config/initializers/session_store.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/home/ubuntu/workspace/visionaria_app/config/initializers/social_share_button.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/config/initializers/social_share_button.rb": [
         1,
         1,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/config/initializers/wrap_parameters.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -460,106 +460,6 @@
         null,
         1,
         1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/home/ubuntu/workspace/visionaria_app/config/routes.rb": [
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null,
         null,
         null,
@@ -567,7 +467,110 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/models/user.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/config/routes.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/models/user.rb": [
         1,
         null,
         null,
@@ -614,19 +617,11 @@
         null,
         null,
         1,
-        4,
+        8,
         null,
         null,
         1,
-        4,
-        null,
-        null,
-        1,
-        80,
-        53,
-        null,
-        27,
-        null,
+        8,
         null,
         null,
         1,
@@ -646,6 +641,14 @@
         null,
         null,
         1,
+        80,
+        53,
+        null,
+        27,
+        null,
+        null,
+        null,
+        1,
         1,
         0,
         0,
@@ -653,7 +656,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/features/step_definitions/admin_steps.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/features/step_definitions/admin_steps.rb": [
         1,
         4,
         4,
@@ -665,7 +668,7 @@
         4,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/features/step_definitions/comment_steps.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/features/step_definitions/comment_steps.rb": [
         1,
         null,
         null,
@@ -674,13 +677,13 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/features/step_definitions/like_steps.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/features/step_definitions/like_steps.rb": [
         1,
         null,
         0,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/features/step_definitions/post_steps.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/features/step_definitions/post_steps.rb": [
         1,
         null,
         null,
@@ -749,7 +752,7 @@
         0,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/features/step_definitions/profile_steps.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/features/step_definitions/profile_steps.rb": [
         1,
         null,
         null,
@@ -790,7 +793,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/features/step_definitions/tagged_post_steps.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/features/step_definitions/tagged_post_steps.rb": [
         1,
         null,
         null,
@@ -812,7 +815,7 @@
         4,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/features/step_definitions/user_steps.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/features/step_definitions/user_steps.rb": [
         1,
         null,
         null,
@@ -830,18 +833,6 @@
         17,
         17,
         17,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
         null,
         null,
         1,
@@ -891,31 +882,32 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/controllers/welcome_controller.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/controllers/welcome_controller.rb": [
         1,
         1,
         78,
         44,
         null,
         null,
+        null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/controllers/application_controller.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/helpers/application_helper.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/helpers/comments_helper.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/helpers/comments_helper.rb": [
         1,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/helpers/helps_helper.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/helpers/helps_helper.rb": [
         1,
         1,
         53,
@@ -934,7 +926,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/helpers/inspires_helper.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/helpers/inspires_helper.rb": [
         1,
         1,
         53,
@@ -953,7 +945,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/helpers/likes_helper.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/helpers/likes_helper.rb": [
         1,
         1,
         53,
@@ -972,27 +964,27 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/helpers/post_helper.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/helpers/post_helper.rb": [
         1,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/helpers/profiles_helper.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/helpers/profiles_helper.rb": [
         1,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/helpers/registration_helper.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/helpers/registration_helper.rb": [
         1,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/helpers/taggedcomments_helper.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/helpers/taggedcomments_helper.rb": [
         1,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/helpers/welcome_helper.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/helpers/welcome_helper.rb": [
         1,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/models/tagged_post.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/models/tagged_post.rb": [
         1,
         1,
         1,
@@ -1025,7 +1017,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/controllers/registrations_controller.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/controllers/registrations_controller.rb": [
         1,
         1,
         1,
@@ -1070,7 +1062,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/models/point.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/models/point.rb": [
         1,
         1,
         null,
@@ -1100,24 +1092,24 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/models/profile.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/models/profile.rb": [
         1,
         1,
         null,
         1,
-        4,
+        8,
         0,
         0,
         0,
         null,
-        4,
-        4,
-        4,
+        8,
+        8,
+        8,
         null,
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/controllers/posts_controller.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/controllers/posts_controller.rb": [
         1,
         1,
         1,
@@ -1136,6 +1128,8 @@
         1,
         1,
         1,
+        1,
+        1,
         null,
         1,
         2,
@@ -1327,7 +1321,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/models/post.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/models/post.rb": [
         1,
         1,
         1,
@@ -1345,7 +1339,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/controllers/tagged_posts_controller.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/controllers/tagged_posts_controller.rb": [
         1,
         1,
         1,
@@ -1383,10 +1377,10 @@
         1,
         0,
         0,
-        0,
         null,
         null,
         1,
+        0,
         0,
         0,
         0,
@@ -1569,40 +1563,40 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/models/like.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/models/like.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/models/help.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/models/help.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/models/inspire.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/models/inspire.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/models/taggedcomment.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/models/taggedcomment.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/models/comment.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/models/comment.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/controllers/admins_controller.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/controllers/admins_controller.rb": [
         1,
         1,
         1,
@@ -1624,7 +1618,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/controllers/users_controller.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/controllers/users_controller.rb": [
         1,
         1,
         null,
@@ -1672,7 +1666,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/controllers/comments_controller.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/controllers/comments_controller.rb": [
         1,
         1,
         null,
@@ -1714,13 +1708,13 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/models/notification.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/models/notification.rb": [
         1,
         1,
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/controllers/taggedcomments_controller.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/controllers/taggedcomments_controller.rb": [
         1,
         1,
         null,
@@ -1762,7 +1756,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/controllers/notifications_controller.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/controllers/notifications_controller.rb": [
         1,
         1,
         null,
@@ -1798,12 +1792,27 @@
         0,
         0,
         0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        0,
+        null,
         null,
         null,
         null,
         null
       ],
-      "/home/ubuntu/workspace/visionaria_app/app/controllers/profiles_controller.rb": [
+      "/Users/WingsofFreedom/Documents/cs169/visionaria_app/app/controllers/profiles_controller.rb": [
         1,
         1,
         null,
@@ -1812,17 +1821,17 @@
         null,
         null,
         1,
-        4,
-        4,
-        4,
+        8,
+        8,
+        8,
         null,
-        4,
+        8,
         0,
         null,
-        4,
+        8,
         null,
         null,
-        4,
+        8,
         1,
         0,
         0,
@@ -1833,9 +1842,9 @@
         1,
         null,
         null,
-        4,
-        4,
-        4,
+        8,
+        8,
+        8,
         null,
         null,
         1,
@@ -1854,6 +1863,6 @@
         null
       ]
     },
-    "timestamp": 1480949729
+    "timestamp": 1484715572
   }
 }

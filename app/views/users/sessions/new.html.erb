@@ -1,32 +1,30 @@
 <div class="login_bg"></div>
 
-<h2 class="page_title">Visionaria Login</h2>
+<h2 class="page_title">Login | Iniciar sesión</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email, :class => 'sign_in_label' %><br />
+    <%= f.label :email, "Email | Correo electrónico", :class => 'sign_in_label' %><br />
     <%= f.text_field :email, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :password, :class => 'sign_in_label' %><br />
+    <%= f.label :password, "Password | Contraseña", :class => 'sign_in_label' %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
     <div class="field">
       <%= f.check_box :remember_me, :class => 'sign_in' %>
-      <%= f.label :remember_me, :class => 'remember' %>
+      <%= f.label :remember_me, "Remember me | Recuérdame", :class => 'remember' %>
     </div>
   <% end -%>
   <br />
   <br />
   <div class="actions">
-    <%= f.submit "Login", :class => 'sign_in' %>
+    <%= f.submit "Login | Iniciar sesión", :class => 'sign_in' %>
   </div>
 <% end %>
 <br />
 
-<div class="sign_in_label_container">
-<%= render "users/shared/links" %>
 </div>
