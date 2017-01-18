@@ -188,7 +188,7 @@ input:focus {
    color: white;
 }
 
-@media (max-width:600px) {
+@media only screen and (max-width:900px) {
     #home-bg {
         display: none;
     }
@@ -209,13 +209,19 @@ input:focus {
 
 .visionaria_info_wrap {
     margin: auto;
-    width: 60%;
+    width: 84%;
     color: gray;
     text-align: justify;
 }
 
-@media (max-width:600px) {
+@media only screen and (min-width:600px) {
     .visionaria_info_wrap {
-        width: 84%;
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .field  {
+        width: 90%;
     }
 }
